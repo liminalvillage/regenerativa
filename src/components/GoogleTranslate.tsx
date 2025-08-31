@@ -38,7 +38,9 @@ export default function GoogleTranslate() {
         if (selectElement) {
           selectElement.value = targetLang;
           selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+          return true;
         }
+        return false;
       };
 
       window.getGoogleTranslateLanguage = function() {

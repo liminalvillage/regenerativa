@@ -1,15 +1,16 @@
 declare global {
-  interface Window {
-    google: {
-      translate: {
-        TranslateElement: {
-          new (options: Record<string, unknown>, elementId: string): Record<string, unknown>;
-          InlineLayout: {
-            SIMPLE: number;
-          };
+  var google: {
+    translate: {
+      TranslateElement: {
+        new (options: Record<string, unknown>, elementId: string): Record<string, unknown>;
+        InlineLayout: {
+          SIMPLE: number;
         };
       };
     };
+  };
+
+  interface Window {
     googleTranslateElementInit: () => void;
     googleTranslateInitialized: boolean;
     googleTranslateReady: boolean;
