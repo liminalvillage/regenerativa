@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Translate Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Google Translate Test Page</h1>
+
+    <div class="test-section">
+        <h2>English Content</h2>
+        <p>This is a test paragraph in English. If Google Translate is working, this should be automatically translated when you select a different language from the dropdown below.</p>
+        <p>The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English alphabet at least once.</p>
+    </div>
+
+    <div class="test-section">
+        <h3>Test Buttons</h3>
+        <button onclick="testSpanish()">Test Spanish</button>
+        <button onclick="testFrench()">Test French</button>
+        <button onclick="resetEnglish()">Reset to English</button>
+        <button onclick="checkStatus()">Check Status</button>
+    </div>
+
+    <div class="test-section">
+        <h3>Status</h3>
+        <div id="status">Loading Google Translate...</div>
+    </div>
+
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            console.log('Google Translate initializing...');
+
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,fr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+
+            console.log('Google Translate initialized');
+            document.getElementById('status').textContent = 'Google Translate Ready ✅';
+        }
+
+        function testSpanish() {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'es';
+                select.dispatchEvent(new Event('change'));
+                console.log('Triggered Spanish translation');
+            } else {
+                console.log('Select element not found');
+            }
+        }
+
+        function testFrench() {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'fr';
+                select.dispatchEvent(new Event('change'));
+                console.log('Triggered French translation');
+            } else {
+                console.log('Select element not found');
+            }
+        }
+
+        function resetEnglish() {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'en';
+                select.dispatchEvent(new Event('change'));
+                console.log('Reset to English');
+            } else {
+                console.log('Select element not found');
+            }
+        }
+
+        function checkStatus() {
+            const select = document.querySelector('.goog-te-combo');
+            const googleExists = typeof google !== 'undefined';
+            const translateExists = typeof google !== 'undefined' && typeof google.translate !== 'undefined';
+
+            console.log('=== STATUS CHECK ===');
+            console.log('Google exists:', googleExists);
+            console.log('Google Translate exists:', translateExists);
+            console.log('Select element:', !!select);
+            if (select) {
+                console.log('Select value:', select.value);
+                console.log('Select options:', select.options.length);
+            }
+
+            document.getElementById('status').innerHTML = `
+                Google: ${googleExists ? '✅' : '❌'}<br>
+                Translate: ${translateExists ? '✅' : '❌'}<br>
+                Select: ${select ? '✅' : '❌'}
+            `;
+        }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

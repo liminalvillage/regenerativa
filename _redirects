@@ -1,0 +1,11 @@
+# Netlify redirects file for Next.js
+# This complements the netlify.toml redirects
+
+# API routes (if any)
+/api/* /.netlify/functions/:splat 200
+
+# Static assets should be served directly
+/_next/static/* /_next/static/:splat 200
+
+# SPA fallback for client-side routing
+/* /index.html 200
