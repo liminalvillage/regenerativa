@@ -1,8 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: __dirname,
+  // Remove turbopack for better static file handling
+  // turbopack: {
+  //   root: __dirname,
+  // },
+
+  // Ensure public directory files are copied
+  output: 'export',
+  trailingSlash: true,
+
+  // Image optimization settings
+  images: {
+    unoptimized: true, // Required for static export
   },
 };
 
