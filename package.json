@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "download-kml": "curl -s 'https://www.google.com/maps/d/u/0/kml?mid=1LZ8IVoeMYCplO7FkaueXTNZrdwY' -H 'User-Agent: Mozilla/5.0' -o public/doc.kml"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.3.3",

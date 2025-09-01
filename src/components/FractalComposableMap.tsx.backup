@@ -40,17 +40,6 @@ const lensColors: Record<LensType, string> = {
   regenerative: '#2e7d32'
 };
 
-// Interface for project data
-interface ProjectData {
-  id: string;
-  name: string;
-  description: string;
-  location: string;
-  coordinates: number[];
-  videoUrl: string;
-  category: string;
-}
-
 // Helper function to extract KML from KMZ file
 const extractKMLFromKMZ = async (kmzBlob: Blob): Promise<string> => {
   return new Promise((resolve, reject) => {
@@ -132,8 +121,8 @@ const extractTextFromHTML = (html: string): string => {
 };
 
 // Helper function to parse KML data
-const parseKMLData = (kmlText: string): ProjectData[] => {
-  const projects: ProjectData[] = [];
+const parseKMLData = (kmlText: string) => {
+  const projects = [];
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(kmlText, 'text/xml');
 
@@ -253,7 +242,7 @@ const parseKMLData = (kmlText: string): ProjectData[] => {
 };
 
 // Helper function to generate comprehensive project data
-const generateComprehensiveProjectData = async (): Promise<ProjectData[]> => {
+const generateComprehensiveProjectData = async () => {
   console.log('[Sample Data] Generating representative regenerative projects data...');
   console.log('[INFO] The actual regen.earth map contains 100+ real regenerative projects with documentaries.');
   console.log('[INFO] This represents ~50 curated projects that would typically be in such a collection.');
@@ -1135,47 +1124,99 @@ export default function FractalComposableMap({
 
   // Load and parse KMZ/KML data for regenerative projects
   const loadRegenerativeProjects = async (mapInstance: maplibregl.Map) => {
-    let projects: ProjectData[] = [];
+    let projects = [];
 
     try {
       // Load KML data
       console.log('[KML Loader] Loading regenerative projects...');
       const response = await fetch('/regen.earth.kml');
 
-      if (response.ok) {
-        const kmlText = await response.text();
-        console.log('[KML Loader] KML file loaded, length:', kmlText.length);
+      try {
+        // Load KMZ file (compressed KML)
+        console.log('[KMZ Loader] Attempting to load KMZ file...');
+        const kmzResponse = await fetch('/regen.earth.kmz');
+        if (kmzResponse.ok) {
+          const kmzBlob = await kmzResponse.blob();
+          console.log(`[KMZ Loader] KMZ file loaded, size: ${kmzBlob.size} bytes`);
 
-        // Parse KML and extract placemarks
-        projects = parseKMLData(kmlText);
-        console.log(`[KML Loader] Successfully parsed ${projects.length} projects from KML`);
-      } else {
-        console.log('[KML Loader] KML file not found, trying doc.kml...');
-        // Fallback to doc.kml
-        const docResponse = await fetch('/doc.kml');
+          // Extract KML content from KMZ
+          const kmlContent = await extractKMLFromKMZ(kmzBlob);
+          console.log(`[KMZ Loader] Extracted KML content, length: ${kmlContent.length}`);
 
-        if (docResponse.ok) {
-          const kmlText = await docResponse.text();
-          console.log('[KML Loader] Fallback doc.kml loaded, length:', kmlText.length);
-
-          // Parse KML and extract placemarks
-          projects = parseKMLData(kmlText);
+          if (kmlContent) {
+            // Parse the extracted KML
+            projects = parseKMLData(kmlContent);
+            console.log(`[KMZ Loader] Successfully parsed ${projects.length} projects from KMZ`);
+          } else {
+            console.log('[KMZ Loader] No KML content found in KMZ, using sample data');
+            projects = await generateComprehensiveProjectData();
+          }
+        } else {
+          console.log(`[KMZ Loader] KMZ file not found (status: ${kmzResponse.status}), using sample data`);
+          console.log('[INFO] The local KMZ only contains a NetworkLink to Google My Maps');
+          projects = await generateComprehensiveProjectData();
         }
-      }
+      } catch (kmzError) {
+        console.error('[KMZ Loader] Error loading KMZ file:', kmzError);
+        console.log('KMZ file not found or parsing failed, trying KML...');
 
-      if (projects.length === 0) {
-        // Fallback to comprehensive sample data
-        console.log('[Sample Data] Using comprehensive sample data...');
-        projects = await generateComprehensiveProjectData();
-      }
+        try {
+          // Try to load the full regen.earth.kml file first
+          console.log('[KML Loader] Attempting to load regen.earth.kml...');
+          const regenResponse = await fetch('/regen.earth.kml');
+          if (regenResponse.ok) {
+            const kmlText = await regenResponse.text();
+            console.log('[KML Loader] Full regen.earth.kml loaded, length:', kmlText.length);
+
+            // Parse KML and extract placemarks
+            projects = parseKMLData(kmlText);
+            console.log(`[KML Loader] Successfully loaded ${projects.length} projects from regen.earth.kml`);
+          } else {
+            console.log('[KML Loader] regen.earth.kml not found, trying doc.kml...');
+            // Fallback to smaller doc.kml file
+            const kmlResponse = await fetch('/doc.kml');
+            if (kmlResponse.ok) {
+              const kmlText = await kmlResponse.text();
+              console.log('[KML Loader] Fallback doc.kml loaded, length:', kmlText.length);
+
+              // Parse KML and extract placemarks
+              projects = parseKMLData(kmlText);
+            }
+          }
+
+          // If no projects found in KML, try to load from Google My Maps
+          if (projects.length === 0) {
+            console.log('[KML Loader] No projects found in KML, trying Google My Maps...');
+            console.log('[INFO] Attempting to load from: https://www.google.com/maps/d/u/0/kml?mid=1LZ8IVoeMYCplO7FkaueXTNZrdwY');
+            try {
+              // Try to load the actual Google My Maps data
+              const googleMapsResponse = await fetch('https://www.google.com/maps/d/u/0/kml?mid=1LZ8IVoeMYCplO7FkaueXTNZrdwY', {
+                mode: 'cors'
+              });
+              if (googleMapsResponse.ok) {
+                const googleKmlText = await googleMapsResponse.text();
+                projects = parseKMLData(googleKmlText);
+                console.log(`[Google Maps] Successfully loaded ${projects.length} projects from Google My Maps`);
+              } else {
+                console.log(`[Google Maps] HTTP ${googleMapsResponse.status} - Access denied or authentication required`);
+              }
+            } catch (googleError) {
+              console.log('[Google Maps] Failed to load from Google My Maps (CORS or network error):', googleError.message);
+            }
+          }
+        }
+
+        if (projects.length === 0) {
+          // Fallback to comprehensive sample data
+          console.log('[Sample Data] Using comprehensive sample data...');
+          projects = await generateComprehensiveProjectData();
+        }
 
       console.log(`[Map] Loaded ${projects.length} regenerative projects from ${projects.length > 50 ? 'REAL KML DATA' : 'sample data'}`);
       if (projects.length > 50) {
         console.log(`[SUCCESS] 🎉 Displaying ${projects.length} real regenerative projects from regen.earth.kml!`);
         console.log(`[INFO] Each project includes YouTube videos, detailed descriptions, and precise locations.`);
       }
-
-
 
       // Convert projects to GeoJSON features
       const features = projects.map(project => ({
@@ -1382,7 +1423,7 @@ export default function FractalComposableMap({
     const [lat, lng] = h3.cellToLatLng(cellId);
     const cellSize = h3.getHexagonEdgeLengthAvg(h3.getResolution(cellId), 'km') * 1000;
     
-    const hexagonFeatures = {
+    const features = {
       type: "FeatureCollection" as const,
       features: [
         {
@@ -1408,7 +1449,7 @@ export default function FractalComposableMap({
     
     const selectedSource = map.current.getSource("selected-hexagon");
     if (selectedSource) {
-      (selectedSource as maplibregl.GeoJSONSource).setData(hexagonFeatures);
+      (selectedSource as maplibregl.GeoJSONSource).setData(features);
     }
     
     setCellId(cellId);
