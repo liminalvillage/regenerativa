@@ -16,46 +16,6 @@ const translations: Record<Language, TranslationData> = {
 
 export function useTranslation() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
-  const [translationsData, setTranslationsData] = useState<TranslationData>({
-    "common": {
-      "home": "Home",
-      "about": "About",
-      "contact": "Contact",
-      "join": "Join",
-      "contribute": "Contribute",
-      "library": "Library",
-      "network": "Network",
-      "events": "Events",
-      "visit": "Visit",
-      "stake": "Stake",
-      "privacy": "Privacy",
-      "terms": "Terms",
-      "cookies": "Cookies",
-      "demo": "Demo"
-    },
-    "hero": {
-      "title": "Regenerativa",
-      "subtitle": "A global initiative for integral regeneration",
-      "description": "Join the movement to build sustainable, resilient communities through bioregional networks and regenerative practices.",
-      "cta": "Join the Movement"
-    },
-    "navigation": {
-      "home": "Home",
-      "about": "About",
-      "network": "Network",
-      "library": "Library",
-      "events": "Events",
-      "contact": "Contact",
-      "join": "Join"
-    },
-    "footer": {
-      "description": "A global initiative for integral regeneration. Join the movement to build sustainable, resilient communities.",
-      "follow_us": "Follow Us",
-      "contact_info": "Contact Information",
-      "quick_links": "Quick Links",
-      "legal": "Legal"
-    }
-  });
   const [isLoading, setIsLoading] = useState(false);
 
   // Load translations for a language
@@ -104,20 +64,49 @@ export function useTranslation() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const initializeTranslations = async () => {
-      // Check for stored language preference
+    const initializeTranslations = () => {
+      // Check for stored language preference first
       const storedLanguage = localStorage.getItem('regenerativa-language') as Language;
       if (storedLanguage && ['en', 'es', 'fr'].includes(storedLanguage)) {
         console.log('Loading stored language:', storedLanguage);
-        await changeLanguage(storedLanguage);
-      } else {
-        // Default to English
-        console.log('Loading default language: en');
-        await loadTranslations('en');
+        setCurrentLanguage(storedLanguage);
+        setTranslationsData(translations[storedLanguage]);
+        return;
       }
+
+      // Detect browser language
+      const browserLang = navigator.language || 'en';
+      const detectedLang = browserLang.split('-')[0] as Language;
+
+      if (['en', 'es', 'fr'].includes(detectedLang)) {
+        console.log('Detected browser language:', detectedLang);
+        setCurrentLanguage(detectedLang);
+        setTranslationsData(translations[detectedLang]);
+        localStorage.setItem('regenerativa-language', detectedLang);
+        return;
+      }
+
+      // Default to English
+      console.log('Loading default language: en');
+      setCurrentLanguage('en');
+      setTranslationsData(translations.en);
+      localStorage.setItem('regenerativa-language', 'en');
     };
 
     initializeTranslations();
+
+    // Listen for language change events from LanguageSelector
+    const handleLanguageChange = (event: CustomEvent) => {
+      const newLanguage = event.detail.language as Language;
+      if (newLanguage && ['en', 'es', 'fr'].includes(newLanguage)) {
+        console.log('Language changed to:', newLanguage);
+        setCurrentLanguage(newLanguage);
+        setTranslationsData(translations[newLanguage]);
+      }
+    };
+
+    window.addEventListener('languageChanged', handleLanguageChange as EventListener);
+    return () => window.removeEventListener('languageChanged', handleLanguageChange as EventListener);
   }, []);
 
   // Translation function

@@ -76,80 +76,63 @@ export default function LanguageSelector() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [isChanging, setIsChanging] = useState(false);
 
-  // Initialize current language from URL or Google Translate
+  // Initialize current language and listen for changes
   useEffect(() => {
-    // Check for URL parameter first
-    const urlParams = new URLSearchParams(window.location.search);
-    const googtrans = urlParams.get('googtrans');
-    if (googtrans) {
-      const langMatch = googtrans.match(/\/auto\/([A-Z]{2})/);
-      if (langMatch) {
-        const langCode = langMatch[1].toLowerCase();
-        setCurrentLanguage(langCode);
-        console.log('Set language from URL:', langCode);
+    const initializeLanguage = () => {
+      // Check for stored language preference first
+      const storedLanguage = localStorage.getItem('regenerativa-language');
+      if (storedLanguage && ['en', 'es', 'fr'].includes(storedLanguage)) {
+        setCurrentLanguage(storedLanguage);
+        console.log('Set language from localStorage:', storedLanguage);
+        return;
       }
-    }
 
-    // Also check Google Translate state periodically
-    const checkGoogleTranslate = () => {
-      const windowWithFunctions = window as Window & {
-        getGoogleTranslateLanguage?: () => string | null;
-      };
-      if (typeof window !== 'undefined' && windowWithFunctions.getGoogleTranslateLanguage) {
-        const googleLang = windowWithFunctions.getGoogleTranslateLanguage();
-        if (googleLang && googleLang !== 'en' && googleLang !== currentLanguage) {
-          setCurrentLanguage(googleLang);
-          console.log('Updated language from Google Translate:', googleLang);
-        }
+      // Detect browser language
+      const browserLang = navigator.language || 'en';
+      const detectedLang = browserLang.split('-')[0];
+
+      if (['en', 'es', 'fr'].includes(detectedLang)) {
+        setCurrentLanguage(detectedLang);
+        console.log('Detected browser language:', detectedLang);
       }
     };
 
-    const interval = setInterval(checkGoogleTranslate, 2000);
-    return () => clearInterval(interval);
-  }, [currentLanguage]);
+    initializeLanguage();
+
+    // Listen for localStorage changes
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'regenerativa-language' && e.newValue) {
+        setCurrentLanguage(e.newValue);
+        console.log('Language updated from storage:', e.newValue);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   // Find current language object
   const currentLangObj = languages.find(lang => lang.code === currentLanguage) || languages[0];
 
-  // Function to change language using Google Translate
+  // Function to change language
   const handleLanguageChange = (language: Language) => {
     if (language.code === currentLanguage) return;
 
     console.log('Changing language to:', language.name, '(', language.code, ')');
     setIsChanging(true);
 
-    // Try direct Google Translate API first
-    const windowWithFunctions = window as Window & {
-      triggerGoogleTranslate?: (lang: string) => boolean;
-    };
-    if (typeof window !== 'undefined' && windowWithFunctions.triggerGoogleTranslate) {
-      const success = windowWithFunctions.triggerGoogleTranslate(language.code);
-      if (success) {
-        console.log('Translation triggered successfully via Google Translate API');
-        setCurrentLanguage(language.code);
-        setTimeout(() => setIsChanging(false), 3000);
-        return;
-      }
+    // Store in localStorage for synchronization
+    if (['en', 'es', 'fr'].includes(language.code)) {
+      localStorage.setItem('regenerativa-language', language.code);
+      setCurrentLanguage(language.code);
+
+      // Dispatch custom event to notify other components
+      window.dispatchEvent(new CustomEvent('languageChanged', {
+        detail: { language: language.code }
+      }));
     }
 
-    // Fallback to URL parameter method
-    try {
-      const url = new URL(window.location.href);
-
-      if (language.code === 'en') {
-        // Remove translation for English
-        url.searchParams.delete('googtrans');
-      } else {
-        // Add translation parameter for other languages
-        url.searchParams.set('googtrans', `/auto/${language.code.toUpperCase()}`);
-      }
-
-      console.log('Redirecting to:', url.toString());
-      window.location.href = url.toString();
-    } catch (error) {
-      console.error('Error changing language:', error);
-      setIsChanging(false);
-    }
+    setTimeout(() => setIsChanging(false), 300);
   };
 
   return (

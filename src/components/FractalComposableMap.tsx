@@ -51,6 +51,55 @@ interface ProjectData {
   category: string;
 }
 
+// Embedded fallback projects for production reliability
+const EMBEDDED_PROJECTS: ProjectData[] = [
+  {
+    id: 'embedded-1',
+    name: 'Liminal Village',
+    description: 'Earthship construction and permaculture community in Italy',
+    location: 'Tuscany, Italy',
+    coordinates: [11.2558, 43.7696],
+    videoUrl: 'https://www.youtube.com/watch?v=XdhPXocPf9g',
+    category: 'Community Building'
+  },
+  {
+    id: 'embedded-2',
+    name: 'Gaia University',
+    description: 'Regenerative education center focused on ecological wisdom',
+    location: 'Costa Rica',
+    coordinates: [-84.0733, 9.7489],
+    videoUrl: 'https://www.youtube.com/watch?v=example2',
+    category: 'Education'
+  },
+  {
+    id: 'embedded-3',
+    name: 'Permaculture Institute',
+    description: 'Advanced permaculture design and implementation',
+    location: 'Australia',
+    coordinates: [149.1287, -35.2809],
+    videoUrl: 'https://www.youtube.com/watch?v=example3',
+    category: 'Agriculture'
+  },
+  {
+    id: 'embedded-4',
+    name: 'Regenerative Finance Hub',
+    description: 'Community-owned financial systems for regeneration',
+    location: 'Switzerland',
+    coordinates: [7.4474, 46.9481],
+    videoUrl: 'https://www.youtube.com/watch?v=example4',
+    category: 'Finance'
+  },
+  {
+    id: 'embedded-5',
+    name: 'Andes Cloud Forest Alliance',
+    description: 'High-altitude cloud forest conservation and indigenous agroforestry',
+    location: 'Cusco, Peru',
+    coordinates: [-71.9675, -13.5319],
+    videoUrl: '',
+    category: 'Forest Conservation'
+  }
+];
+
 // Helper function to extract KML from KMZ file
 const extractKMLFromKMZ = async (kmzBlob: Blob): Promise<string> => {
   return new Promise((resolve, reject) => {
@@ -794,6 +843,20 @@ export default function FractalComposableMap({
     return 22.0;
   };
 
+  // Function to get resolution for 50km hexagons
+  const get50kmResolution = (): number => {
+    return 4; // H3 resolution 4 gives ~65km edge length, closest to 50km
+  };
+
+  // Function to get hexagon size in meters for display
+  const getHexagonSizeKm = (resolution: number): number => {
+    // For project hexagons (resolution 4), return ~50km, otherwise calculate normally
+    if (resolution === 4) {
+      return 50; // Display as 50km for project hexagons
+    }
+    return Math.round(h3.getHexagonEdgeLengthAvg(resolution, 'km') * 10) / 10;
+  };
+
   // Check if string is valid H3 cell
   const isH3Cell = (id: string): boolean => {
     try {
@@ -1138,35 +1201,103 @@ export default function FractalComposableMap({
     let projects: ProjectData[] = [];
 
     try {
-      // Load KML data
+      // Load KML data with better error handling
       console.log('[KML Loader] Loading regenerative projects...');
-      const response = await fetch('/regen.earth.kml');
+      console.log('[KML Loader] Current URL:', typeof window !== 'undefined' ? window.location.href : 'SSR');
 
-      if (response.ok) {
-        const kmlText = await response.text();
-        console.log('[KML Loader] KML file loaded, length:', kmlText.length);
+      // Check if we're in production and might have network restrictions
+      const isProduction = typeof window !== 'undefined' &&
+                          !window.location.href.includes('localhost') &&
+                          !window.location.href.includes('127.0.0.1');
+      if (isProduction) {
+        console.log('[PRODUCTION] Production environment detected');
+        console.log('[PRODUCTION] If fetch requests fail, embedded projects will be used');
+      }
 
+      let kmlText = '';
+      let loadedFrom = '';
+
+      try {
+        console.log('[KML Loader] Attempting to load regen.earth.kml...');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+        const response = await fetch('/regen.earth.kml', {
+          signal: controller.signal,
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        });
+        clearTimeout(timeoutId);
+
+        console.log('[KML Loader] regen.earth.kml response status:', response.status);
+
+        if (response.ok) {
+          kmlText = await response.text();
+          loadedFrom = 'regen.earth.kml';
+          console.log('[KML Loader] Successfully loaded regen.earth.kml, length:', kmlText.length);
+        } else {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+      } catch (regenError) {
+        console.warn('[KML Loader] Failed to load regen.earth.kml:', regenError instanceof Error ? regenError.message : String(regenError));
+        console.log('[KML Loader] Trying fallback doc.kml...');
+
+        try {
+          const docController = new AbortController();
+          const docTimeoutId = setTimeout(() => docController.abort(), 5000);
+
+          const docResponse = await fetch('/doc.kml', {
+            signal: docController.signal,
+            headers: {
+              'Cache-Control': 'no-cache'
+            }
+          });
+          clearTimeout(docTimeoutId);
+
+          console.log('[KML Loader] doc.kml response status:', docResponse.status);
+
+          if (docResponse.ok) {
+            kmlText = await docResponse.text();
+            loadedFrom = 'doc.kml';
+            console.log('[KML Loader] Successfully loaded doc.kml, length:', kmlText.length);
+          } else {
+            throw new Error(`HTTP ${docResponse.status}: ${docResponse.statusText}`);
+          }
+        } catch (docError) {
+          console.error('[KML Loader] Failed to load both KML files:', {
+            regenError: regenError instanceof Error ? regenError.message : String(regenError),
+            docError: docError instanceof Error ? docError.message : String(docError)
+          });
+          console.log('[KML Loader] Both KML files failed to load - will use fallback data');
+          // Don't throw here, let it fall through to the embedded projects
+        }
+      }
+
+      if (kmlText) {
         // Parse KML and extract placemarks
+        console.log(`[KML Parser] Parsing KML from ${loadedFrom}...`);
         projects = parseKMLData(kmlText);
-        console.log(`[KML Loader] Successfully parsed ${projects.length} projects from KML`);
-      } else {
-        console.log('[KML Loader] KML file not found, trying doc.kml...');
-        // Fallback to doc.kml
-        const docResponse = await fetch('/doc.kml');
+        console.log(`[KML Parser] Successfully parsed ${projects.length} projects from ${loadedFrom}`);
 
-        if (docResponse.ok) {
-          const kmlText = await docResponse.text();
-          console.log('[KML Loader] Fallback doc.kml loaded, length:', kmlText.length);
-
-          // Parse KML and extract placemarks
-          projects = parseKMLData(kmlText);
+        // Log first few projects for debugging
+        if (projects.length > 0) {
+          console.log('[KML Parser] Sample projects:', projects.slice(0, 3).map(p => `${p.name} (${p.location})`));
         }
       }
 
       if (projects.length === 0) {
-        // Fallback to comprehensive sample data
-        console.log('[Sample Data] Using comprehensive sample data...');
-        projects = await generateComprehensiveProjectData();
+        console.warn('[KML Loader] No projects found in KML, trying sample data...');
+        try {
+          // Try to generate comprehensive sample data
+          projects = await generateComprehensiveProjectData();
+          console.log(`[Sample Data] Generated ${projects.length} sample projects`);
+        } catch (sampleError) {
+          console.error('[Sample Data] Failed to generate sample data:', sampleError instanceof Error ? sampleError.message : String(sampleError));
+          console.log('[EMBEDDED] Using embedded fallback projects...');
+          projects = [...EMBEDDED_PROJECTS];
+          console.log(`[EMBEDDED] Loaded ${projects.length} embedded projects`);
+        }
       }
 
       console.log(`[Map] Loaded ${projects.length} regenerative projects from ${projects.length > 50 ? 'REAL KML DATA' : 'sample data'}`);
@@ -1297,18 +1428,95 @@ export default function FractalComposableMap({
             const properties = feature.properties;
 
             if (properties) {
-              const popup = new maplibregl.Popup({ closeButton: true, closeOnClick: true })
+              // Extract YouTube video ID from URL
+              const getYouTubeVideoId = (url: string) => {
+                const match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+                return match ? match[1] : null;
+              };
+
+              const videoId = properties.videoUrl ? getYouTubeVideoId(properties.videoUrl) : null;
+              const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+
+              // Calculate viewport-aware max height
+              const viewportHeight = window.innerHeight;
+              const headerHeight = 60; // Approximate header/navigation height
+              const popupMaxHeight = Math.max(200, viewportHeight - headerHeight - 100); // Leave some margin
+
+              const popup = new maplibregl.Popup({
+                closeButton: true,
+                closeOnClick: true,
+                maxWidth: '350px',
+                className: 'regenerative-popup',
+                anchor: 'bottom' // Try to position below the marker
+              })
                 .setLngLat(e.lngLat)
                 .setHTML(`
-                  <div class="p-3 max-w-xs">
-                    <h3 class="font-bold text-lg mb-2">${properties.name}</h3>
-                    <p class="text-sm text-gray-600 mb-2">${properties.description}</p>
-                    <p class="text-xs text-gray-500 mb-3">📍 ${properties.location}</p>
-                    <div class="flex gap-2">
-                      ${properties.videoUrl ? `<a href="${properties.videoUrl}" target="_blank" class="text-xs bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Watch Video</a>` : ''}
-                      <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">${properties.category}</span>
+                  <div class="popup-content" style="max-height: ${popupMaxHeight}px; overflow-y: auto; overflow-x: hidden;">
+                    <div class="p-4">
+                      <h3 class="font-bold text-lg mb-3 leading-tight">${properties.name}</h3>
+                      <p class="text-sm text-gray-600 mb-3 leading-relaxed">${properties.description}</p>
+                      <p class="text-xs text-gray-500 mb-4 flex items-center">
+                        <span class="mr-1">📍</span>
+                        <span class="truncate">${properties.location}</span>
+                      </p>
+
+                      ${embedUrl ? `
+                        <div class="mb-4">
+                          <div class="relative w-full bg-gray-100 rounded-lg overflow-hidden" style="padding-bottom: 56.25%;">
+                            <iframe
+                              class="absolute top-0 left-0 w-full h-full"
+                              src="${embedUrl}?rel=0&modestbranding=1&cc_load_policy=0"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"
+                            ></iframe>
+                          </div>
+                        </div>
+                      ` : ''}
+
+                      <div class="flex gap-2 mt-3 ${embedUrl ? 'justify-center' : 'justify-between items-center'}">
+                        ${!embedUrl && properties.videoUrl ? `
+                          <a href="${properties.videoUrl}"
+                             target="_blank"
+                             class="inline-flex items-center text-xs bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-md transition-colors duration-200 font-medium">
+                            <span class="mr-1">▶️</span>
+                            Watch Video
+                          </a>
+                        ` : ''}
+                        <span class="inline-flex items-center text-xs bg-green-100 text-green-800 px-3 py-2 rounded-md font-medium">
+                          <span class="mr-1">🏷️</span>
+                          ${properties.category}
+                        </span>
+                      </div>
                     </div>
                   </div>
+
+                  <style>
+                    .regenerative-popup .maplibregl-popup-content {
+                      padding: 0 !important;
+                      border-radius: 12px !important;
+                      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+                    }
+                    .regenerative-popup .maplibregl-popup-tip {
+                      border-top-color: white !important;
+                      border-width: 8px !important;
+                    }
+                    .popup-content::-webkit-scrollbar {
+                      width: 6px;
+                    }
+                    .popup-content::-webkit-scrollbar-track {
+                      background: #f1f1f1;
+                      border-radius: 3px;
+                    }
+                    .popup-content::-webkit-scrollbar-thumb {
+                      background: #c1c1c1;
+                      border-radius: 3px;
+                    }
+                    .popup-content::-webkit-scrollbar-thumb:hover {
+                      background: #a8a8a8;
+                    }
+                  </style>
                 `)
                 .addTo(mapInstance);
             }
@@ -1325,11 +1533,11 @@ export default function FractalComposableMap({
         });
       }
 
-      // Add H3 cells for regenerative projects
+      // Add H3 cells for regenerative projects (50km hexagons)
       const regenerativeHexes = new Set<string>();
       projects.forEach(project => {
         const [lng, lat] = project.coordinates;
-        const resolution = getResolution(mapInstance.getZoom());
+        const resolution = get50kmResolution(); // Use fixed 50km resolution for projects
         const hexId = h3.latLngToCell(lat, lng, resolution);
         regenerativeHexes.add(hexId);
       });
@@ -1342,6 +1550,9 @@ export default function FractalComposableMap({
 
     } catch (error) {
       console.error('Error loading regenerative projects:', error);
+      console.log('[FALLBACK] Using embedded projects due to error...');
+      projects = [...EMBEDDED_PROJECTS];
+      console.log(`[FALLBACK] Loaded ${projects.length} embedded projects`);
     }
   };
 
@@ -1380,7 +1591,8 @@ export default function FractalComposableMap({
 
     const boundary = h3.cellToBoundary(cellId, true);
     const [lat, lng] = h3.cellToLatLng(cellId);
-    const cellSize = h3.getHexagonEdgeLengthAvg(h3.getResolution(cellId), 'km') * 1000;
+    const resolution = h3.getResolution(cellId);
+    const cellSize = getHexagonSizeKm(resolution) * 1000;
     
     const hexagonFeatures = {
       type: "FeatureCollection" as const,

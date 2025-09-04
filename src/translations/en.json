@@ -36,5 +36,107 @@
     "contact_info": "Contact Information",
     "quick_links": "Quick Links",
     "legal": "Legal"
+  },
+  "regenerativeVillage": {
+    "hero": {
+      "title": "Regenerative Village",
+      "subtitle": "A Third Sector village between nature, innovation and community.",
+      "description": "Discover our vision and join the community",
+      "cta": "Join the Community",
+      "discoverVision": "Discover the Vision"
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "\"Not just a settlement, but an ecosystem of life and social innovation. The Third Sector village combines sustainable living, coworking and active community: a pioneering model inspired by the Bottega del Terzo Settore, but expanded to include residential, hospitality and collective spaces.\"",
+      "sustainableLiving": "Sustainable Living",
+      "sustainableLivingDesc": "Residential integrated with nature",
+      "activeCommunity": "Active Community",
+      "activeCommunityDesc": "Collective participation and collaboration",
+      "collectiveSpaces": "Collective Spaces",
+      "collectiveSpacesDesc": "Coworking and inclusive common areas"
+    },
+    "location": {
+      "title": "Location & History",
+      "description": "\"Nestled in the heart of the Marche region, our village offers the perfect blend of natural beauty and strategic accessibility. Located just 10 minutes from the historic center of Ascoli Piceno, the cultural capital of the region, it provides residents with both tranquility and urban convenience.\"",
+      "size": "Size & Scale",
+      "sizeDesc": "Approximately 50 hectares of land dedicated to sustainable development, housing, community spaces, and agricultural areas",
+      "history": "Historical Context",
+      "historyDesc": "Built on ancient agricultural traditions with a vision for the future, combining historical wisdom with modern regenerative practices",
+      "ascoliPiceno": "Ascoli Piceno",
+      "ascoliPicenoDesc": "10 minutes from the historic center - cultural capital of the Marche region with Renaissance architecture and local traditions",
+      "adriaticCoast": "Adriatic Coast",
+      "adriaticCoastDesc": "30 minutes drive to beautiful beaches and coastal towns along the Adriatic Sea",
+      "skiArea": "Ski Areas",
+      "skiAreaDesc": "30 minutes to nearby ski areas in the Sibillini Mountains, offering winter sports and mountain activities",
+      "rome": "Rome",
+      "romeDesc": "2.5 hours by car to the center of Rome, connecting you to Italy's cultural and business hub",
+      "sibilliniPark": "Sibillini National Park",
+      "sibilliniParkDesc": "15 minutes to the entrance of Sibillini National Park, offering hiking trails, wildlife viewing, and mountain activities",
+      "lagaPark": "Laga Mountains National Park",
+      "lagaParkDesc": "45 minutes to Laga Mountains National Park, featuring ancient forests, waterfalls, and biodiversity-rich landscapes",
+      "accessibility": "Highway Access",
+      "accessibilityDesc": "Easily accessible via major highways, with convenient connections to regional and national transportation networks"
+    },
+    "communityCulture": {
+      "title": "Community and Culture",
+      "description": "\"The village also becomes a cultural stage: concerts, conferences, outdoor cinema. Nature becomes the scenery, and the community the protagonist. Every event becomes an opportunity to give birth to new ideas, collaborations, social impact projects.\"",
+      "culturalEvents": "Cultural Events",
+      "culturalEventsDesc": "Concerts, conferences, outdoor cinema",
+      "socialInnovation": "Social Innovation",
+      "socialInnovationDesc": "Emerging new ideas and collaborations",
+      "communityParticipation": "Community Participation",
+      "communityParticipationDesc": "The community as active protagonist"
+    },
+    "innovationCoworking": {
+      "title": "Innovation and Coworking",
+      "description": "\"A social innovation hub immersed in greenery. Shared workspaces, workshop rooms, places to incubate Third Sector startups and projects. Here living and working coincide, creating a continuous flow between life and innovation.\"",
+      "workspaces": "Workspaces",
+      "workspacesDesc": "Shared coworking areas immersed in nature, designed to foster creativity and collaboration",
+      "workshopRooms": "Workshop Rooms",
+      "workshopRoomsDesc": "Dedicated spaces for workshops, training and community meetings",
+      "startupIncubator": "Startup Incubator",
+      "startupIncubatorDesc": "Support for Third Sector startups and social impact projects"
+    },
+    "dailyLifeGastronomy": {
+      "title": "Daily Life and Gastronomy",
+      "description": "\"A community restaurant with km 0 cuisine. Shared gardens that become education classrooms and sustainability laboratories. Every meal tells the story of the territory and the relationships that sustain it.\"",
+      "communityRestaurant": "Community Restaurant",
+      "communityRestaurantDesc": "Km 0 cuisine with local and sustainable products",
+      "sharedGardens": "Shared Gardens",
+      "sharedGardensDesc": "Educational spaces to learn about sustainability",
+      "authenticRelationships": "Authentic Relationships",
+      "authenticRelationshipsDesc": "Every meal celebrates the territory and human connections"
+    },
+    "wellnessNature": {
+      "title": "Wellness and Nature",
+      "description": "\"Wellness is an integral part of the experience: relaxation spaces, unspoiled nature, authentic connection with oneself and with others. Regenerative Village is a village where time slows down, and life resumes its natural rhythm.\"",
+      "relaxationSpaces": "Relaxation Spaces",
+      "relaxationSpacesDesc": "Areas dedicated to rest and contemplation",
+      "unspoiledNature": "Unspoiled Nature",
+      "unspoiledNatureDesc": "Deep connection with the natural environment",
+      "authenticConnection": "Authentic Connection",
+      "authenticConnectionDesc": "Natural rhythm of life and genuine relationships"
+    },
+    "futureInnovation": {
+      "title": "Future and Innovation",
+      "description": "\"A living laboratory for the future of the Third Sector. A village that inspires new forms of solidarity economy, participatory governance and environmental sustainability. Regenerative Village is not just a place to live: it's a place to build the future together.\"",
+      "solidarityEconomy": "Solidarity Economy",
+      "solidarityEconomyDesc": "New economic models based on solidarity and sustainability",
+      "participatoryGovernance": "Participatory Governance",
+      "participatoryGovernanceDesc": "Collective decisions and active community participation",
+      "environmentalSustainability": "Environmental Sustainability",
+      "environmentalSustainabilityDesc": "Ecological practices integrated into daily life",
+      "buildFuture": "Regenerative Village is not just a place to live: it's a place to build the future together."
+    },
+    "villageVisions": {
+      "title": "Village Visions",
+      "description": "Discover the concepts and visions of our village through these images made on the actual location."
+    },
+    "callToAction": {
+      "title": "Join the Future of the Third Sector",
+      "description": "Regenerative Village is more than a village: it's a movement to build together a sustainable, inclusive and innovative future. Your participation can make the difference.",
+      "joinNow": "Join Now",
+      "contactUs": "Contact Us"
+    }
   }
 }

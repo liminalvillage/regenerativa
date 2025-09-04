@@ -36,5 +36,107 @@
     "contact_info": "Información de Contacto",
     "quick_links": "Enlaces Rápidos",
     "legal": "Legal"
+  },
+  "regenerativeVillage": {
+    "hero": {
+      "title": "Aldea Regenerativa",
+      "subtitle": "Un pueblo del Tercer Sector entre naturaleza, innovación y comunidad.",
+      "description": "Descubre nuestra visión y únete a la comunidad",
+      "cta": "Únete a la Comunidad",
+      "discoverVision": "Descubre la Visión"
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "\"No solo un asentamiento, sino un ecosistema de vida e innovación social. El pueblo del Tercer Sector combina vivienda sostenible, coworking y comunidad activa: un modelo pionero inspirado en la Bottega del Terzo Settore, pero ampliado para incluir residencial, hospitalidad y espacios colectivos.\"",
+      "sustainableLiving": "Vivienda Sostenible",
+      "sustainableLivingDesc": "Residencial integrado con la naturaleza",
+      "activeCommunity": "Comunidad Activa",
+      "activeCommunityDesc": "Participación y colaboración colectiva",
+      "collectiveSpaces": "Espacios Colectivos",
+      "collectiveSpacesDesc": "Coworking y áreas comunes inclusivas"
+    },
+    "location": {
+      "title": "Ubicación e Historia",
+      "description": "\"Ubicado en el corazón de la región de las Marcas, nuestro pueblo ofrece la combinación perfecta de belleza natural y accesibilidad estratégica. Situado a solo 10 minutos del centro histórico de Ascoli Piceno, la capital cultural de la región, brinda a los residentes tanto tranquilidad como comodidad urbana.\"",
+      "size": "Tamaño y Escala",
+      "sizeDesc": "Aproximadamente 50 hectáreas de terreno dedicadas al desarrollo sostenible, vivienda, espacios comunitarios y áreas agrícolas",
+      "history": "Contexto Histórico",
+      "historyDesc": "Construido sobre antiguas tradiciones agrícolas con una visión para el futuro, combinando sabiduría histórica con prácticas regenerativas modernas",
+      "ascoliPiceno": "Ascoli Piceno",
+      "ascoliPicenoDesc": "10 minutos del centro histórico - capital cultural de la región de las Marcas con arquitectura renacentista y tradiciones locales",
+      "adriaticCoast": "Costa Adriática",
+      "adriaticCoastDesc": "30 minutos en coche a hermosas playas y pueblos costeros a lo largo del Mar Adriático",
+      "skiArea": "Estaciones de Esquí",
+      "skiAreaDesc": "30 minutos a estaciones de esquí cercanas en las Montañas Sibillini, ofreciendo deportes de invierno y actividades de montaña",
+      "rome": "Roma",
+      "romeDesc": "2.5 horas en coche al centro de Roma, conectándote con el centro cultural y empresarial de Italia",
+      "sibilliniPark": "Parque Nacional Sibillini",
+      "sibilliniParkDesc": "15 minutos a la entrada del Parque Nacional Sibillini, ofreciendo senderos para caminar, observación de vida silvestre y actividades de montaña",
+      "lagaPark": "Parque Nacional Montes Laga",
+      "lagaParkDesc": "45 minutos al Parque Nacional Montes Laga, con bosques antiguos, cascadas y paisajes ricos en biodiversidad",
+      "accessibility": "Acceso por Autopista",
+      "accessibilityDesc": "Fácilmente accesible vía autopistas principales, con conexiones convenientes a redes de transporte regional y nacional"
+    },
+    "communityCulture": {
+      "title": "Comunidad y Cultura",
+      "description": "\"El pueblo también se convierte en escenario cultural: conciertos, conferencias, cine al aire libre. La naturaleza se convierte en el decorado, y la comunidad en protagonista. Cada evento se convierte en oportunidad para dar nacimiento a nuevas ideas, colaboraciones, proyectos de impacto social.\"",
+      "culturalEvents": "Eventos Culturales",
+      "culturalEventsDesc": "Conciertos, conferencias, cine al aire libre",
+      "socialInnovation": "Innovación Social",
+      "socialInnovationDesc": "Nuevas ideas y colaboraciones emergentes",
+      "communityParticipation": "Participación Comunitaria",
+      "communityParticipationDesc": "La comunidad como protagonista activa"
+    },
+    "innovationCoworking": {
+      "title": "Innovación y Coworking",
+      "description": "\"Un centro de innovación social inmerso en el verde. Espacios de trabajo compartidos, salas para talleres, lugares para incubar startups del Tercer Sector y proyectos. Aquí vivir y trabajar coinciden, creando un flujo continuo entre vida e innovación.\"",
+      "workspaces": "Espacios de Trabajo",
+      "workspacesDesc": "Áreas de coworking compartidas inmersas en la naturaleza, diseñadas para fomentar la creatividad y colaboración",
+      "workshopRooms": "Salas de Talleres",
+      "workshopRoomsDesc": "Espacios dedicados para talleres, formación y reuniones comunitarias",
+      "startupIncubator": "Incubadora de Startups",
+      "startupIncubatorDesc": "Apoyo para startups del Tercer Sector y proyectos de impacto social"
+    },
+    "dailyLifeGastronomy": {
+      "title": "Vida Cotidiana y Gastronomía",
+      "description": "\"Un restaurante comunitario con cocina km 0. Huertos compartidos que se convierten en aulas de educación y laboratorios de sostenibilidad. Cada comida cuenta la historia del territorio y las relaciones que lo sostienen.\"",
+      "communityRestaurant": "Restaurante Comunitario",
+      "communityRestaurantDesc": "Cocina km 0 con productos locales y sostenibles",
+      "sharedGardens": "Huertos Compartidos",
+      "sharedGardensDesc": "Espacios educativos para aprender sobre sostenibilidad",
+      "authenticRelationships": "Relaciones Auténticas",
+      "authenticRelationshipsDesc": "Cada comida celebra el territorio y las conexiones humanas"
+    },
+    "wellnessNature": {
+      "title": "Bienestar y Naturaleza",
+      "description": "\"El bienestar es parte integral de la experiencia: espacios de relajación, naturaleza intacta, conexión auténtica consigo mismo y con los demás. Aldea Regenerativa es un pueblo donde el tiempo se ralentiza, y la vida retoma su ritmo natural.\"",
+      "relaxationSpaces": "Espacios de Relajación",
+      "relaxationSpacesDesc": "Áreas dedicadas al descanso y contemplación",
+      "unspoiledNature": "Naturaleza Intacta",
+      "unspoiledNatureDesc": "Conexión profunda con el entorno natural",
+      "authenticConnection": "Conexión Auténtica",
+      "authenticConnectionDesc": "Ritmo natural de la vida y relaciones genuinas"
+    },
+    "futureInnovation": {
+      "title": "Futuro e Innovación",
+      "description": "\"Un laboratorio vivo para el futuro del Tercer Sector. Un pueblo que inspira nuevas formas de economía solidaria, gobernanza participativa y sostenibilidad ambiental. Aldea Regenerativa no es solo un lugar para vivir: es un lugar para construir el futuro juntos.\"",
+      "solidarityEconomy": "Economía Solidaria",
+      "solidarityEconomyDesc": "Nuevos modelos económicos basados en solidaridad y sostenibilidad",
+      "participatoryGovernance": "Gobernanza Participativa",
+      "participatoryGovernanceDesc": "Decisiones colectivas y participación activa de la comunidad",
+      "environmentalSustainability": "Sostenibilidad Ambiental",
+      "environmentalSustainabilityDesc": "Prácticas ecológicas integradas en la vida cotidiana",
+      "buildFuture": "Aldea Regenerativa no es solo un lugar para vivir: es un lugar para construir el futuro juntos."
+    },
+    "villageVisions": {
+      "title": "Visiones del Pueblo",
+      "description": "Descubre los conceptos y visiones de nuestro pueblo a través de estas imágenes realizadas en el lugar mismo."
+    },
+    "callToAction": {
+      "title": "Únete al Futuro del Tercer Sector",
+      "description": "Aldea Regenerativa es más que un pueblo: es un movimiento para construir juntos un futuro sostenible, inclusivo e innovador. Tu participación puede marcar la diferencia.",
+      "joinNow": "Únete Ahora",
+      "contactUs": "Contáctanos"
+    }
   }
 }

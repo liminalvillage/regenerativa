@@ -36,5 +36,107 @@
     "contact_info": "Informations de Contact",
     "quick_links": "Liens Rapides",
     "legal": "Légal"
+  },
+  "regenerativeVillage": {
+    "hero": {
+      "title": "Village Régénératif",
+      "subtitle": "Un village du Tiers Secteur entre nature, innovation et communauté.",
+      "description": "Découvrez notre vision et rejoignez la communauté",
+      "cta": "Rejoignez la Communauté",
+      "discoverVision": "Découvrez la Vision"
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "\"Pas seulement un établissement, mais un écosystème de vie et d'innovation sociale. Le village du Tiers Secteur combine habitat durable, coworking et communauté active : un modèle pionnier inspiré de la Bottega del Terzo Settore, mais élargi pour inclure résidentiel, accueil et espaces collectifs.\"",
+      "sustainableLiving": "Habitat Durable",
+      "sustainableLivingDesc": "Résidentiel intégré à la nature",
+      "activeCommunity": "Communauté Active",
+      "activeCommunityDesc": "Participation et collaboration collective",
+      "collectiveSpaces": "Espaces Collectifs",
+      "collectiveSpacesDesc": "Coworking et espaces communs inclusifs"
+    },
+    "location": {
+      "title": "Emplacement et Histoire",
+      "description": "\"Niché au cœur de la région des Marches, notre village offre le mélange parfait de beauté naturelle et d'accessibilité stratégique. Situé à seulement 10 minutes du centre historique d'Ascoli Piceno, la capitale culturelle de la région, il offre aux résidents à la fois tranquillité et commodité urbaine.\"",
+      "size": "Taille et Échelle",
+      "sizeDesc": "Environ 50 hectares de terrain dédiés au développement durable, au logement, aux espaces communautaires et aux zones agricoles",
+      "history": "Contexte Historique",
+      "historyDesc": "Construit sur d'anciennes traditions agricoles avec une vision pour l'avenir, combinant la sagesse historique avec des pratiques régénératives modernes",
+      "ascoliPiceno": "Ascoli Piceno",
+      "ascoliPicenoDesc": "10 minutes du centre historique - capitale culturelle de la région des Marches avec architecture Renaissance et traditions locales",
+      "adriaticCoast": "Côte Adriatique",
+      "adriaticCoastDesc": "30 minutes de route vers de belles plages et villes côtières le long de la mer Adriatique",
+      "skiArea": "Stations de Ski",
+      "skiAreaDesc": "30 minutes vers les stations de ski voisines dans les Montagnes Sibillini, offrant sports d'hiver et activités de montagne",
+      "rome": "Rome",
+      "romeDesc": "2.5 heures en voiture vers le centre de Rome, vous connectant au centre culturel et économique de l'Italie",
+      "sibilliniPark": "Parc National des Sibillini",
+      "sibilliniParkDesc": "15 minutes jusqu'à l'entrée du Parc National des Sibillini, offrant des sentiers de randonnée, l'observation de la faune et des activités de montagne",
+      "lagaPark": "Parc National des Monts Laga",
+      "lagaParkDesc": "45 minutes vers le Parc National des Monts Laga, avec des forêts anciennes, des cascades et des paysages riches en biodiversité",
+      "accessibility": "Accès Autoroutier",
+      "accessibilityDesc": "Facilement accessible via les autoroutes principales, avec des connexions pratiques aux réseaux de transport régional et national"
+    },
+    "communityCulture": {
+      "title": "Communauté et Culture",
+      "description": "\"Le village devient aussi une scène culturelle : concerts, conférences, cinéma en plein air. La nature devient le décor, et la communauté le protagoniste. Chaque événement devient une opportunité de donner naissance à de nouvelles idées, collaborations, projets d'impact social.\"",
+      "culturalEvents": "Événements Culturels",
+      "culturalEventsDesc": "Concerts, conférences, cinéma en plein air",
+      "socialInnovation": "Innovation Sociale",
+      "socialInnovationDesc": "Nouvelles idées et collaborations émergentes",
+      "communityParticipation": "Participation Communautaire",
+      "communityParticipationDesc": "La communauté comme protagoniste active"
+    },
+    "innovationCoworking": {
+      "title": "Innovation et Coworking",
+      "description": "\"Un centre d'innovation sociale immergé dans le vert. Espaces de travail partagés, salles pour ateliers, lieux pour incuber startups du Tiers Secteur et projets. Ici vivre et travailler coïncident, créant un flux continu entre vie et innovation.\"",
+      "workspaces": "Espaces de Travail",
+      "workspacesDesc": "Espaces de coworking partagés immergés dans la nature, conçus pour favoriser la créativité et la collaboration",
+      "workshopRooms": "Salles d'Ateliers",
+      "workshopRoomsDesc": "Espaces dédiés aux ateliers, formation et réunions communautaires",
+      "startupIncubator": "Incubateur de Startups",
+      "startupIncubatorDesc": "Soutien pour startups du Tiers Secteur et projets d'impact social"
+    },
+    "dailyLifeGastronomy": {
+      "title": "Vie Quotidienne et Gastronomie",
+      "description": "\"Un restaurant communautaire avec cuisine km 0. Jardins partagés qui deviennent salles d'éducation et laboratoires de durabilité. Chaque repas raconte l'histoire du territoire et les relations qui le soutiennent.\"",
+      "communityRestaurant": "Restaurant Communautaire",
+      "communityRestaurantDesc": "Cuisine km 0 avec produits locaux et durables",
+      "sharedGardens": "Jardins Partagés",
+      "sharedGardensDesc": "Espaces éducatifs pour apprendre la durabilité",
+      "authenticRelationships": "Relations Authentiques",
+      "authenticRelationshipsDesc": "Chaque repas célèbre le territoire et les connexions humaines"
+    },
+    "wellnessNature": {
+      "title": "Bien-être et Nature",
+      "description": "\"Le bien-être fait partie intégrante de l'expérience : espaces de relaxation, nature intacte, connexion authentique avec soi-même et avec les autres. Village Régénératif est un village où le temps ralentit, et la vie reprend son rythme naturel.\"",
+      "relaxationSpaces": "Espaces de Relaxation",
+      "relaxationSpacesDesc": "Espaces dédiés au repos et à la contemplation",
+      "unspoiledNature": "Nature Intacte",
+      "unspoiledNatureDesc": "Connexion profonde avec l'environnement naturel",
+      "authenticConnection": "Connexion Authentique",
+      "authenticConnectionDesc": "Rythme naturel de la vie et relations authentiques"
+    },
+    "futureInnovation": {
+      "title": "Futur et Innovation",
+      "description": "\"Un laboratoire vivant pour l'avenir du Tiers Secteur. Un village qui inspire de nouvelles formes d'économie solidaire, gouvernance participative et durabilité environnementale. Village Régénératif n'est pas seulement un lieu pour vivre : c'est un lieu pour construire l'avenir ensemble.\"",
+      "solidarityEconomy": "Économie Solidaire",
+      "solidarityEconomyDesc": "Nouveaux modèles économiques basés sur la solidarité et la durabilité",
+      "participatoryGovernance": "Gouvernance Participative",
+      "participatoryGovernanceDesc": "Décisions collectives et participation active de la communauté",
+      "environmentalSustainability": "Durabilité Environnementale",
+      "environmentalSustainabilityDesc": "Pratiques écologiques intégrées dans la vie quotidienne",
+      "buildFuture": "Village Régénératif n'est pas seulement un lieu pour vivre : c'est un lieu pour construire l'avenir ensemble."
+    },
+    "villageVisions": {
+      "title": "Visions du Village",
+      "description": "Découvrez les concepts et visions de notre village à travers ces images réalisées sur le lieu même."
+    },
+    "callToAction": {
+      "title": "Rejoignez l'Avenir du Tiers Secteur",
+      "description": "Village Régénératif est plus qu'un village : c'est un mouvement pour construire ensemble un avenir durable, inclusif et innovant. Votre participation peut faire la différence.",
+      "joinNow": "Rejoignez Maintenant",
+      "contactUs": "Contactez-nous"
+    }
   }
 }
