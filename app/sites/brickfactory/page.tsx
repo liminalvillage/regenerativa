@@ -3,7 +3,7 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Home,
   Users,
@@ -15,11 +15,8 @@ import {
   Music,
   Building2,
   TreePine,
-  Coffee,
   Sun,
-  Camera,
   MapPin,
-  Clock,
   Mountain,
   Waves,
   Car,

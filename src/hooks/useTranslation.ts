@@ -17,6 +17,7 @@ const translations: Record<Language, TranslationData> = {
 export function useTranslation() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
   const [isLoading, setIsLoading] = useState(false);
+  const [translationsData, setTranslationsData] = useState<TranslationData>(translations.en);
 
   // Load translations for a language
   const loadTranslations = async (language: Language) => {

@@ -2,7 +2,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Users, Calendar, BookOpen, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine } from "lucide-react";
+import { MapPin, Users, Calendar, BookOpen, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine, Target } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              Building <span className="text-primary">EcoCivilization 2030</span>
+              A pathway to an <span className="text-primary">EcoCivilization by 2030</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
               A global initiative for integral regeneration through bioregional networks and sustainable communities.
@@ -284,7 +284,7 @@ export default function HomePage() {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 relative">
                 <Image
-                  src="/brickfactory/1.jpeg"
+                  src="/liminalvillage/1.jpeg"
                   alt="Liminal Village - Community hub"
                   fill
                   className="object-cover"
@@ -304,7 +304,7 @@ export default function HomePage() {
                   serving as the heart of our regenerative network.
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/sites/fornace">
+                  <Link href="/sites/liminalvillage">
                     Learn More
                     <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
@@ -335,7 +335,7 @@ export default function HomePage() {
                   and sustainable production methodologies.
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/sites/regenerative-village">
+                  <Link href="/sites/brickfactory">
                     Learn More
                     <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
@@ -346,7 +346,7 @@ export default function HomePage() {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 relative">
                 <Image
-                  src="/banner1.jpg"
+                  src="/casaselva/1.jpeg"
                   alt="Casa Selva - Forest sanctuary"
                   fill
                   className="object-cover"
@@ -366,7 +366,7 @@ export default function HomePage() {
                   in perfect harmony with nature.
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/sites/casa-selva">
+                  <Link href="/sites/casaselva">
                     Learn More
                     <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
@@ -540,81 +540,151 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section id="partners" className="py-16 bg-muted/30">
+      {/* Partners & Network - Hidden for now */}
+      {/* 
+      <section id="partners" className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Our Partners & Allies
+              Our Regenerative Network
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Collaborating with organizations committed to regeneration and sustainability.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Connected to a global ecosystem of organizations pioneering regenerative practices, 
+              Resource-Based Economy principles, and transformative community models.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-            <div className="text-center">
-              <div className="h-16 w-16 mx-auto mb-2 relative">
-                <Image
-                  src="/venusproject.png"
-                  alt="Venus Project"
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                />
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-display font-bold text-center mb-8">Core Partners</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="h-20 w-20 mx-auto mb-4 relative">
+                  <Image
+                    src="/venusproject.png"
+                    alt="Venus Project"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Venus Project</h4>
+                <p className="text-sm text-muted-foreground">
+                  Pioneering Resource-Based Economy and holistic design for sustainable civilization.
+                </p>
               </div>
-              <p className="text-sm font-medium">Venus Project</p>
+              <div className="text-center">
+                <div className="h-20 w-20 mx-auto mb-4 relative">
+                  <Image
+                    src="/zeitgeist.png"
+                    alt="Zeitgeist Movement"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Zeitgeist Movement</h4>
+                <p className="text-sm text-muted-foreground">
+                  Global movement advocating for scientific method and Resource-Based Economy principles.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="h-20 w-20 mx-auto mb-4 relative">
+                  <Image
+                    src="/envienta.png"
+                    alt="Envienta"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Envienta</h4>
+                <p className="text-sm text-muted-foreground">
+                  Open-source platform for regenerative technology and sustainable innovation.
+                </p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="h-16 w-16 mx-auto mb-2 relative">
-                <Image
-                  src="/zeitgeist.png"
-                  alt="Zeitgeist Movement"
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                />
+          </div>
+
+          <div className="mb-16">
+            <h3 className="text-2xl font-display font-bold text-center mb-8">Regenerative Allies</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Leaf className="h-8 w-8 text-primary" />
+                </div>
+                <p className="text-sm font-medium">Permaculture Institute</p>
+                <p className="text-xs text-muted-foreground mt-1">Regenerative Agriculture</p>
               </div>
-              <p className="text-sm font-medium">Zeitgeist Movement</p>
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Users className="h-8 w-8 text-primary" />
+                </div>
+                <p className="text-sm font-medium">Transition Network</p>
+                <p className="text-xs text-muted-foreground mt-1">Community Resilience</p>
+              </div>
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Globe className="h-8 w-8 text-primary" />
+                </div>
+                <p className="text-sm font-medium">Biomimicry Institute</p>
+                <p className="text-xs text-muted-foreground mt-1">Nature-Inspired Design</p>
+              </div>
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Heart className="h-8 w-8 text-primary" />
+                </div>
+                <p className="text-sm font-medium">Game B Community</p>
+                <p className="text-xs text-muted-foreground mt-1">Cultural Evolution</p>
+              </div>
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Target className="h-8 w-8 text-primary" />
+                </div>
+                <p className="text-sm font-medium">Regen Network</p>
+                <p className="text-xs text-muted-foreground mt-1">Regenerative Finance</p>
+              </div>
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <BookOpen className="h-8 w-8 text-primary" />
+                </div>
+                <p className="text-sm font-medium">Open Source Ecology</p>
+                <p className="text-xs text-muted-foreground mt-1">Open Technology</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="h-16 w-16 mx-auto mb-2 relative">
-                <Image
-                  src="/ethereum.png"
-                  alt="Ethereum"
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                />
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-display font-bold text-center mb-8">Technology Partners</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <div className="h-20 w-20 mx-auto mb-4 relative">
+                  <Image
+                    src="/ethereum.png"
+                    alt="Ethereum"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Ethereum Foundation</h4>
+                <p className="text-sm text-muted-foreground">
+                  Decentralized infrastructure supporting regenerative economy and community governance.
+                </p>
               </div>
-              <p className="text-sm font-medium">Ethereum</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 mx-auto mb-2 relative">
-                <Image
-                  src="/envienta.png"
-                  alt="Envienta"
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                />
+              <div className="text-center">
+                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Globe className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Holochain</h4>
+                <p className="text-sm text-muted-foreground">
+                  Peer-to-peer applications for regenerative community coordination and resource sharing.
+                </p>
               </div>
-              <p className="text-sm font-medium">Envienta</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 bg-muted rounded-lg flex items-center justify-center mx-auto mb-2">
-                <BookOpen className="h-8 w-8 text-muted-foreground" />
-              </div>
-              <p className="text-sm font-medium">Permaculture Institute</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 bg-muted rounded-lg flex items-center justify-center mx-auto mb-2">
-                <BookOpen className="h-8 w-8 text-muted-foreground" />
-              </div>
-              <p className="text-sm font-medium">Transition Network</p>
             </div>
           </div>
         </div>
       </section>
+      */}
 
       <Footer />
     </div>

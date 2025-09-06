@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import GoogleTranslate from "@/components/GoogleTranslate";
 
 export const metadata: Metadata = {
   title: "Regenerativa - EcoCivilization 2030",

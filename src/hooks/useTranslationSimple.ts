@@ -490,11 +490,11 @@ export function useTranslation() {
   // Translation function
   const t = (key: string, defaultValue?: string): string => {
     const keys = key.split('.');
-    let value: any = translations[currentLanguage];
+    let value: unknown = translations[currentLanguage];
 
     for (const k of keys) {
-      if (value && typeof value === 'object') {
-        value = value[k];
+      if (value && typeof value === 'object' && value !== null) {
+        value = (value as Record<string, unknown>)[k];
       } else {
         value = undefined;
         break;
