@@ -27,10 +27,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              A pathway to an <span className="text-primary">EcoCivilization by 2030</span>
+              Building a Global Network for <span className="text-primary">Integral Care</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              A global initiative for integral regeneration through bioregional networks and sustainable communities.
+              A global network for integral care through bioregional communities and regenerative practices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
@@ -123,6 +123,114 @@ export default function HomePage() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Sites */}
+      <section id="sites" className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
+              Our Sites
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Visit our regenerative communities and see sustainable living in action.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
+                <Image
+                  src="/liminalvillage/1.jpeg"
+                  alt="Liminal Village - Community hub"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Home className="h-5 w-5 mr-2 text-primary" />
+                  Liminal Village
+                </CardTitle>
+                <CardDescription>Community hub</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Our central community hub where innovation meets tradition,
+                  serving as the heart of our regenerative network.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/sites/liminalvillage">
+                    Learn More
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
+                <Image
+                  src="/brickfactory/13.jpeg"
+                  alt="Fabbrica del Terzo Settore - Regenerative Factory"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Factory className="h-5 w-5 mr-2 text-primary" />
+                  Fabbrica del Terzo Settore
+                </CardTitle>
+                <CardDescription>Regenerative Factory</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  A third sector factory focused on regenerative practices, circular economy,
+                  and sustainable production methodologies.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/sites/brickfactory">
+                    Learn More
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
+                <Image
+                  src="/casaselva/1.jpeg"
+                  alt="Casa Selva - Forest sanctuary"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <TreePine className="h-5 w-5 mr-2 text-primary" />
+                  Casa Selva
+                </CardTitle>
+                <CardDescription>Forest sanctuary</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  A forest sanctuary blending traditional architecture with modern regenerative living
+                  in perfect harmony with nature.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/sites/casaselva">
+                    Learn More
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -262,114 +370,6 @@ export default function HomePage() {
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/visit">Plan Visit</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Sites */}
-      <section id="sites" className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Our Sites
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Visit our regenerative communities and see sustainable living in action.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-48 relative">
-                <Image
-                  src="/liminalvillage/1.jpeg"
-                  alt="Liminal Village - Community hub"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Home className="h-5 w-5 mr-2 text-primary" />
-                  Liminal Village
-                </CardTitle>
-                <CardDescription>Community hub</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Our central community hub where innovation meets tradition,
-                  serving as the heart of our regenerative network.
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/sites/liminalvillage">
-                    Learn More
-                    <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-48 relative">
-                <Image
-                  src="/brickfactory/13.jpeg"
-                  alt="Fabbrica del Terzo Settore - Regenerative Factory"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Factory className="h-5 w-5 mr-2 text-primary" />
-                  Fabbrica del Terzo Settore
-                </CardTitle>
-                <CardDescription>Regenerative Factory</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  A third sector factory focused on regenerative practices, circular economy,
-                  and sustainable production methodologies.
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/sites/brickfactory">
-                    Learn More
-                    <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-48 relative">
-                <Image
-                  src="/casaselva/1.jpeg"
-                  alt="Casa Selva - Forest sanctuary"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <TreePine className="h-5 w-5 mr-2 text-primary" />
-                  Casa Selva
-                </CardTitle>
-                <CardDescription>Forest sanctuary</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  A forest sanctuary blending traditional architecture with modern regenerative living
-                  in perfect harmony with nature.
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/sites/casaselva">
-                    Learn More
-                    <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
                 </Button>
               </CardContent>
             </Card>
