@@ -2,7 +2,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Users, Calendar, BookOpen, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine, Target } from "lucide-react";
+import { MapPin, Users, Calendar, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 

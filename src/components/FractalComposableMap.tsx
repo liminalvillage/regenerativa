@@ -100,65 +100,6 @@ const EMBEDDED_PROJECTS: ProjectData[] = [
   }
 ];
 
-// Helper function to extract KML from KMZ file
-const extractKMLFromKMZ = async (kmzBlob: Blob): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = async (event) => {
-      try {
-        // Use JSZip-like functionality with native APIs
-        const arrayBuffer = event.target?.result as ArrayBuffer;
-        const uint8Array = new Uint8Array(arrayBuffer);
-
-        // Look for KML content in the KMZ (simplified extraction)
-        // This is a basic extraction - in production, you'd use a proper KMZ library
-        const decoder = new TextDecoder('utf-8');
-        let kmlContent = '';
-
-        // Try to find KML content within the zip
-        // For now, we'll try to extract it by looking for XML patterns
-        const textContent = decoder.decode(uint8Array);
-
-        // Look for KML start and end tags
-        const kmlStart = textContent.indexOf('<kml');
-        const kmlEnd = textContent.lastIndexOf('</kml>');
-
-        if (kmlStart !== -1 && kmlEnd !== -1) {
-          kmlContent = textContent.substring(kmlStart, kmlEnd + 6);
-        } else {
-          // Fallback: try to find any XML content
-          const xmlStart = textContent.indexOf('<?xml');
-          if (xmlStart !== -1) {
-            kmlContent = textContent.substring(xmlStart);
-          }
-        }
-
-        resolve(kmlContent);
-      } catch (error) {
-        reject(error);
-      }
-    };
-    reader.onerror = () => reject(new Error('Failed to read KMZ file'));
-    reader.readAsArrayBuffer(kmzBlob);
-  });
-};
-
-// Helper function to extract YouTube video ID from URL
-const extractYouTubeId = (url: string): string | null => {
-  const patterns = [
-    /(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&\n?#]+)/,
-    /(?:https?:\/\/)?(?:www\.)?youtube\.com\/embed\/([^&\n?#]+)/,
-    /(?:https?:\/\/)?youtu\.be\/([^&\n?#]+)/
-  ];
-
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match && match[1]) {
-      return match[1];
-    }
-  }
-  return null;
-};
 
 // Helper function to extract text content from HTML description
 const extractTextFromHTML = (html: string): string => {

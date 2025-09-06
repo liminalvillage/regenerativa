@@ -12,8 +12,6 @@ import {
   Mountain,
   Camera,
   Sun,
-  Leaf,
-  Building2,
   Globe
 } from "lucide-react";
 import Link from "next/link";
@@ -317,7 +315,7 @@ export default function CasaSelvaPage() {
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Experience Casa Selva as a space for inner work, healing, and learning—where education is not just for children but for all ages, 
-              and where life unfolds at a slower rhythm guided by nature's cycles.
+              and where life unfolds at a slower rhythm guided by nature&apos;s cycles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

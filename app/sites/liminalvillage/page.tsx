@@ -75,7 +75,7 @@ export default function LiminalVillagePage() {
                 Our Vision
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                The term "liminal" reflects our mission: a site of transition, a threshold between old systems and the new possibilities of harmonious living.
+                The term &quot;liminal&quot; reflects our mission: a site of transition, a threshold between old systems and the new possibilities of harmonious living.
                 Rooted in regenerative design and inspired by concepts like Resource-Based Economy and Game B, we aim to upgrade the societal operating system,
                 moving from scarcity-driven markets to access abundance.
               </p>
@@ -194,7 +194,7 @@ export default function LiminalVillagePage() {
                   <Mountain className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold">Tronto Valley, Marche</p>
-                    <p className="text-sm text-muted-foreground">Central Italy's regenerative heartland, offering panoramic landscapes and natural beauty.</p>
+                    <p className="text-sm text-muted-foreground">Central Italy&apos;s regenerative heartland, offering panoramic landscapes and natural beauty.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
