@@ -2,7 +2,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Users, Calendar, BookOpen, ArrowRight, Hexagon, Leaf, Heart, Globe } from "lucide-react";
+import { MapPin, Users, Calendar, BookOpen, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,9 +11,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section id="hero" className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="absolute inset-0 z-0">
           <Image
             src="/banner1.jpg"
@@ -51,7 +51,7 @@ export default function HomePage() {
       </section>
 
       {/* Intro Video Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/90 via-primary to-secondary/90 text-white">
+      <section id="video" className="py-16 lg:py-24 bg-gradient-to-br from-primary/90 via-primary to-secondary/90 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -76,7 +76,7 @@ export default function HomePage() {
       </section>
 
       {/* Value Explainer */}
-      <section className="py-16 lg:py-24">
+      <section id="about" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -128,7 +128,7 @@ export default function HomePage() {
       </section>
 
       {/* Network Map Preview */}
-      <section className="py-16 bg-muted/30">
+      <section id="network" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -188,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* Ways to Engage */}
-      <section className="py-16 lg:py-24">
+      <section id="engage" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -269,8 +269,116 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Our Sites */}
+      <section id="sites" className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
+              Our Sites
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Visit our regenerative communities and see sustainable living in action.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
+                <Image
+                  src="/brickfactory/1.jpeg"
+                  alt="Liminal Village - Community hub"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Home className="h-5 w-5 mr-2 text-primary" />
+                  Liminal Village
+                </CardTitle>
+                <CardDescription>Community hub</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Our central community hub where innovation meets tradition,
+                  serving as the heart of our regenerative network.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/sites/fornace">
+                    Learn More
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
+                <Image
+                  src="/brickfactory/13.jpeg"
+                  alt="Fabbrica del Terzo Settore - Regenerative Factory"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Factory className="h-5 w-5 mr-2 text-primary" />
+                  Fabbrica del Terzo Settore
+                </CardTitle>
+                <CardDescription>Regenerative Factory</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  A third sector factory focused on regenerative practices, circular economy,
+                  and sustainable production methodologies.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/sites/regenerative-village">
+                    Learn More
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
+                <Image
+                  src="/banner1.jpg"
+                  alt="Casa Selva - Forest sanctuary"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <TreePine className="h-5 w-5 mr-2 text-primary" />
+                  Casa Selva
+                </CardTitle>
+                <CardDescription>Forest sanctuary</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  A forest sanctuary blending traditional architecture with modern regenerative living
+                  in perfect harmony with nature.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/sites/casa-selva">
+                    Learn More
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Upcoming Events */}
-      <section className="py-16 bg-muted/30">
+      <section id="events" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -348,7 +456,7 @@ export default function HomePage() {
       </section>
 
       {/* Latest Stories */}
-      <section className="py-16 lg:py-24">
+      <section id="stories" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -433,7 +541,7 @@ export default function HomePage() {
       </section>
 
       {/* Partners */}
-      <section className="py-16 bg-muted/30">
+      <section id="partners" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">

@@ -47,29 +47,29 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Regenerative Village",
-        "subtitle": "A Third Sector village between nature, innovation and community.",
+        "title": "Fabbrica del Terzo Settore",
+        "subtitle": "A Third Sector factory focused on regenerative practices, circular economy, and sustainable production.",
         "description": "Discover our vision and join the community",
         "cta": "Join the Community",
         "discoverVision": "Discover the Vision"
       },
       "vision": {
         "title": "Vision",
-        "description": "\"Not just a settlement, but an ecosystem of life and social innovation. The Third Sector village combines sustainable living, coworking and active community: a pioneering model inspired by the Bottega del Terzo Settore, but expanded to include residential, hospitality and collective spaces.\"",
-        "sustainableLiving": "Sustainable Living",
-        "sustainableLivingDesc": "Residential integrated with nature",
+        "description": "\"Not just a factory, but an ecosystem of production and social innovation. The Third Sector factory combines regenerative practices, circular economy and sustainable production: a pioneering model that integrates manufacturing, innovation hubs, and community spaces.\"",
+        "sustainableLiving": "Regenerative Production",
+        "sustainableLivingDesc": "Manufacturing integrated with nature",
         "activeCommunity": "Active Community",
         "activeCommunityDesc": "Collective participation and collaboration",
-              "collectiveSpaces": "Collective Spaces",
-      "collectiveSpacesDesc": "Coworking and inclusive common areas"
+              "collectiveSpaces": "Innovation Spaces",
+      "collectiveSpacesDesc": "Coworking and inclusive innovation areas"
       },
       "location": {
         "title": "Location & History",
-        "description": "\"Nestled in the heart of the Marche region, our village offers the perfect blend of natural beauty and strategic accessibility. Located just 10 minutes from the historic center of Ascoli Piceno, the cultural capital of the region, it provides residents with both tranquility and urban convenience.\"",
+        "description": "\"Nestled in the heart of the Marche region, our factory offers the perfect blend of natural beauty and strategic accessibility. Located just 10 minutes from the historic center of Ascoli Piceno, the cultural capital of the region, it provides the perfect environment for sustainable production.\"",
         "size": "Size & Scale",
-        "sizeDesc": "Approximately 50 hectares of land dedicated to sustainable development, housing, community spaces, and agricultural areas",
+        "sizeDesc": "Approximately 50 hectares of land dedicated to sustainable production, innovation spaces, community areas, and regenerative practices",
         "history": "Historical Context",
-        "historyDesc": "Built on ancient agricultural traditions with a vision for the future, combining historical wisdom with modern regenerative practices",
+        "historyDesc": "Built on ancient manufacturing traditions with a vision for the future, combining historical craftsmanship with modern regenerative practices",
         "ascoliPiceno": "Ascoli Piceno",
         "ascoliPicenoDesc": "10 minutes from the historic center - cultural capital of the Marche region with Renaissance architecture and local traditions",
         "adriaticCoast": "Adriatic Coast",
@@ -82,14 +82,14 @@ const translations = {
         "sibilliniParkDesc": "15 minutes to the entrance of Sibillini National Park, offering hiking trails, wildlife viewing, and mountain activities",
         "lagaPark": "Laga Mountains National Park",
         "lagaParkDesc": "45 minutes to Laga Mountains National Park, featuring ancient forests, waterfalls, and biodiversity-rich landscapes",
-        "accessibility": "Highway Access",
+        "accessibility": "Easy Access",
         "accessibilityDesc": "Easily accessible via major highways, with convenient connections to regional and national transportation networks"
       },
       "communityCulture": {
         "title": "Community and Culture",
-        "description": "\"The village also becomes a cultural stage: concerts, conferences, outdoor cinema. Nature becomes the scenery, and the community the protagonist. Every event becomes an opportunity to give birth to new ideas, collaborations, social impact projects.\"",
+        "description": "\"The factory also becomes a cultural stage: exhibitions, conferences, workshops. Nature becomes the scenery, and the community the protagonist. Every event becomes an opportunity to showcase regenerative practices, collaborations, social impact projects.\"",
         "culturalEvents": "Cultural Events",
-        "culturalEventsDesc": "Concerts, conferences, outdoor cinema",
+        "culturalEventsDesc": "Exhibitions, conferences, workshops",
         "socialInnovation": "Social Innovation",
         "socialInnovationDesc": "Emerging new ideas and collaborations",
         "communityParticipation": "Community Participation",
@@ -117,32 +117,32 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Wellness and Nature",
-        "description": "\"Wellness is an integral part of the experience: relaxation spaces, unspoiled nature, authentic connection with oneself and with others. Regenerative Village is a village where time slows down, and life resumes its natural rhythm.\"",
+        "description": "\"Wellness is an integral part of the experience: relaxation spaces, unspoiled nature, authentic connection with oneself and with others. Fabbrica del Terzo Settore is a place where time slows down, and work resumes its natural rhythm.\"",
         "relaxationSpaces": "Relaxation Spaces",
         "relaxationSpacesDesc": "Areas dedicated to rest and contemplation",
         "unspoiledNature": "Unspoiled Nature",
         "unspoiledNatureDesc": "Deep connection with the natural environment",
         "authenticConnection": "Authentic Connection",
-        "authenticConnectionDesc": "Natural rhythm of life and genuine relationships"
+        "authenticConnectionDesc": "Natural rhythm of work and genuine relationships"
       },
       "futureInnovation": {
         "title": "Future and Innovation",
-        "description": "\"A living laboratory for the future of the Third Sector. A village that inspires new forms of solidarity economy, participatory governance and environmental sustainability. Regenerative Village is not just a place to live: it's a place to build the future together.\"",
+        "description": "\"A living laboratory for the future of the Third Sector. A factory that inspires new forms of solidarity economy, participatory governance and environmental sustainability. Fabbrica del Terzo Settore is not just a place to work: it's a place to build the future together.\"",
         "solidarityEconomy": "Solidarity Economy",
         "solidarityEconomyDesc": "New economic models based on solidarity and sustainability",
         "participatoryGovernance": "Participatory Governance",
         "participatoryGovernanceDesc": "Collective decisions and active community participation",
         "environmentalSustainability": "Environmental Sustainability",
-        "environmentalSustainabilityDesc": "Ecological practices integrated into daily life",
-        "buildFuture": "Regenerative Village is not just a place to live: it's a place to build the future together."
+        "environmentalSustainabilityDesc": "Ecological practices integrated into daily operations",
+        "buildFuture": "Fabbrica del Terzo Settore is not just a place to work: it's a place to build the future together."
       },
       "villageVisions": {
-        "title": "Village Visions",
-        "description": "Discover the concepts and visions of our village through these images made on the actual location."
+        "title": "Factory Visions",
+        "description": "Discover the concepts and visions of our factory through these images made on the actual location."
       },
       "callToAction": {
         "title": "Join the Future of the Third Sector",
-        "description": "Regenerative Village is more than a village: it's a movement to build together a sustainable, inclusive and innovative future. Your participation can make the difference.",
+        "description": "Fabbrica del Terzo Settore is more than a factory: it's a movement to build together a sustainable, inclusive and innovative future. Your participation can make the difference.",
         "joinNow": "Join Now",
         "contactUs": "Contact Us"
       }
@@ -189,17 +189,17 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Aldea Regenerativa",
-        "subtitle": "Un pueblo del Tercer Sector entre naturaleza, innovación y comunidad.",
+        "title": "Fábrica del Tercer Sector",
+        "subtitle": "Una fábrica del Tercer Sector enfocada en prácticas regenerativas, economía circular y producción sostenible.",
         "description": "Descubre nuestra visión y únete a la comunidad",
         "cta": "Únete a la Comunidad",
         "discoverVision": "Descubre la Visión"
       },
       "vision": {
         "title": "Visión",
-        "description": "\"No solo un asentamiento, sino un ecosistema de vida e innovación social. El pueblo del Tercer Sector combina vivienda sostenible, coworking y comunidad activa: un modelo pionero inspirado en la Bottega del Terzo Settore, pero ampliado para incluir residencial, hospitalidad y espacios colectivos.\"",
-        "sustainableLiving": "Vivienda Sostenible",
-        "sustainableLivingDesc": "Residencial integrado con la naturaleza",
+        "description": "\"No solo una fábrica, sino un ecosistema de producción e innovación social. La fábrica del Tercer Sector combina prácticas regenerativas, economía circular y producción sostenible: un modelo pionero que integra manufactura, centros de innovación y espacios comunitarios.\"",
+        "sustainableLiving": "Producción Regenerativa",
+        "sustainableLivingDesc": "Manufactura integrada con la naturaleza",
         "activeCommunity": "Comunidad Activa",
         "activeCommunityDesc": "Participación y colaboración colectiva",
               "collectiveSpaces": "Espacios Colectivos",
@@ -331,17 +331,17 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Village Régénératif",
-        "subtitle": "Un village du Tiers Secteur entre nature, innovation et communauté.",
+        "title": "Fabrique du Tiers Secteur",
+        "subtitle": "Une fabrique du Tiers Secteur axée sur les pratiques régénératives, l'économie circulaire et la production durable.",
         "description": "Découvrez notre vision et rejoignez la communauté",
         "cta": "Rejoignez la Communauté",
         "discoverVision": "Découvrez la Vision"
       },
       "vision": {
         "title": "Vision",
-        "description": "\"Pas seulement un établissement, mais un écosystème de vie et d'innovation sociale. Le village du Tiers Secteur combine habitat durable, coworking et communauté active : un modèle pionnier inspiré de la Bottega del Terzo Settore, mais élargi pour inclure résidentiel, accueil et espaces collectifs.\"",
-        "sustainableLiving": "Habitat Durable",
-        "sustainableLivingDesc": "Résidentiel intégré à la nature",
+        "description": "\"Pas seulement une fabrique, mais un écosystème de production et d'innovation sociale. La fabrique du Tiers Secteur combine pratiques régénératives, économie circulaire et production durable : un modèle pionero qui intègre la manufacture, les centres d'innovation et les espaces communautaires.\"",
+        "sustainableLiving": "Production Régénérative",
+        "sustainableLivingDesc": "Manufacture intégrée à la nature",
         "activeCommunity": "Communauté Active",
         "activeCommunityDesc": "Participation et collaboration collective",
               "collectiveSpaces": "Espaces Collectifs",
@@ -401,7 +401,7 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Bien-être et Nature",
-        "description": "\"Le bien-être fait partie intégrante de l'expérience : espaces de relaxation, nature intacte, connexion authentique avec soi-même et avec les autres. Village Régénératif est un village où le temps ralentit, et la vie reprend son rythme naturel.\"",
+        "description": "\"Le bien-être fait partie intégrante de l'expérience : espaces de relaxation, nature intacte, connexion authentique avec soi-même et avec les autres. Fabrique du Tiers Secteur est un lieu où le temps ralentit, et le travail reprend son rythme naturel.\"",
         "relaxationSpaces": "Espaces de Relaxation",
         "relaxationSpacesDesc": "Espaces dédiés au repos et à la contemplation",
         "unspoiledNature": "Nature Intacte",
@@ -411,22 +411,22 @@ const translations = {
       },
       "futureInnovation": {
         "title": "Futur et Innovation",
-        "description": "\"Un laboratoire vivant pour l'avenir du Tiers Secteur. Un village qui inspire de nouvelles formes d'économie solidaire, gouvernance participative et durabilité environnementale. Village Régénératif n'est pas seulement un lieu pour vivre : c'est un lieu pour construire l'avenir ensemble.\"",
+        "description": "\"Un laboratoire vivant pour l'avenir du Tiers Secteur. Une fabrique qui inspire de nouvelles formes d'économie solidaire, gouvernance participative et durabilité environnementale. Fabrique du Tiers Secteur n'est pas seulement un lieu pour travailler : c'est un lieu pour construire l'avenir ensemble.\"",
         "solidarityEconomy": "Économie Solidaire",
         "solidarityEconomyDesc": "Nouveaux modèles économiques basés sur la solidarité et la durabilité",
         "participatoryGovernance": "Gouvernance Participative",
         "participatoryGovernanceDesc": "Décisions collectives et participation active de la communauté",
         "environmentalSustainability": "Durabilité Environnementale",
         "environmentalSustainabilityDesc": "Pratiques écologiques intégrées dans la vie quotidienne",
-        "buildFuture": "Village Régénératif n'est pas seulement un lieu pour vivre : c'est un lieu pour construire l'avenir ensemble."
+        "buildFuture": "Fabrique du Tiers Secteur n'est pas seulement un lieu pour travailler : c'est un lieu pour construire l'avenir ensemble."
       },
       "villageVisions": {
-        "title": "Visions du Village",
-        "description": "Découvrez les concepts et visions de notre village à travers ces images réalisées sur le lieu même."
+        "title": "Visions de la Fabrique",
+        "description": "Découvrez les concepts et visions de notre fabrique à travers ces images réalisées sur le lieu même."
       },
       "callToAction": {
         "title": "Rejoignez l'Avenir du Tiers Secteur",
-        "description": "Village Régénératif est plus qu'un village : c'est un mouvement pour construire ensemble un avenir durable, inclusif et innovant. Votre participation peut faire la différence.",
+        "description": "Fabrique du Tiers Secteur est plus qu'une fabrique : c'est un mouvement pour construire ensemble un avenir durable, inclusif et innovant. Votre participation peut faire la différence.",
         "joinNow": "Rejoignez Maintenant",
         "contactUs": "Contactez-nous"
       }

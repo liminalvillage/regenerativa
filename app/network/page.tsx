@@ -14,7 +14,7 @@ export default function NetworkPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section id="hero" className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
@@ -42,7 +42,7 @@ export default function NetworkPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-8 lg:py-12">
+      <section id="map" className="py-8 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-[80vh] rounded-2xl overflow-hidden shadow-2xl border border-border/50">
             <FractalComposableMap
@@ -57,7 +57,7 @@ export default function NetworkPage() {
       </section>
 
       {/* Network Stats */}
-      <section className="py-16 bg-muted/30">
+      <section id="stats" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -109,7 +109,7 @@ export default function NetworkPage() {
       </section>
 
       {/* How to Use */}
-      <section className="py-16 lg:py-24">
+      <section id="usage" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -182,7 +182,7 @@ export default function NetworkPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-muted/30">
+      <section id="join" className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">

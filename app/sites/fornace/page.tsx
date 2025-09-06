@@ -5,12 +5,10 @@ import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Factory,
   Home,
   Users,
   TreePine,
-  Pizza,
-  Recycle,
+  Heart,
   Mountain,
   Waves,
   GraduationCap,
@@ -22,12 +20,15 @@ import {
   Calendar,
   Zap,
   Droplets,
-  Utensils
+  Coffee,
+  Sparkles,
+  Lightbulb,
+  Music
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function FornacePage() {
+export default function LiminalVillagePage() {
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -37,7 +38,7 @@ export default function FornacePage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/brickfactory/1.jpeg"
-            alt="Fornace brick factory site"
+            alt="Liminal Village - Community sanctuary"
             fill
             className="object-cover opacity-20"
             priority
@@ -47,10 +48,10 @@ export default function FornacePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              Fornace <span className="text-primary">Site</span>
+              Liminal <span className="text-primary">Village</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              The physical foundation of Regenerativa - a 3-acre brick factory site transforming into a self-sustaining regenerative community.
+              Where transformation begins. A former industrial site reborn as a regenerative community hub, blending ancient wisdom with cutting-edge sustainability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
@@ -70,42 +71,82 @@ export default function FornacePage() {
         </div>
       </section>
 
-      {/* Overview Section */}
-      <section className="py-16 lg:py-24">
+      {/* Vision & Principles */}
+      <section id="vision" className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
+                Our Vision
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Liminal Village represents the threshold between old industrial paradigms and new regenerative possibilities.
+                What was once a brick factory is becoming a living laboratory for sustainable community living,
+                where ancient building techniques meet cutting-edge ecological design.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6">
+                Here, we demonstrate that industrial sites can be transformed into thriving ecosystems that support
+                both human flourishing and environmental regeneration.
+              </p>
+              <Button asChild>
+                <Link href="/library">
+                  Learn More About Our Vision
+                  <TreePine className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-display font-bold">Core Principles</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Heart className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold">Regenerative Transformation</h4>
+                    <p className="text-sm text-muted-foreground">Turning industrial legacy into ecological opportunity.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Users className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold">Community First</h4>
+                    <p className="text-sm text-muted-foreground">Building spaces that foster genuine human connection.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Lightbulb className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold">Innovation Through Tradition</h4>
+                    <p className="text-sm text-muted-foreground">Honoring ancestral wisdom while embracing future technologies.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Transformation */}
+      <section id="transformation" className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Site Overview
+              From Factory to Village
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              An old brick factory site serving as the physical foundation and key resource for the entire Regenerativa initiative.
-              This three-acre property offers significant building capacity and unique features central to our vision of a self-sustaining, regenerative community.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Witnessing the rebirth of industrial space into a thriving regenerative community.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Building2 className="h-5 w-5 mr-2" />
-                  6,000 m³ Capacity
+                  Adaptive Reuse
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Equivalent to 2,000 m² of building capacity including the old brick factory and its silo.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <TreePine className="h-5 w-5 mr-2" />
-                  3-Acre Property
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Located with a regeneration plan that specifically allows for housing development.
+                  Transforming industrial structures into living, breathing community spaces that honor the past while serving the future.
                 </p>
               </CardContent>
             </Card>
@@ -113,403 +154,155 @@ export default function FornacePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Leaf className="h-5 w-5 mr-2" />
-                  Strategic Foundation
+                  Ecological Restoration
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Central to the project's vision of a self-sustaining, regenerative community.
+                  Healing the land through regenerative practices, native planting, and wildlife habitat restoration.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Users className="h-5 w-5 mr-2" />
+                  Community Building
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Creating spaces that foster genuine human connection and collaborative living.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-
-      {/* Infrastructure & Capacity */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-                Existing Infrastructure & Capacity
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-3">
-                  <Factory className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Building Capacity</h3>
-                    <p className="text-sm text-muted-foreground">6,000 cubic meters of building capacity, equivalent to 2,000 square meters.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Building2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Historic Brick Factory</h3>
-                    <p className="text-sm text-muted-foreground">The old brick factory building with its stone oven and industrial heritage.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Home className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Relocatable Silo</h3>
-                    <p className="text-sm text-muted-foreground">The old silo can be relocated or repurposed to facilitate housing unit creation.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <TreePine className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">3-Acre Property</h3>
-                    <p className="text-sm text-muted-foreground">Property size with regeneration plan allowing housing development.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
-                <Image
-                  src="/brickfactory/2.jpeg"
-                  alt="Fornace site infrastructure"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Housing Development */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
-                <Image
-                  src="/brickfactory/3.jpeg"
-                  alt="Housing development potential"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-                Housing Development
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                The project envisions starting with about 20 housing units, each approximately 100 square meters,
-                designed to be built on this property using sustainable materials.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Home className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">20 Housing Units</h3>
-                    <p className="text-sm text-muted-foreground">Each approximately 100 square meters, built with sustainable materials.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Target className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Flexible Design Approach</h3>
-                    <p className="text-sm text-muted-foreground">Instead of rigid master plans, housing volumes defined as "boxes" for flexibility.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Users className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Community-Driven Development</h3>
-                    <p className="text-sm text-muted-foreground">Housing development allows for flexibility and adjustment over time.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Phased Utilization */}
-      <section className="py-16 bg-muted/30">
+      {/* Daily Life & Community */}
+      <section id="community" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Phased Utilization of the Site
+              Community Life
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A strategic approach to transforming the brick factory site into a thriving regenerative community.
+              Experience the vibrant daily life and communal activities that make Liminal Village a living, breathing community.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Users className="h-5 w-5 mr-2" />
-                  Phase One: Pioneer Community & Infrastructure
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  The initial phase focuses on developing basic urbanization on the property, including sewerage and electricity.
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li>• Basic infrastructure development</li>
-                  <li>• Camper stop transformation</li>
-                  <li>• Tiny house friendly with gardens</li>
-                  <li>• Special camping spots for tiny houses</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Home className="h-5 w-5 mr-2" />
-                  Phase Two: Permanent Housing & Business Incubation
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Once a cohesive community is established, focus on permanent housing and regenerative business development.
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li>• Additive manufacturing (3D printing) for houses</li>
-                  <li>• Rapid, cost-effective building with local materials</li>
-                  <li>• Regenerative business incubation</li>
-                  <li>• Community consolidation</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Regenerative Businesses Hub */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Hub for Regenerative Businesses & Activities
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The brick factory site is envisioned as a vibrant hub for various regenerative businesses and community activities.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Pizza className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Food Business</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  The stone oven within the brick factory is ideal for establishing a pizzeria or similar food venture.
-                </p>
-                <ul className="space-y-1 text-sm">
-                  <li>• Stone oven utilization</li>
-                  <li>• Collectively managed gardens</li>
-                  <li>• Local food production</li>
-                  <li>• Community dining experiences</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Building2 className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Regenerative Building Company</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  A company that would operate from the site, using local, sustainable materials and green energy.
-                </p>
-                <ul className="space-y-1 text-sm">
-                  <li>• Sustainable building materials</li>
-                  <li>• Green energy utilization</li>
-                  <li>• Cost-effective construction</li>
-                  <li>• Services for challenging locations</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Recycle className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Plastic Recycling</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Implementation of Precious Plastic initiatives for plastic recycling on the site.
-                </p>
-                <ul className="space-y-1 text-sm">
-                  <li>• Precious Plastic workshops</li>
-                  <li>• Plastic waste processing</li>
-                  <li>• Recycled material production</li>
-                  <li>• Community recycling programs</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Tourism & Recreation */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-                Tourism and Recreation
-              </h2>
-              <div className="space-y-6">
+              <h3 className="text-2xl font-display font-bold mb-6">Daily Practices</h3>
+              <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <Mountain className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <Coffee className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Rock Climbing Wall</h3>
-                    <p className="text-sm text-muted-foreground">Conveniently located near a prominent rock-climbing wall, noted as the closest wall to the sea in Italy.</p>
+                    <p className="font-semibold">Shared Meals</p>
+                    <p className="text-sm text-muted-foreground">Community meals prepared from our regenerative gardens and local partnerships.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Waves className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <Sparkles className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">River Activities</h3>
-                    <p className="text-sm text-muted-foreground">The river located just down from the factory offers potential for canoeing, with coordination with the municipality for dike openings.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <TreePine className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Riverside Cleanup</h3>
-                    <p className="text-sm text-muted-foreground">Requires cleaning up the riverside to ensure safety for recreational activities.</p>
+                    <p className="font-semibold">Creative Workshops</p>
+                    <p className="text-sm text-muted-foreground">Art, music, and craft sessions inspired by our industrial heritage.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
-                <Image
-                  src="/brickfactory/4.jpeg"
-                  alt="Natural surroundings for tourism and recreation"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+            <div>
+              <h3 className="text-2xl font-display font-bold mb-6">Community Events</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Music className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Cultural Gatherings</p>
+                    <p className="text-sm text-muted-foreground">Concerts, performances, and celebrations in our transformed industrial spaces.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Camera className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Learning Experiences</p>
+                    <p className="text-sm text-muted-foreground">Workshops on regenerative practices, sustainable building, and community living.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Project & Educational Hub */}
-      <section className="py-16 lg:py-24">
+      {/* The Future */}
+      <section id="future" className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Social Project and Educational Hub
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The brick factory site will ultimately be a social project and a model for future living, serving as a hub for open-source regenerative technologies.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Droplets className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Water Purification</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Development and production of water purification systems using open-source regenerative technologies.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Utensils className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Food Machines</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Creation of innovative food production and processing machines for sustainable food systems.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Technology Hub</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Open-source regenerative technologies development, production, and distribution center.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="text-center">
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Systems for water purification and food machines will be developed, produced, and distributed by the community from this location.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Image Gallery */}
-      <section id="gallery" className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Site Gallery
+              Building the Future
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore the Fornace brick factory site through these images showcasing its current state and potential.
+              Liminal Village is more than a place—it's a movement demonstrating how industrial sites can become thriving regenerative communities.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((num) => (
-              <div key={num} className="relative group overflow-hidden rounded-lg">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src={`/brickfactory/${num}.jpeg`}
-                    alt={`Fornace site image ${num}`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Target className="h-5 w-5 mr-2" />
+                  Living Laboratory
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  A real-world testing ground for regenerative practices, sustainable building techniques, and community living models.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Lightbulb className="h-5 w-5 mr-2" />
+                  Innovation Hub
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Spaces for workshops, research, and collaboration on solutions for the ecological and social challenges of our time.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Heart className="h-5 w-5 mr-2" />
+                  Community Sanctuary
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  A welcoming space where people can connect, learn, and contribute to building a more regenerative world together.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24">
+      <section id="join" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              Join the Fornace Community
+              Join Liminal Village
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Be part of transforming this historic brick factory site into a model of regenerative living.
-              Whether you're interested in housing, business development, or community building,
-              there's a place for you in our vision.
+              Be part of the transformation from industrial legacy to regenerative community.
+              Your participation helps build a more sustainable and connected world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/join">
-                  Join the Movement
+                  Join the Community
                   <Users className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

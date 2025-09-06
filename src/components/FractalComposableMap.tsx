@@ -812,7 +812,7 @@ export default function FractalComposableMap({
   // Initialize HoloSphere
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      holosphere.current = new HoloSphere('regenerativa-network');
+      holosphere.current = new HoloSphere('Holons');
     }
   }, []);
 
@@ -1437,88 +1437,72 @@ export default function FractalComposableMap({
               const videoId = properties.videoUrl ? getYouTubeVideoId(properties.videoUrl) : null;
               const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}` : null;
 
-              // Calculate viewport-aware max height
-              const viewportHeight = window.innerHeight;
-              const headerHeight = 60; // Approximate header/navigation height
-              const popupMaxHeight = Math.max(200, viewportHeight - headerHeight - 100); // Leave some margin
+              // Show project details in side panel
+              const panel = document.getElementById('project-panel');
+              const content = document.getElementById('project-content');
 
-              const popup = new maplibregl.Popup({
-                closeButton: true,
-                closeOnClick: true,
-                maxWidth: '350px',
-                className: 'regenerative-popup',
-                anchor: 'bottom' // Try to position below the marker
-              })
-                .setLngLat(e.lngLat)
-                .setHTML(`
-                  <div class="popup-content" style="max-height: ${popupMaxHeight}px; overflow-y: auto; overflow-x: hidden;">
-                    <div class="p-4">
-                      <h3 class="font-bold text-lg mb-3 leading-tight">${properties.name}</h3>
-                      <p class="text-sm text-gray-600 mb-3 leading-relaxed">${properties.description}</p>
-                      <p class="text-xs text-gray-500 mb-4 flex items-center">
-                        <span class="mr-1">📍</span>
-                        <span class="truncate">${properties.location}</span>
-                      </p>
+              if (panel && content) {
+                // Clear previous content
+                content.innerHTML = '';
 
-                      ${embedUrl ? `
-                        <div class="mb-4">
-                          <div class="relative w-full bg-gray-100 rounded-lg overflow-hidden" style="padding-bottom: 56.25%;">
-                            <iframe
-                              class="absolute top-0 left-0 w-full h-full"
-                              src="${embedUrl}?rel=0&modestbranding=1&cc_load_policy=0"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen
-                              loading="lazy"
-                            ></iframe>
-                          </div>
-                        </div>
+                // Create project content
+                const projectHTML = `
+                  <div class="space-y-4">
+                    <div>
+                      <h3 class="text-2xl font-bold text-gray-800 mb-2">${properties.name}</h3>
+                      <p class="text-gray-600 leading-relaxed">${properties.description}</p>
+                    </div>
+
+                    <div class="flex items-center text-gray-500">
+                      <span class="mr-2">📍</span>
+                      <span>${properties.location}</span>
+                    </div>
+
+                    ${embedUrl ? `
+                      <div class="w-full bg-gray-100 rounded-lg overflow-hidden" style="aspect-ratio: 16/9;">
+                        <iframe
+                          class="w-full h-full"
+                          src="${embedUrl}?rel=0&modestbranding=1&cc_load_policy=0"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"
+                        ></iframe>
+                      </div>
+                    ` : ''}
+
+                    <div class="flex flex-col gap-3">
+                      ${!embedUrl && properties.videoUrl ? `
+                        <a href="${properties.videoUrl}"
+                           target="_blank"
+                           class="inline-flex items-center justify-center bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg transition-colors duration-200 font-medium">
+                          <span class="mr-2">▶️</span>
+                          Watch Video
+                        </a>
                       ` : ''}
-
-                      <div class="flex gap-2 mt-3 ${embedUrl ? 'justify-center' : 'justify-between items-center'}">
-                        ${!embedUrl && properties.videoUrl ? `
-                          <a href="${properties.videoUrl}"
-                             target="_blank"
-                             class="inline-flex items-center text-xs bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-md transition-colors duration-200 font-medium">
-                            <span class="mr-1">▶️</span>
-                            Watch Video
-                          </a>
-                        ` : ''}
-                        <span class="inline-flex items-center text-xs bg-green-100 text-green-800 px-3 py-2 rounded-md font-medium">
-                          <span class="mr-1">🏷️</span>
-                          ${properties.category}
-                        </span>
+                      <div class="inline-flex items-center justify-center bg-green-100 text-green-800 px-4 py-3 rounded-lg font-medium">
+                        <span class="mr-2">🏷️</span>
+                        ${properties.category}
                       </div>
                     </div>
                   </div>
+                `;
 
-                  <style>
-                    .regenerative-popup .maplibregl-popup-content {
-                      padding: 0 !important;
-                      border-radius: 12px !important;
-                      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-                    }
-                    .regenerative-popup .maplibregl-popup-tip {
-                      border-top-color: white !important;
-                      border-width: 8px !important;
-                    }
-                    .popup-content::-webkit-scrollbar {
-                      width: 6px;
-                    }
-                    .popup-content::-webkit-scrollbar-track {
-                      background: #f1f1f1;
-                      border-radius: 3px;
-                    }
-                    .popup-content::-webkit-scrollbar-thumb {
-                      background: #c1c1c1;
-                      border-radius: 3px;
-                    }
-                    .popup-content::-webkit-scrollbar-thumb:hover {
-                      background: #a8a8a8;
-                    }
-                  </style>
-                `)
-                .addTo(mapInstance);
+                content.innerHTML = projectHTML;
+
+                // Show the panel
+                panel.classList.remove('hidden');
+                panel.classList.add('flex');
+
+                // Add close functionality
+                const closeBtn = document.getElementById('close-panel');
+                if (closeBtn) {
+                  closeBtn.onclick = () => {
+                    panel.classList.add('hidden');
+                    panel.classList.remove('flex');
+                  };
+                }
+              }
             }
           }
         });
@@ -1632,7 +1616,7 @@ export default function FractalComposableMap({
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
 
-    map.current = new maplibregl.Map({
+          map.current = new maplibregl.Map({
       container: mapContainer.current,
       style: {
         version: 8,
@@ -1673,9 +1657,9 @@ export default function FractalComposableMap({
         type: "line",
         source: "hexagon-grid",
         paint: {
-          "line-color": "#fff",
-          "line-width": 1,
-          "line-opacity": 0.6
+          "line-color": "#2E7D32",
+          "line-width": 3,
+          "line-opacity": 0.7
         }
       });
 
@@ -1684,11 +1668,11 @@ export default function FractalComposableMap({
         type: "circle",
         source: "hexagon-grid",
         paint: {
-          "circle-color": "#fff",
-          "circle-opacity": 0.6,
+          "circle-color": "#2E7D32",
+          "circle-opacity": 0.5,
           "circle-stroke-width": 1,
-          "circle-stroke-color": "#fff",
-          "circle-stroke-opacity": 0.6,
+          "circle-stroke-color": "#2E7D32",
+          "circle-stroke-opacity": 0.5,
           "circle-radius": [
             "interpolate",
             ["exponential", 2],
@@ -1710,9 +1694,9 @@ export default function FractalComposableMap({
         type: "line",
         source: "hexagon-grid-lower",
         paint: {
-          "line-color": "#aaa",
-          "line-width": 0.5,
-          "line-opacity": 0.4
+          "line-color": "#81C784",
+          "line-width": 2,
+          "line-opacity": 0.8
         }
       });
 
@@ -1721,11 +1705,11 @@ export default function FractalComposableMap({
         type: "circle",
         source: "hexagon-grid-lower",
         paint: {
-          "circle-color": "#aaa",
-          "circle-opacity": 0.4,
+          "circle-color": "#81C784",
+          "circle-opacity": 0.6,
           "circle-stroke-width": 0.5,
-          "circle-stroke-color": "#aaa",
-          "circle-stroke-opacity": 0.4,
+          "circle-stroke-color": "#81C784",
+          "circle-stroke-opacity": 0.6,
           "circle-radius": [
             "interpolate",
             ["exponential", 2],
@@ -1801,8 +1785,8 @@ export default function FractalComposableMap({
         type: "fill",
         source: "selected-hexagon",
         paint: {
-          "fill-color": "#088",
-          "fill-opacity": 0.6
+          "fill-color": "#2E7D32",
+          "fill-opacity": 0.7
         }
       });
 
@@ -1811,9 +1795,9 @@ export default function FractalComposableMap({
         type: "line",
         source: "selected-hexagon",
         paint: {
-          "line-color": "#088",
-          "line-width": 2,
-          "line-opacity": 0.8
+          "line-color": "#2E7D32",
+          "line-width": 4,
+          "line-opacity": 0.9
         }
       });
 
@@ -1822,10 +1806,10 @@ export default function FractalComposableMap({
         type: "circle",
         source: "selected-hexagon",
         paint: {
-          "circle-color": "#088",
-          "circle-opacity": 0.6,
+          "circle-color": "#2E7D32",
+          "circle-opacity": 0.7,
           "circle-stroke-width": 2,
-          "circle-stroke-color": "#088",
+          "circle-stroke-color": "#2E7D32",
           "circle-stroke-opacity": 0.8,
           "circle-radius": [
             "interpolate",
@@ -1842,6 +1826,11 @@ export default function FractalComposableMap({
       console.log("Map loaded");
       setIsMapLoaded(true);
 
+      // Ensure map fills the container properly
+      if (map.current) {
+        map.current.resize();
+      }
+
       // Load regenerative projects data
       if (map.current) {
         loadRegenerativeProjects(map.current);
@@ -1854,6 +1843,15 @@ export default function FractalComposableMap({
         }
       }, 500);
     });
+
+    // Add window resize handler to keep map properly sized
+    const handleResize = () => {
+      if (map.current) {
+        map.current.resize();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
 
     // Add movement handlers
     map.current.on("movestart", () => {
@@ -1871,7 +1869,7 @@ export default function FractalComposableMap({
         renderHexes(map.current, currentLens);
       }
     });
-    
+
     map.current.on("moveend", () => {
       // Schedule data fetch after movement with a delay
       setTimeout(() => {
@@ -1883,13 +1881,20 @@ export default function FractalComposableMap({
 
     // Add click handler
     map.current.on("click", (e: maplibregl.MapMouseEvent) => {
-      console.log("Map clicked", e.lngLat);
+
+      // Close side panel if it's open (when clicking on map)
+      const panel = document.getElementById('project-panel');
+      if (panel && !panel.classList.contains('hidden')) {
+        panel.classList.add('hidden');
+        panel.classList.remove('flex');
+      }
+
       const { lng, lat } = e.lngLat;
       const zoom = map.current?.getZoom() || 5;
       const resolution = getResolution(zoom);
       const newHexId = h3.latLngToCell(lat, lng, resolution);
       console.log("Hexagon ID:", newHexId);
-      
+
       // Only update if it's a valid H3 cell
       if (isH3Cell(newHexId)) {
         updateSelectedCell(newHexId);
@@ -1909,6 +1914,7 @@ export default function FractalComposableMap({
 
     // Cleanup function
     return () => {
+      window.removeEventListener('resize', handleResize);
       if (map.current) {
         map.current.remove();
         map.current = null;
@@ -1929,16 +1935,58 @@ export default function FractalComposableMap({
   }, [lensData, currentLens, isMapLoaded]);
 
   return (
-    <div className={`relative w-full h-full ${className}`}>
-      <div ref={mapContainer} className="w-full h-full" />
+    <div
+      className={`relative w-full h-full ${className}`}
+      style={{
+        width: '100%',
+        height: '100%'
+      }}
+    >
+      {/* Map Container - Takes up full parent space */}
+      <div
+        ref={mapContainer}
+        className="w-full h-full"
+        style={{
+          height: '100%',
+          width: '100%',
+          margin: 0,
+          padding: 0
+        }}
+      />
+
+      {/* Side Panel for Project Details */}
+      <div
+        id="project-panel"
+        className="absolute top-0 right-0 w-96 bg-white shadow-lg border-l border-gray-200 overflow-y-auto hidden"
+        style={{
+          height: '100%',
+          margin: 0,
+          padding: 0
+        }}
+      >
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-gray-800">Project Details</h2>
+            <button
+              id="close-panel"
+              className="text-gray-500 hover:text-gray-700 text-xl font-bold"
+            >
+              ×
+            </button>
+          </div>
+          <div id="project-content" className="space-y-4">
+            {/* Project content will be populated here */}
+          </div>
+        </div>
+      </div>
       
-      {/* Lens Selector */}
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex items-center gap-2 px-2 py-1 min-h-9 bg-white rounded shadow-lg">
+      {/* Lens Selector - Positioned over the map */}
+      <div className="absolute top-4 left-4 z-10">
+        <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow-lg border border-gray-200">
           <label htmlFor="lens-select" className="text-sm font-medium text-gray-700 whitespace-nowrap">
             Lens:
           </label>
-          <select 
+          <select
             id="lens-select"
             value={currentLens}
             onChange={(e) => setCurrentLens(e.target.value as LensType)}
@@ -1953,7 +2001,7 @@ export default function FractalComposableMap({
         </div>
       </div>
 
-      {/* Hexagon Info */}
+      {/* Hexagon Info - Positioned over map area */}
       {cellId && (
         <div className="absolute bottom-4 left-4 bg-gray-800/80 text-white px-3 py-2 rounded-full text-sm z-10">
           Selected Cell: {cellId}

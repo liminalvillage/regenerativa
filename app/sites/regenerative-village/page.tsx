@@ -41,7 +41,7 @@ export default function RegenerativeVillagePage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/brickfactory/13.jpeg"
-            alt="Regenerative Village"
+            alt="Fabbrica del Terzo Settore"
             fill
             className="object-cover opacity-20"
             priority

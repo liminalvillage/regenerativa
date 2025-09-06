@@ -6,26 +6,81 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, MapPin, Users } from "lucide-react";
 import LanguageSelector from "@/components/LanguageSelector";
+import SectionNavigation from "@/components/SectionNavigation";
+import { useEffect, useState } from "react";
 
-const Navigation = () => {
+interface NavigationProps {
+  sections?: Array<{ id: string; label: string }>;
+  autoDetectSections?: boolean;
+}
+
+const Navigation = ({ sections: propSections, autoDetectSections = true }: NavigationProps = {}) => {
+  const [detectedSections, setDetectedSections] = useState<Array<{ id: string; label: string }>>([]);
+
+  // Auto-detect sections on the page
+  useEffect(() => {
+    if (!autoDetectSections) return;
+
+    const detectSections = () => {
+      const sectionElements = document.querySelectorAll('section[id]');
+      const sections = Array.from(sectionElements).map(section => {
+        const id = section.id;
+        // Try to find a heading within the section for the label
+        const heading = section.querySelector('h1, h2, h3');
+        let label = id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+
+        if (heading) {
+          const headingText = heading.textContent?.trim();
+          if (headingText && headingText.length > 0 && headingText.length < 30) {
+            label = headingText;
+          }
+        }
+
+        return { id, label };
+      }).filter(section => section.id !== ''); // Filter out empty IDs
+
+      setDetectedSections(sections);
+    };
+
+    // Initial detection
+    detectSections();
+
+    // Re-detect on navigation changes (for SPA routing)
+    const observer = new MutationObserver(detectSections);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, [autoDetectSections]);
+
+  // Use prop sections if provided, otherwise use detected sections
+  const sections = propSections || detectedSections;
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo - Left */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 relative">
-              <Image
-                src="/logotransparent.png"
-                alt="Regenerativa Logo"
-                fill
-                className="object-contain"
-                sizes="32px"
+          {/* Logo and Section Navigation - Left */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="h-8 w-8 relative">
+                <Image
+                  src="/logotransparent.png"
+                  alt="Regenerativa Logo"
+                  fill
+                  className="object-contain"
+                  sizes="32px"
+                />
+              </div>
+              <span className="font-display text-xl font-bold">Regenerativa</span>
+            </Link>
+            {sections && sections.length > 0 && (
+              <SectionNavigation
+                position="inline"
+                sections={sections}
+                className="flex"
               />
-            </div>
-            <span className="font-display text-xl font-bold">Regenerativa</span>
-          </Link>
+            )}
+          </div>
 
           {/* Main Navigation - Center */}
           <div className="hidden md:flex items-center space-x-6">

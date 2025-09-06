@@ -13,9 +13,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section id="hero" className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="absolute inset-0 z-0">
           <Image
             src="/banner3.jpg"
@@ -39,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Principles */}
-      <section className="py-16 lg:py-24">
+      <section id="vision" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* Interactive Hexagonal Map */}
-      <section className="py-16 lg:py-24 bg-muted/20">
+      <section id="map" className="py-16 lg:py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -129,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 bg-muted/30">
+      <section id="team" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -217,7 +217,7 @@ export default function AboutPage() {
       </section>
 
       {/* Governance */}
-      <section className="py-16 lg:py-24">
+      <section id="governance" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -281,7 +281,7 @@ export default function AboutPage() {
       </section>
 
       {/* Impact & Roadmap */}
-      <section className="py-16 bg-muted/30">
+      <section id="impact" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -379,7 +379,7 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24">
+      <section id="join" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">

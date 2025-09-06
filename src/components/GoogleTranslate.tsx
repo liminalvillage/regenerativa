@@ -11,7 +11,7 @@ export default function GoogleTranslate() {
         try {
           new google.translate.TranslateElement({
             pageLanguage: 'en',
-            includedLanguages: 'es,fr,en',
+            includedLanguages: 'es,fr,en,it',
             autoDisplay: false,
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
           }, 'google_translate_element');
