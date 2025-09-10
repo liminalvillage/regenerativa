@@ -1040,6 +1040,15 @@ export default function FractalComposableMap({
           highlightHexagons(visibleHighlightedHexes, highlightColor)
         );
       }
+    } else {
+      // Clear highlighted hexagons when none are visible
+      const highlightedSource = mapInstance.getSource("highlighted-hexagons");
+      if (highlightedSource) {
+        (highlightedSource as maplibregl.GeoJSONSource).setData({
+          type: "FeatureCollection",
+          features: []
+        });
+      }
     }
 
     const h3res = getResolution(currentZoom);
@@ -1152,7 +1161,7 @@ export default function FractalComposableMap({
                           !window.location.href.includes('127.0.0.1');
       if (isProduction) {
         console.log('[PRODUCTION] Production environment detected');
-        console.log('[PRODUCTION] If fetch requests fail, embedded projects will be used');
+        console.log('[PRODUCTION] Loading KML files for regenerative projects');
       }
 
       let kmlText = '';
@@ -1585,7 +1594,7 @@ export default function FractalComposableMap({
     });
 
     map.current.on("style.load", () => {
-      console.log("Map style loaded");
+      console.log("Map style loaded - initializing hexagon layers");
       
       // Add hexagon grid sources and layers
       map.current?.addSource("hexagon-grid", {

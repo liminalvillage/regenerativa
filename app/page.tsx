@@ -1,3 +1,5 @@
+'use client';
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -5,8 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MapPin, Users, Calendar, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "@/hooks/useTranslationSimple";
 
 export default function HomePage() {
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen">
@@ -27,21 +31,21 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              Building a Global Network for <span className="text-primary">Integral Care</span>
+              {t("hero.title")}
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              A global network for integral care through bioregional communities and regenerative practices.
+              {t("hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/join">
-                  Join the Movement
+                  {t("hero.cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/network">
-                  Explore Network
+                  {t("hero.explore")}
                   <MapPin className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -55,10 +59,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Watch Our Introduction
+              {t("video.title")}
             </h2>
             <p className="text-lg lg:text-xl text-white/90 max-w-2xl mx-auto">
-              Learn more about our vision to restore and revitalize our planet and our lives
+              {t("video.subtitle")}
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
@@ -81,33 +85,31 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-                What is Regenerativa?
+                {t("about.title")}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                We&apos;re building a global network of bioregional communities connected through fractal and composable micro-economies.
-                Each cell represents a local catchment area where people collaborate on regenerative projects,
-                share resources, and build resilient systems.
+                {t("about.description")}
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <Hexagon className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Fractal and Composable Networks</h3>
-                    <p className="text-sm text-muted-foreground">Local communities organized in H3 fractal cells for optimal resource sharing.</p>
+                    <h3 className="font-semibold">{t("about.fractalNetworks")}</h3>
+                    <p className="text-sm text-muted-foreground">{t("about.fractalNetworksDesc")}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Leaf className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Regenerative Practices</h3>
-                    <p className="text-sm text-muted-foreground">Permaculture, sustainable agriculture, and circular economy principles.</p>
+                    <h3 className="font-semibold">{t("about.regenerativePractices")}</h3>
+                    <p className="text-sm text-muted-foreground">{t("about.regenerativePracticesDesc")}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Heart className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Integral Regeneration</h3>
-                    <p className="text-sm text-muted-foreground">Holistic approach addressing social, ecological, and economic systems.</p>
+                    <h3 className="font-semibold">{t("about.integralRegeneration")}</h3>
+                    <p className="text-sm text-muted-foreground">{t("about.integralRegenerationDesc")}</p>
                   </div>
                 </div>
               </div>
@@ -132,10 +134,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Our Sites
+              {t("sites.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Visit our regenerative communities and see sustainable living in action.
+              {t("sites.subtitle")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -152,14 +154,13 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Home className="h-5 w-5 mr-2 text-primary" />
-                  Liminal Village
+                  {t("sites.liminalVillage.title")}
                 </CardTitle>
-                <CardDescription>Community hub</CardDescription>
+                <CardDescription>{t("sites.liminalVillage.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our central community hub where innovation meets tradition,
-                  serving as the heart of our regenerative network.
+                  {t("sites.liminalVillage.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/sites/liminalvillage">
@@ -183,14 +184,13 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Factory className="h-5 w-5 mr-2 text-primary" />
-                  Fabbrica del Terzo Settore
+                  {t("sites.brickFactory.title")}
                 </CardTitle>
-                <CardDescription>Regenerative Factory</CardDescription>
+                <CardDescription>{t("sites.brickFactory.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  A third sector factory focused on regenerative practices, circular economy,
-                  and sustainable production methodologies.
+                  {t("sites.brickFactory.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/sites/brickfactory">
@@ -214,14 +214,13 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <TreePine className="h-5 w-5 mr-2 text-primary" />
-                  Casa Selva
+                  {t("sites.casaSelva.title")}
                 </CardTitle>
-                <CardDescription>Forest sanctuary</CardDescription>
+                <CardDescription>{t("sites.casaSelva.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  A forest sanctuary blending traditional architecture with modern regenerative living
-                  in perfect harmony with nature.
+                  {t("sites.casaSelva.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/sites/casaselva">
@@ -240,10 +239,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Our Growing Network
+              {t("network.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of people already building regenerative communities across the globe.
+              {t("network.subtitle")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -251,43 +250,43 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <MapPin className="h-5 w-5 mr-2" />
-                  Active Nodes
+                  {t("network.activeNodes")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold text-primary">12</p>
-                <p className="text-sm text-muted-foreground">Regenerative communities</p>
+                <p className="text-sm text-muted-foreground">{t("network.activeNodesDesc")}</p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Users className="h-5 w-5 mr-2" />
-                  Community Members
+                  {t("network.communityMembers")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold text-primary">2,847</p>
-                <p className="text-sm text-muted-foreground">Active participants</p>
+                <p className="text-sm text-muted-foreground">{t("network.communityMembersDesc")}</p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Globe className="h-5 w-5 mr-2" />
-                  Fractal Communities
+                  {t("network.fractalCommunities")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold text-primary">156</p>
-                <p className="text-sm text-muted-foreground">Local micro-economies</p>
+                <p className="text-sm text-muted-foreground">{t("network.fractalCommunitiesDesc")}</p>
               </CardContent>
             </Card>
           </div>
           <div className="text-center">
             <Button asChild>
               <Link href="/network">
-                Explore Interactive Map
+                {t("network.explore")}
                 <MapPin className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -300,10 +299,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Ways to Get Involved
+              {t("engage.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose your path to contribute to the regeneration movement.
+              {t("engage.subtitle")}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -312,15 +311,15 @@ export default function HomePage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Join</CardTitle>
+                <CardTitle>{t("engage.join.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Tell us about yourself and get connected with regenerative communities worldwide.
+                  {t("engage.join.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <a href="https://wequest.typeform.com/to/q0BDRm7z" target="_blank" rel="noopener noreferrer">
-                    Get Connected
+                    {t("engage.join.cta")}
                   </a>
                 </Button>
               </CardContent>
@@ -330,14 +329,14 @@ export default function HomePage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Heart className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Contribute</CardTitle>
+                <CardTitle>{t("engage.contribute.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Share your skills, time, and expertise to support regenerative projects.
+                  {t("engage.contribute.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/contribute">Share Skills</Link>
+                  <Link href="/contribute">{t("engage.contribute.cta")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -346,14 +345,14 @@ export default function HomePage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Leaf className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Stake</CardTitle>
+                <CardTitle>{t("engage.stake.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Invest in regenerative projects and receive receipt tokens for future benefits.
+                  {t("engage.stake.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/stake">Stake Funds</Link>
+                  <Link href="/stake">{t("engage.stake.cta")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -362,14 +361,14 @@ export default function HomePage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Visit</CardTitle>
+                <CardTitle>{t("engage.visit.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Experience regenerative living firsthand at Liminal Village and other network nodes.
+                  {t("engage.visit.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/visit">Plan Visit</Link>
+                  <Link href="/visit">{t("engage.visit.cta")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -382,10 +381,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Upcoming Events
+              {t("events.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join our Lunation Protocol and seasonal celebrations.
+              {t("events.subtitle")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -393,17 +392,17 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Calendar className="h-5 w-5 mr-2" />
-                  Next Lunation
+                  {t("events.nextLunation.title")}
                 </CardTitle>
-                <CardDescription>Monthly co-creation rhythm</CardDescription>
+                <CardDescription>{t("events.nextLunation.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold mb-2">September 15-30, 2025</p>
+                <p className="text-lg font-semibold mb-2">{t("events.nextLunation.date")}</p>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Join our monthly cycle of planning, building, and celebrating regenerative projects.
+                  {t("events.nextLunation.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/events">Learn More</Link>
+                  <Link href="/events">{t("events.nextLunation.cta")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -411,17 +410,17 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Calendar className="h-5 w-5 mr-2" />
-                  Autumn Equinox
+                  {t("events.autumnEquinox.title")}
                 </CardTitle>
-                <CardDescription>Seasonal celebration</CardDescription>
+                <CardDescription>{t("events.autumnEquinox.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold mb-2">September 22, 2025</p>
+                <p className="text-lg font-semibold mb-2">{t("events.autumnEquinox.date")}</p>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Celebrate the harvest and prepare for the winter season with community rituals.
+                  {t("events.autumnEquinox.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/events">Join Celebration</Link>
+                  <Link href="/events">{t("events.autumnEquinox.cta")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -429,17 +428,17 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Calendar className="h-5 w-5 mr-2" />
-                  Permaculture Workshop
+                  {t("events.permacultureWorkshop.title")}
                 </CardTitle>
-                <CardDescription>Skill building</CardDescription>
+                <CardDescription>{t("events.permacultureWorkshop.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold mb-2">October 5-7, 2025</p>
+                <p className="text-lg font-semibold mb-2">{t("events.permacultureWorkshop.date")}</p>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Learn regenerative design principles at Liminal Village.
+                  {t("events.permacultureWorkshop.description")}
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/events">Register Now</Link>
+                  <Link href="/events">{t("events.permacultureWorkshop.cta")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -447,7 +446,7 @@ export default function HomePage() {
           <div className="text-center">
             <Button asChild>
               <Link href="/events">
-                View All Events
+                {t("events.viewAll")}
                 <Calendar className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -460,10 +459,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Latest Stories
+              {t("stories.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover how communities are implementing regenerative practices around the world.
+              {t("stories.subtitle")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -478,12 +477,12 @@ export default function HomePage() {
                 />
               </div>
               <CardHeader>
-                <CardTitle>Clay House Construction Begins</CardTitle>
-                <CardDescription>Liminal Village, Italy</CardDescription>
+                <CardTitle>{t("stories.clayHouse.title")}</CardTitle>
+                <CardDescription>{t("stories.clayHouse.location")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Our first clay house project is underway, showcasing sustainable building techniques and local materials.
+                  {t("stories.clayHouse.description")}
                 </p>
                 <Button variant="link" size="sm" className="p-0">
                   Read More <ArrowRight className="ml-1 h-3 w-3" />
@@ -501,12 +500,12 @@ export default function HomePage() {
                 />
               </div>
               <CardHeader>
-                <CardTitle>New Fractal Community Forms</CardTitle>
-                <CardDescription>Tuscany Region</CardDescription>
+                <CardTitle>{t("stories.newCommunity.title")}</CardTitle>
+                <CardDescription>{t("stories.newCommunity.location")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  A new fractal and composable community has reached 500 members, creating a local micro-economy focused on food sovereignty.
+                  {t("stories.newCommunity.description")}
                 </p>
                 <Button variant="link" size="sm" className="p-0">
                   Read More <ArrowRight className="ml-1 h-3 w-3" />
@@ -524,12 +523,12 @@ export default function HomePage() {
                 />
               </div>
               <CardHeader>
-                <CardTitle>Regenerative Finance Pilot</CardTitle>
-                <CardDescription>Global Network</CardDescription>
+                <CardTitle>{t("stories.regenFinance.title")}</CardTitle>
+                <CardDescription>{t("stories.regenFinance.location")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Launching our first receipt token system for funding regenerative infrastructure projects.
+                  {t("stories.regenFinance.description")}
                 </p>
                 <Button variant="link" size="sm" className="p-0">
                   Read More <ArrowRight className="ml-1 h-3 w-3" />

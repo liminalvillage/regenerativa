@@ -21,55 +21,8 @@ const languages: Language[] = [
   { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
   { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
-  { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
   { code: 'it', name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹' },
-  { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹' },
-  { code: 'ru', name: 'Russian', nativeName: 'Русский', flag: '🇷🇺' },
-  { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
-  { code: 'zh-CN', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
-  { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
-  { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦' },
-  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳' },
-  { code: 'th', name: 'Thai', nativeName: 'ไทย', flag: '🇹🇭' },
-  { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳' },
-  { code: 'id', name: 'Indonesian', nativeName: 'Bahasa Indonesia', flag: '🇮🇩' },
-  { code: 'ms', name: 'Malay', nativeName: 'Bahasa Melayu', flag: '🇲🇾' },
-  { code: 'fil', name: 'Filipino', nativeName: 'Filipino', flag: '🇵🇭' },
   { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' },
-  { code: 'pl', name: 'Polish', nativeName: 'Polski', flag: '🇵🇱' },
-  { code: 'sv', name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪' },
-  { code: 'da', name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰' },
-  { code: 'no', name: 'Norwegian', nativeName: 'Norsk', flag: '🇳🇴' },
-  { code: 'fi', name: 'Finnish', nativeName: 'Suomi', flag: '🇫🇮' },
-  { code: 'hu', name: 'Hungarian', nativeName: 'Magyar', flag: '🇭🇺' },
-  { code: 'cs', name: 'Czech', nativeName: 'Čeština', flag: '🇨🇿' },
-  { code: 'sk', name: 'Slovak', nativeName: 'Slovenčina', flag: '🇸🇰' },
-  { code: 'sl', name: 'Slovenian', nativeName: 'Slovenščina', flag: '🇸🇮' },
-  { code: 'hr', name: 'Croatian', nativeName: 'Hrvatski', flag: '🇭🇷' },
-  { code: 'bs', name: 'Bosnian', nativeName: 'Bosanski', flag: '🇧🇦' },
-  { code: 'sr', name: 'Serbian', nativeName: 'Српски', flag: '🇷🇸' },
-  { code: 'bg', name: 'Bulgarian', nativeName: 'Български', flag: '🇧🇬' },
-  { code: 'ro', name: 'Romanian', nativeName: 'Română', flag: '🇷🇴' },
-  { code: 'el', name: 'Greek', nativeName: 'Ελληνικά', flag: '🇬🇷' },
-  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷' },
-  { code: 'he', name: 'Hebrew', nativeName: 'עברית', flag: '🇮🇱' },
-  { code: 'fa', name: 'Persian', nativeName: 'فارسی', flag: '🇮🇷' },
-  { code: 'ur', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰' },
-  { code: 'bn', name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩' },
-  { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી', flag: '🇮🇳' },
-  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', flag: '🇮🇳' },
-  { code: 'or', name: 'Odia', nativeName: 'ଓଡ଼ିଆ', flag: '🇮🇳' },
-  { code: 'as', name: 'Assamese', nativeName: 'অসমীয়া', flag: '🇮🇳' },
-  { code: 'mr', name: 'Marathi', nativeName: 'मराठी', flag: '🇮🇳' },
-  { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', flag: '🇮🇳' },
-  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు', flag: '🇮🇳' },
-  { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ', flag: '🇮🇳' },
-  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം', flag: '🇮🇳' },
-  { code: 'km', name: 'Khmer', nativeName: 'ខ្មែរ', flag: '🇰🇭' },
-  { code: 'lo', name: 'Lao', nativeName: 'ລາວ', flag: '🇱🇦' },
-  { code: 'my', name: 'Burmese', nativeName: 'မြန်မာ', flag: '🇲🇲' },
-  { code: 'ne', name: 'Nepali', nativeName: 'नेपाली', flag: '🇳🇵' },
-  { code: 'si', name: 'Sinhala', nativeName: 'සිංහල', flag: '🇱🇰' },
 ];
 
 export default function LanguageSelector() {
@@ -79,22 +32,45 @@ export default function LanguageSelector() {
   // Initialize current language and listen for changes
   useEffect(() => {
     const initializeLanguage = () => {
-      // Check for stored language preference first
+      const supportedLanguages = languages.map(l => l.code);
+      
+      // Check if user has manually set a language before
       const storedLanguage = localStorage.getItem('regenerativa-language');
-      if (storedLanguage && ['en', 'es', 'fr'].includes(storedLanguage)) {
+      const hasManuallySetLanguage = localStorage.getItem('regenerativa-language-manually-set') === 'true';
+      
+      if (storedLanguage && supportedLanguages.includes(storedLanguage) && hasManuallySetLanguage) {
         setCurrentLanguage(storedLanguage);
-        console.log('Set language from localStorage:', storedLanguage);
+        console.log('LanguageSelector: Loading manually set language:', storedLanguage);
         return;
       }
 
-      // Detect browser language
-      const browserLang = navigator.language || 'en';
+      // Auto-detect browser language for first-time visitors or when no manual setting exists
+      const browserLang = navigator.language || navigator.languages?.[0] || 'en';
       const detectedLang = browserLang.split('-')[0];
 
-      if (['en', 'es', 'fr'].includes(detectedLang)) {
+      if (supportedLanguages.includes(detectedLang)) {
         setCurrentLanguage(detectedLang);
-        console.log('Detected browser language:', detectedLang);
+        console.log('LanguageSelector: Auto-detected browser language:', detectedLang, 'from', browserLang);
+        localStorage.setItem('regenerativa-language', detectedLang);
+        return;
       }
+
+      // Try fallback languages from browser preferences
+      if (navigator.languages) {
+        for (const lang of navigator.languages) {
+          const fallbackLang = lang.split('-')[0];
+          if (supportedLanguages.includes(fallbackLang)) {
+            setCurrentLanguage(fallbackLang);
+            console.log('LanguageSelector: Auto-detected fallback language:', fallbackLang, 'from', lang);
+            localStorage.setItem('regenerativa-language', fallbackLang);
+            return;
+          }
+        }
+      }
+
+      // Default to English
+      console.log('LanguageSelector: No supported browser language detected, defaulting to English');
+      setCurrentLanguage('en');
     };
 
     initializeLanguage();
@@ -118,12 +94,14 @@ export default function LanguageSelector() {
   const handleLanguageChange = (language: Language) => {
     if (language.code === currentLanguage) return;
 
-    console.log('Changing language to:', language.name, '(', language.code, ')');
+    console.log('Manually changing language to:', language.name, '(', language.code, ')');
     setIsChanging(true);
 
-    // Store in localStorage for synchronization
-    if (['en', 'es', 'fr'].includes(language.code)) {
+    // Store in localStorage for synchronization and mark as manually set
+    const supportedLanguages = languages.map(l => l.code);
+    if (supportedLanguages.includes(language.code)) {
       localStorage.setItem('regenerativa-language', language.code);
+      localStorage.setItem('regenerativa-language-manually-set', 'true');
       setCurrentLanguage(language.code);
 
       // Dispatch custom event to notify other components

@@ -6,13 +6,13 @@ const nextConfig: NextConfig = {
   //   root: __dirname,
   // },
 
-  // Ensure public directory files are copied
-  output: 'export',
-  trailingSlash: true,
+  // Comment out static export to enable server functionality for map
+  // output: 'export',
+  // trailingSlash: true,
 
   // Image optimization settings
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true, // Keep this for compatibility
   },
 };
 
