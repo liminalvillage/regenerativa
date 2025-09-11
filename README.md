@@ -1,10 +1,10 @@
-# Regenerativa Website
+# ReGenerativa Website
 
-A modern, responsive website for Regenerativa APS - a global initiative for integral regeneration and EcoCivilization 2030.
+A modern, responsive website for ReGenerativa APS - a global initiative for integral regeneration and EcoCivilization 2030.
 
 ## 🎯 Overview
 
-This website serves as the primary digital presence for Regenerativa, presenting the organization as a credible global initiative for integral regeneration. It converts visitors into subscribers, contributors, partners, and node leads through clear contribution paths and engaging content.
+This website serves as the primary digital presence for ReGenerativa, presenting the organization as a credible global initiative for integral regeneration. It converts visitors into subscribers, contributors, partners, and node leads through clear contribution paths and engaging content.
 
 ## ✨ Features
 

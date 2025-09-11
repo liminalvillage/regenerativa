@@ -25,12 +25,12 @@ const translations = {
     },
     "hero": {
       "title": "Building a Global Network for Integral Care",
-      "subtitle": "A global network for integral care through bioregional communities and regenerative practices.",
+      "subtitle": "Connecting bioregional communities through regenerative practices and fractal collaboration.",
       "cta": "Join the Movement",
       "explore": "Explore Network"
     },
     "about": {
-      "title": "What is Regenerativa?",
+      "title": "What is ReGenerativa?",
       "description": "We're building a global network of bioregional communities connected through fractal and composable micro-economies. Each cell represents a local catchment area where people collaborate on regenerative projects, share resources, and build resilient systems.",
       "fractalNetworks": "Fractal and Composable Networks",
       "fractalNetworksDesc": "Local communities organized in H3 fractal cells for optimal resource sharing.",
@@ -280,12 +280,12 @@ const translations = {
     },
     "hero": {
       "title": "Construyendo una Red Global para el Cuidado Integral",
-      "subtitle": "Una red global para el cuidado integral a través de comunidades biorregionales y prácticas regenerativas.",
+      "subtitle": "Conectando comunidades biorregionales a través de prácticas regenerativas y colaboración fractal.",
       "cta": "Únete al Movimiento",
       "explore": "Explorar Red"
     },
     "about": {
-      "title": "¿Qué es Regenerativa?",
+      "title": "¿Qué es ReGenerativa?",
       "description": "Estamos construyendo una red global de comunidades biorregionales conectadas a través de micro-economías fractales y componibles. Cada célula representa un área de captación local donde las personas colaboran en proyectos regenerativos, comparten recursos y construyen sistemas resilientes.",
       "fractalNetworks": "Redes Fractales y Componibles",
       "fractalNetworksDesc": "Comunidades locales organizadas en células fractales H3 para compartir recursos de manera óptima.",
@@ -535,12 +535,12 @@ const translations = {
     },
     "hero": {
       "title": "Construire un Réseau Global pour les Soins Intégraux",
-      "subtitle": "Un réseau global pour les soins intégraux à travers les communautés biorégionales et les pratiques régénératives.",
+      "subtitle": "Connecter les communautés biorégionales à travers les pratiques régénératives et la collaboration fractale.",
       "cta": "Rejoindre le Mouvement",
       "explore": "Explorer le Réseau"
     },
     "about": {
-      "title": "Qu'est-ce que Regenerativa ?",
+      "title": "Qu'est-ce que ReGenerativa ?",
       "description": "Nous construisons un réseau global de communautés biorégionales connectées à travers des micro-économies fractales et composables. Chaque cellule représente un bassin versant local où les personnes collaborent sur des projets régénératifs, partagent des ressources et construisent des systèmes résilients.",
       "fractalNetworks": "Réseaux Fractales et Composables",
       "fractalNetworksDesc": "Communautés locales organisées en cellules fractales H3 pour un partage optimal des ressources.",
@@ -790,12 +790,12 @@ const translations = {
     },
     "hero": {
       "title": "Costruire una Rete Globale per la Cura Integrale",
-      "subtitle": "Una rete globale per la cura integrale attraverso comunità bioregionali e pratiche rigenerative.",
+      "subtitle": "Connettere comunità bioregionali attraverso pratiche rigenerative e collaborazione frattale.",
       "cta": "Unisciti al Movimento",
       "explore": "Esplora la Rete"
     },
     "about": {
-      "title": "Cos'è Regenerativa?",
+      "title": "Cos'è ReGenerativa?",
       "description": "Stiamo costruendo una rete globale di comunità bioregionali connesse attraverso micro-economie frattali e componibili. Ogni cellula rappresenta un bacino locale dove le persone collaborano su progetti rigenerativi, condividono risorse e costruiscono sistemi resilienti.",
       "fractalNetworks": "Reti Frattali e Componibili",
       "fractalNetworksDesc": "Comunità locali organizzate in cellule frattali H3 per una condivisione ottimale delle risorse.",
@@ -1045,12 +1045,12 @@ const translations = {
     },
     "hero": {
       "title": "Een Wereldwijd Netwerk Bouwen voor Integrale Zorg",
-      "subtitle": "Een wereldwijd netwerk voor integrale zorg door bioregionale gemeenschappen en regeneratieve praktijken.",
+      "subtitle": "Bioregionale gemeenschappen verbinden door regeneratieve praktijken en fractale samenwerking.",
       "cta": "Word Lid van de Beweging",
       "explore": "Verken Netwerk"
     },
     "about": {
-      "title": "Wat is Regenerativa?",
+      "title": "Wat is ReGenerativa?",
       "description": "We bouwen een wereldwijd netwerk van bioregionale gemeenschappen verbonden door fractale en samengestelde micro-economieën. Elke cel vertegenwoordigt een lokaal stroomgebied waar mensen samenwerken aan regeneratieve projecten, middelen delen en veerkrachtige systemen bouwen.",
       "fractalNetworks": "Fractale en Samengestelde Netwerken",
       "fractalNetworksDesc": "Lokale gemeenschappen georganiseerd in H3 fractale cellen voor optimaal delen van middelen.",

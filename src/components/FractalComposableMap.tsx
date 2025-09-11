@@ -1033,21 +1033,23 @@ export default function FractalComposableMap({
     );
 
     // Update the highlighted hexagons if any are visible at current resolution
-    if (visibleHighlightedHexes.size > 0) {
-      const highlightedSource = mapInstance.getSource("highlighted-hexagons");
-      if (highlightedSource) {
+    const highlightedSource = mapInstance.getSource("highlighted-hexagons");
+    if (highlightedSource) {
+      if (visibleHighlightedHexes.size > 0) {
         (highlightedSource as maplibregl.GeoJSONSource).setData(
           highlightHexagons(visibleHighlightedHexes, highlightColor)
         );
-      }
-    } else {
-      // Clear highlighted hexagons when none are visible
-      const highlightedSource = mapInstance.getSource("highlighted-hexagons");
-      if (highlightedSource) {
-        (highlightedSource as maplibregl.GeoJSONSource).setData({
-          type: "FeatureCollection",
-          features: []
-        });
+        console.log(`[Map] Rendered ${visibleHighlightedHexes.size} highlighted hexagons for lens: ${lens}`);
+      } else {
+        // Only clear if we have no hexagons for this lens at all, not just at current resolution
+        const allHexesForLens = currentLensData[lens as LensType] || new Set();
+        if (allHexesForLens.size === 0) {
+          (highlightedSource as maplibregl.GeoJSONSource).setData({
+            type: "FeatureCollection",
+            features: []
+          });
+          console.log(`[Map] Cleared highlighted hexagons - no data for lens: ${lens}`);
+        }
       }
     }
 
@@ -1078,6 +1080,12 @@ export default function FractalComposableMap({
 
   // Fetch lens data from HoloSphere
   const fetchLensData = async (lens: string, mapInstance: maplibregl.Map) => {
+    // Skip HoloSphere data fetching for regenerative lens - data comes from KML
+    if (lens === 'regenerative') {
+      console.log('[Map] Skipping HoloSphere fetch for regenerative lens - using KML data');
+      return;
+    }
+
     if (!holosphere.current || !mapInstance) return;
 
     const bounds = mapInstance.getBounds();
@@ -1137,13 +1145,17 @@ export default function FractalComposableMap({
 
     await Promise.all(fetchPromises);
     
-    // Update lens data with hexagons that have content
-    setLensData(prev => ({
-      ...prev,
-      [lens as LensType]: hexagonsWithContent
-    }));
+    // Update lens data with hexagons that have content, merging with existing data
+    setLensData(prev => {
+      const existingHexes = prev[lens as LensType] || new Set();
+      const mergedHexes = new Set([...existingHexes, ...hexagonsWithContent]);
+      return {
+        ...prev,
+        [lens as LensType]: mergedHexes
+      };
+    });
     
-    console.log(`[Map] Updated ${hexagonsWithContent.size} hexagons for ${lens}`);
+    console.log(`[Map] Updated ${hexagonsWithContent.size} hexagons for ${lens}, total: ${hexagonsWithContent.size}`);
   };
 
   // Load and parse KMZ/KML data for regenerative projects
@@ -1803,22 +1815,25 @@ export default function FractalComposableMap({
 
     window.addEventListener('resize', handleResize);
 
-    // Add movement handlers
+    // Add movement handlers with throttling
+    let renderTimeout: NodeJS.Timeout | null = null;
+    
+    const throttledRender = () => {
+      if (renderTimeout) clearTimeout(renderTimeout);
+      renderTimeout = setTimeout(() => {
+        if (map.current && currentLens) {
+          renderHexes(map.current, currentLens);
+        }
+      }, 100); // Throttle to 100ms
+    };
+
     map.current.on("movestart", () => {
-      // Cancel any pending operations
+      // Cancel any pending render operations during movement
+      if (renderTimeout) clearTimeout(renderTimeout);
     });
 
-    map.current.on("move", () => {
-      if (map.current && currentLens) {
-        renderHexes(map.current, currentLens);
-      }
-    });
-
-    map.current.on("zoom", () => {
-      if (map.current && currentLens) {
-        renderHexes(map.current, currentLens);
-      }
-    });
+    map.current.on("move", throttledRender);
+    map.current.on("zoom", throttledRender);
 
     map.current.on("moveend", () => {
       // Schedule data fetch after movement with a delay
@@ -1865,6 +1880,7 @@ export default function FractalComposableMap({
     // Cleanup function
     return () => {
       window.removeEventListener('resize', handleResize);
+      if (renderTimeout) clearTimeout(renderTimeout);
       if (map.current) {
         map.current.remove();
         map.current = null;
