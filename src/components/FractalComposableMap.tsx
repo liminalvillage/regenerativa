@@ -1167,12 +1167,12 @@ export default function FractalComposableMap({
       console.log('[KML Loader] Loading regenerative projects...');
       console.log('[KML Loader] Current URL:', typeof window !== 'undefined' ? window.location.href : 'SSR');
 
-      // Check if we're in production and might have network restrictions
+      // Check if we're in production (static export environment)
       const isProduction = typeof window !== 'undefined' &&
                           !window.location.href.includes('localhost') &&
                           !window.location.href.includes('127.0.0.1');
       if (isProduction) {
-        console.log('[PRODUCTION] Production environment detected');
+        console.log('[PRODUCTION] Static export environment detected');
         console.log('[PRODUCTION] Loading KML files for regenerative projects');
       }
 

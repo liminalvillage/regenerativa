@@ -76,6 +76,6 @@
 # [build.hooks]
 #   init = "echo 'Starting build...'"
 
-# Plugins (if needed)
+# Plugins (not needed for static export)
 # [[plugins]]
 #   package = "@netlify/plugin-nextjs"

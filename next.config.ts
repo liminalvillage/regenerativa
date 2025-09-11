@@ -6,13 +6,13 @@ const nextConfig: NextConfig = {
   //   root: __dirname,
   // },
 
-  // Comment out static export to enable server functionality for map
-  // output: 'export',
-  // trailingSlash: true,
+  // Enable static export for Netlify deployment
+  output: 'export',
+  trailingSlash: true,
 
   // Image optimization settings
   images: {
-    unoptimized: true, // Keep this for compatibility
+    unoptimized: true, // Required for static export
   },
 };
 
