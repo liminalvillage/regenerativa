@@ -160,15 +160,15 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Fabbrica del Terzo Settore",
-        "subtitle": "A co-living co-creation factory and maker space fostering community-owned initiatives and third-sector entities.",
+        "title": "Co-Creation Space for Symbiotic Innovation",
+        "subtitle": "A co-living co-creation space where new collaborations and symbiotic relationships flourish through shared innovation and community-driven initiatives.",
         "description": "Discover our vision and join the community",
         "cta": "Join the Community",
         "discoverVision": "Discover the Vision"
       },
       "vision": {
         "title": "Vision",
-        "description": "\"Not just a factory, but a thriving ecosystem of co-living, co-creation, and community-owned initiatives. A maker space where third-sector entities collaborate on regenerative practices, circular economy, and sustainable production: a pioneering model that integrates manufacturing, innovation hubs, and communal living spaces.\"",
+        "description": "\"A thriving ecosystem where collaboration meets symbiosis. This co-creation space brings together diverse minds and initiatives to forge new partnerships, innovative solutions, and regenerative practices. Here, third-sector entities and changemakers unite to create synergistic relationships that benefit both community and environment.\"",
         "sustainableLiving": "Co-Creation & Making",
         "sustainableLivingDesc": "Collaborative maker space with shared tools and resources",
         "activeCommunity": "Co-Living Community",
@@ -178,11 +178,11 @@ const translations = {
       },
       "location": {
         "title": "Location & History",
-        "description": "\"Nestled in the heart of the Marche region, our factory offers the perfect blend of natural beauty and strategic accessibility. Located just 10 minutes from the historic center of Ascoli Piceno, the cultural capital of the region, it provides the perfect environment for sustainable production.\"",
+        "description": "\"Nestled in the heart of the Marche region, our co-creation space offers the perfect blend of natural beauty and strategic accessibility. Located just 10 minutes from the historic center of Ascoli Piceno, it provides the ideal environment where diverse collaborations can flourish and symbiotic relationships can take root.\"",
         "size": "Size & Scale",
-        "sizeDesc": "About 3 hectares of land with building capacity of 6000m³, dedicated to sustainable production, innovation spaces, community areas, and regenerative practices",
+        "sizeDesc": "About 3 hectares of land with building capacity of 6000m³, dedicated to co-creation workshops, collaboration spaces, community areas, and symbiotic innovation projects",
         "history": "Historical Context",
-        "historyDesc": "Built on ancient manufacturing traditions with a vision for the future, combining historical craftsmanship with modern regenerative practices",
+        "historyDesc": "Built on ancient traditions of craftsmanship and collaboration, with a vision for fostering new forms of symbiotic partnerships and regenerative innovation",
         "ascoliPiceno": "Ascoli Piceno",
         "ascoliPicenoDesc": "10 minutes",
         "adriaticCoast": "Adriatic Coast",
@@ -202,7 +202,7 @@ const translations = {
       },
       "communityCulture": {
         "title": "Community and Culture",
-        "description": "\"The factory also becomes a cultural stage: exhibitions, conferences, workshops. Nature becomes the scenery, and the community the protagonist. Every event becomes an opportunity to showcase regenerative practices, collaborations, social impact projects.\"",
+        "description": "\"This co-creation space becomes a living stage for collaboration: exhibitions, conferences, workshops where new symbiotic relationships are born. Nature provides the backdrop as diverse communities converge to forge innovative partnerships and regenerative solutions.\"",
         "culturalEvents": "Cultural Events",
         "culturalEventsDesc": "Exhibitions, conferences, workshops",
         "socialInnovation": "Social Innovation",
@@ -212,13 +212,13 @@ const translations = {
       },
       "innovationCoworking": {
         "title": "Maker Space & Co-Creation Hub",
-        "description": "\"A thriving maker space and co-creation hub immersed in greenery. Shared workshops, fabrication labs, and spaces to incubate community-owned third-sector initiatives. Here co-living and co-creating coincide, fostering a continuous flow between communal life and collaborative innovation.\"",
+        "description": "\"A thriving ecosystem of collaboration immersed in nature. Shared workshops, co-creation labs, and spaces where symbiotic partnerships emerge organically. Here co-living and co-creating intersect, fostering continuous cross-pollination between diverse initiatives and innovative collaborations.\"",
         "workspaces": "Maker Workshops",
         "workspacesDesc": "Shared fabrication labs and maker spaces with tools for prototyping and creation",
         "workshopRooms": "Co-Creation Labs",
         "workshopRoomsDesc": "Collaborative spaces where community members co-create solutions and innovations",
         "startupIncubator": "Community Initiative Incubator",
-        "startupIncubatorDesc": "Nurturing community-owned third-sector entities and social impact initiatives"
+        "startupIncubatorDesc": "Cultivating symbiotic partnerships between diverse entities and fostering collaborative social impact initiatives"
       },
       "dailyLifeGastronomy": {
         "title": "Daily Life and Gastronomy",
@@ -240,22 +240,22 @@ const translations = {
       },
       "futureInnovation": {
         "title": "Future and Innovation",
-        "description": "\"A living laboratory for the future of the Third Sector. A factory that inspires new forms of solidarity economy, participatory governance and environmental sustainability. Fabbrica del Terzo Settore is not just a place to work: it's a place to build the future together.\"",
+        "description": "\"A living laboratory where symbiotic innovation thrives. This co-creation space nurtures new forms of collaborative economies, participatory governance, and regenerative partnerships. More than a workplace—it's where diverse entities unite to co-create sustainable futures through meaningful collaboration.\"",
         "solidarityEconomy": "Solidarity Economy",
         "solidarityEconomyDesc": "New economic models based on solidarity and sustainability",
         "participatoryGovernance": "Participatory Governance",
         "participatoryGovernanceDesc": "Collective decisions and active community participation",
         "environmentalSustainability": "Environmental Sustainability",
         "environmentalSustainabilityDesc": "Ecological practices integrated into daily operations",
-        "buildFuture": "Fabbrica del Terzo Settore is not just a place to work: it's a place to build the future together."
+        "buildFuture": "This co-creation space is where symbiotic relationships flourish and collaborative futures are born."
       },
       "villageVisions": {
-        "title": "Factory Visions",
-        "description": "Discover the concepts and visions of our factory through these images made on the actual location."
+        "title": "Co-Creation Visions",
+        "description": "Discover the concepts and visions of our collaborative space through these images made on the actual location."
       },
       "callToAction": {
-        "title": "Join the Future of the Third Sector",
-        "description": "Fabbrica del Terzo Settore is more than a factory: it's a movement to build together a sustainable, inclusive and innovative future. Your participation can make the difference.",
+        "title": "Join the Collaborative Revolution",
+        "description": "This co-creation space is more than a place—it's a movement where diverse minds unite to forge symbiotic relationships and sustainable futures. Your unique contribution can spark new collaborations.",
         "joinNow": "Join Now",
         "contactUs": "Contact Us"
       }
@@ -415,8 +415,8 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Fábrica del Tercer Sector",
-        "subtitle": "Una fábrica de co-living y co-creación con maker space que fomenta iniciativas comunitarias y entidades del tercer sector.",
+        "title": "Espacio de Co-Creación para Innovación Simbiótica",
+        "subtitle": "Un espacio de co-living y co-creación donde florecen nuevas colaboraciones y relaciones simbióticas a través de la innovación compartida.",
         "description": "Descubre nuestra visión y únete a la comunidad",
         "cta": "Únete a la Comunidad",
         "discoverVision": "Descubre la Visión"
@@ -670,8 +670,8 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Fabrique du Tiers Secteur",
-        "subtitle": "Une fabrique de co-living et co-création avec maker space favorisant les initiatives communautaires et entités du tiers secteur.",
+        "title": "Espace de Co-Création pour l'Innovation Symbiotique",
+        "subtitle": "Un espace de co-living et co-création où de nouvelles collaborations et relations symbiotiques s'épanouissent par l'innovation partagée.",
         "description": "Découvrez notre vision et rejoignez la communauté",
         "cta": "Rejoignez la Communauté",
         "discoverVision": "Découvrez la Vision"
