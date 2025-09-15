@@ -1115,14 +1115,14 @@ export default function FractalMap({
           console.log(`[HoloSphere] 🔍 Querying hexagon ${hexShort}... (${i + index + 1}/${hexagonArray.length}) for lens ${lens}`);
           
           // Try getAll method first
-          let items = await holosphere.current!.getAll(hex, lens);
+          const items = await holosphere.current!.getAll(hex, lens);
           
           // Also try subscribe method if available (non-blocking)
-          if (holosphere.current.subscribe && typeof holosphere.current.subscribe === 'function') {
+          if (holosphere.current && holosphere.current.subscribe && typeof holosphere.current.subscribe === 'function') {
             try {
               console.log(`[HoloSphere] 📡 Also subscribing to ${hexShort}... for real-time updates`);
-              holosphere.current.subscribe(hex, lens, (liveData: any) => {
-                if (liveData && liveData.length > 0) {
+              holosphere.current.subscribe(hex, lens, (liveData: unknown) => {
+                if (liveData && Array.isArray(liveData) && liveData.length > 0) {
                   console.log(`[HoloSphere] 🔔 LIVE UPDATE: Received ${liveData.length} items for ${hexShort}... via subscription`);
                   // Update the hexagon set if new data arrives
                   setLensData(prev => {

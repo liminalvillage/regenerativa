@@ -682,9 +682,9 @@ const translations = {
         "sustainableLiving": "Co-Création et Fabrication",
         "sustainableLivingDesc": "Maker space collaboratif avec outils et ressources partagés",
         "activeCommunity": "Communauté Co-Living",
-        "activeCommunityDesc": "Espaces de vie partagés favorisant la collaboration profonde"
-              "collectiveSpaces": "Espaces Collectifs",
-      "collectiveSpacesDesc": "Coworking et espaces communs inclusifs"
+        "activeCommunityDesc": "Espaces de vie partagés favorisant la collaboration profonde",
+        "collectiveSpaces": "Initiatives Communautaires",
+        "collectiveSpacesDesc": "Entités du tiers secteur et projets communautaires"
       },
       "location": {
         "title": "Emplacement et Histoire",
