@@ -1160,7 +1160,7 @@ export default function FractalMap({
             console.log(`[HoloSphere] 📦 Raw data for ${hexShort}:`, {
               type: typeof items,
               keys: typeof items === 'object' ? Object.keys(items) : 'not-object',
-              sample: typeof items === 'string' ? `"${items.slice(0, 50)}..."` : items
+              sample: typeof items === 'string' ? `"${(items as string).slice(0, 50)}..."` : items
             });
           } else {
             console.log(`[HoloSphere] ⚪ No response/null for hexagon ${hexShort}... (lens: ${lens})`);
@@ -1168,9 +1168,9 @@ export default function FractalMap({
         } catch (error) {
           console.error(`[HoloSphere] ❌ Error fetching ${lens} data for ${hex.slice(0, 9)}...:`, error);
           console.error(`[HoloSphere] Error details:`, {
-            message: error.message,
-            name: error.name,
-            stack: error.stack?.split('\n').slice(0, 3)
+            message: error instanceof Error ? error.message : String(error),
+            name: error instanceof Error ? error.name : 'Unknown',
+            stack: error instanceof Error ? error.stack?.split('\n').slice(0, 3) : undefined
           });
         }
       });
