@@ -35,8 +35,8 @@ export default function LanguageSelector() {
       const supportedLanguages = languages.map(l => l.code);
       
       // Check if user has manually set a language before
-      const storedLanguage = localStorage.getItem('regenerativa-language');
-      const hasManuallySetLanguage = localStorage.getItem('regenerativa-language-manually-set') === 'true';
+      const storedLanguage = localStorage.getItem('ReGenerativa-language');
+      const hasManuallySetLanguage = localStorage.getItem('ReGenerativa-language-manually-set') === 'true';
       
       if (storedLanguage && supportedLanguages.includes(storedLanguage) && hasManuallySetLanguage) {
         setCurrentLanguage(storedLanguage);
@@ -51,7 +51,7 @@ export default function LanguageSelector() {
       if (supportedLanguages.includes(detectedLang)) {
         setCurrentLanguage(detectedLang);
         console.log('LanguageSelector: Auto-detected browser language:', detectedLang, 'from', browserLang);
-        localStorage.setItem('regenerativa-language', detectedLang);
+        localStorage.setItem('ReGenerativa-language', detectedLang);
         return;
       }
 
@@ -62,7 +62,7 @@ export default function LanguageSelector() {
           if (supportedLanguages.includes(fallbackLang)) {
             setCurrentLanguage(fallbackLang);
             console.log('LanguageSelector: Auto-detected fallback language:', fallbackLang, 'from', lang);
-            localStorage.setItem('regenerativa-language', fallbackLang);
+            localStorage.setItem('ReGenerativa-language', fallbackLang);
             return;
           }
         }
@@ -77,7 +77,7 @@ export default function LanguageSelector() {
 
     // Listen for localStorage changes
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'regenerativa-language' && e.newValue) {
+      if (e.key === 'ReGenerativa-language' && e.newValue) {
         setCurrentLanguage(e.newValue);
         console.log('Language updated from storage:', e.newValue);
       }
@@ -100,8 +100,8 @@ export default function LanguageSelector() {
     // Store in localStorage for synchronization and mark as manually set
     const supportedLanguages = languages.map(l => l.code);
     if (supportedLanguages.includes(language.code)) {
-      localStorage.setItem('regenerativa-language', language.code);
-      localStorage.setItem('regenerativa-language-manually-set', 'true');
+      localStorage.setItem('ReGenerativa-language', language.code);
+      localStorage.setItem('ReGenerativa-language-manually-set', 'true');
       setCurrentLanguage(language.code);
 
       // Dispatch custom event to notify other components

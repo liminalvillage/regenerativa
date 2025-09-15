@@ -143,7 +143,7 @@ export default function LibraryPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <FileText className="h-5 w-5 mr-2" />
-                  Regenerativa Manifesto
+                  ReGenerativa Manifesto
                 </CardTitle>
                 <CardDescription>Core vision and principles</CardDescription>
               </CardHeader>

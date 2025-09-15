@@ -79,7 +79,7 @@ src/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd regenerativa-website
+cd ReGenerativa-website
 ```
 
 2. Install dependencies:
@@ -178,7 +178,7 @@ STRIPE_SECRET_KEY="..."
 STRIPE_PUBLISHABLE_KEY="..."
 
 # Analytics
-PLAUSIBLE_DOMAIN="regenerativa.org"
+PLAUSIBLE_DOMAIN="regenerativa.earth"
 ```
 
 ### Tailwind Configuration
@@ -213,13 +213,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Icons**: Lucide React
 - **Fonts**: Google Fonts (Work Sans, Fraunces)
 - **Framework**: Next.js team
-- **Community**: Regenerativa APS team and contributors
+- **Community**: ReGenerativa APS team and contributors
 
 ## 📞 Support
 
 For questions or support:
-- Email: hello@regenerativa.org
-- Website: [regenerativa.org](https://regenerativa.org)
+- Email: hello@regenerativa.earth
+- Website: [regenerativa.earth](https://regenerativa.earth)
 - Community: Join our Telegram/Matrix channels
 
 ---

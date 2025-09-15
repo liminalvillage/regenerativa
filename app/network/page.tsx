@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Hexagon, Users, MapPin, Globe, Search, Info } from "lucide-react";
 import Link from "next/link";
-import FractalComposableMap from "@/components/FractalComposableMap";
+import FractalMap from "@/components/FractalMap";
 
 export default function NetworkPage() {
   return (
@@ -45,7 +45,7 @@ export default function NetworkPage() {
       <section id="map" className="py-8 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-[80vh] rounded-2xl overflow-hidden shadow-2xl border border-border/50">
-            <FractalComposableMap
+            <FractalMap
               selectedLens="regenerative"
               onCellSelect={(cellId) => {
                 console.log('Selected cell:', cellId);

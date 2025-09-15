@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Globe, Users, Map, Calendar, Leaf, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import FractalComposableMap from "@/components/FractalComposableMap";
+import FractalMap from "@/components/FractalMap";
 
 export default function DemoPage() {
   return (
@@ -13,7 +13,7 @@ export default function DemoPage() {
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4">Demo Dashboard</h1>
           <p className="text-lg text-muted-foreground">
-            Explore the features of the Regenerativa platform
+            Explore the features of the ReGenerativa platform
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export default function DemoPage() {
             </CardHeader>
             <CardContent>
               <div className="h-96 w-full rounded-lg border">
-                <FractalComposableMap
+                <FractalMap
                   selectedLens="regenerative"
                   onCellSelect={(cellId) => {
                     console.log('Selected cell:', cellId);

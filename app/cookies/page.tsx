@@ -199,8 +199,8 @@ export default function CookiesPage() {
                 If you have any questions about our use of cookies or this Cookie Policy, please contact us at:
               </p>
               <div className="bg-muted/30 p-4 rounded-lg mt-4">
-                <p className="font-semibold">Regenerativa</p>
-                <p className="text-muted-foreground">Email: privacy@regenerativa.org</p>
+                <p className="font-semibold">ReGenerativa</p>
+                <p className="text-muted-foreground">Email: privacy@regenerativa.earth</p>
                 <p className="text-muted-foreground">Contact Form: <Link href="/contact" className="text-primary hover:underline">Contact Us</Link></p>
               </div>
             </div>

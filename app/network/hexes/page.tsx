@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Hexagon, MapPin, Users, Globe, ArrowLeft, Search, Filter } from "lucide-react";
 import Link from "next/link";
-import FractalComposableMap from "@/components/FractalComposableMap";
+import FractalMap from "@/components/FractalMap";
 
 export default function HexesPage() {
   return (
@@ -65,7 +65,7 @@ export default function HexesPage() {
             </div>
           </div>
           <div className="h-[70vh] rounded-2xl overflow-hidden shadow-2xl border border-border/50">
-            <FractalComposableMap
+            <FractalMap
               selectedLens="cells"
               onCellSelect={(cellId) => {
                 console.log('Selected cell:', cellId);

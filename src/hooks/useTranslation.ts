@@ -57,7 +57,7 @@ export function useTranslation() {
 
     // Store in localStorage
     if (typeof window !== 'undefined') {
-      localStorage.setItem('regenerativa-language', language);
+      localStorage.setItem('ReGenerativa-language', language);
     }
   };
 
@@ -67,7 +67,7 @@ export function useTranslation() {
 
     const initializeTranslations = () => {
       // Check for stored language preference first
-      const storedLanguage = localStorage.getItem('regenerativa-language') as Language;
+      const storedLanguage = localStorage.getItem('ReGenerativa-language') as Language;
       if (storedLanguage && ['en', 'es', 'fr'].includes(storedLanguage)) {
         console.log('Loading stored language:', storedLanguage);
         setCurrentLanguage(storedLanguage);
@@ -83,7 +83,7 @@ export function useTranslation() {
         console.log('Detected browser language:', detectedLang);
         setCurrentLanguage(detectedLang);
         setTranslationsData(translations[detectedLang]);
-        localStorage.setItem('regenerativa-language', detectedLang);
+        localStorage.setItem('ReGenerativa-language', detectedLang);
         return;
       }
 
@@ -91,7 +91,7 @@ export function useTranslation() {
       console.log('Loading default language: en');
       setCurrentLanguage('en');
       setTranslationsData(translations.en);
-      localStorage.setItem('regenerativa-language', 'en');
+      localStorage.setItem('ReGenerativa-language', 'en');
     };
 
     initializeTranslations();

@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Hexagon, Leaf, Heart, Users, Globe, Target, Award, BookOpen } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import FractalComposableMap from "@/components/FractalComposableMap";
+import FractalMap from "@/components/FractalMap";
 
 export default function AboutPage() {
   return (
@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              About <span className="text-primary">Regenerativa</span>
+              About <span className="text-primary">ReGenerativa</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
               Building EcoCivilization 2030 through integral regeneration and bioregional networks.
@@ -112,7 +112,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="h-[600px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl">
-            <FractalComposableMap
+            <FractalMap
               selectedLens="communities"
               onCellSelect={(cellId) => {
                 console.log('Selected cell:', cellId);
@@ -136,7 +136,7 @@ export default function AboutPage() {
               Our Team
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Meet the people behind Regenerativa, working to build a more sustainable and regenerative future.
+              Meet the people behind ReGenerativa, working to build a more sustainable and regenerative future.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

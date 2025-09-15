@@ -15,13 +15,13 @@ const Navigation = () => {
               <div className="h-8 w-8 relative">
                 <Image
                   src="/logotransparent.png"
-                  alt="Regenerativa Logo"
+                  alt="ReGenerativa Logo"
                   fill
                   className="object-contain"
                   sizes="32px"
                 />
               </div>
-              <span className="font-display text-xl font-bold">Regenerativa</span>
+              <span className="font-display text-xl font-bold">ReGenerativa</span>
             </Link>
           </div>
 

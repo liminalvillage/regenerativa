@@ -250,7 +250,7 @@ export default function ContactPage() {
                 <p className="text-sm text-muted-foreground mb-4">
                   For general inquiries and support
                 </p>
-                <p className="font-semibold">hello@regenerativa.org</p>
+                <p className="font-semibold">hello@regenerativa.earth</p>
                 <p className="text-xs text-muted-foreground mt-2">
                   Response within 24-48 hours
                 </p>

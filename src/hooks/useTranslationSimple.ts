@@ -161,42 +161,44 @@ const translations = {
     "regenerativeVillage": {
       "hero": {
         "title": "Fabbrica del Terzo Settore",
-        "subtitle": "A Third Sector factory focused on regenerative practices, circular economy, and sustainable production.",
+        "subtitle": "A co-living co-creation factory and maker space fostering community-owned initiatives and third-sector entities.",
         "description": "Discover our vision and join the community",
         "cta": "Join the Community",
         "discoverVision": "Discover the Vision"
       },
       "vision": {
         "title": "Vision",
-        "description": "\"Not just a factory, but an ecosystem of production and social innovation. The Third Sector factory combines regenerative practices, circular economy and sustainable production: a pioneering model that integrates manufacturing, innovation hubs, and community spaces.\"",
-        "sustainableLiving": "Regenerative Production",
-        "sustainableLivingDesc": "Manufacturing integrated with nature",
-        "activeCommunity": "Active Community",
-        "activeCommunityDesc": "Collective participation and collaboration",
-              "collectiveSpaces": "Innovation Spaces",
-      "collectiveSpacesDesc": "Coworking and inclusive innovation areas"
+        "description": "\"Not just a factory, but a thriving ecosystem of co-living, co-creation, and community-owned initiatives. A maker space where third-sector entities collaborate on regenerative practices, circular economy, and sustainable production: a pioneering model that integrates manufacturing, innovation hubs, and communal living spaces.\"",
+        "sustainableLiving": "Co-Creation & Making",
+        "sustainableLivingDesc": "Collaborative maker space with shared tools and resources",
+        "activeCommunity": "Co-Living Community",
+        "activeCommunityDesc": "Shared living spaces fostering deep collaboration",
+              "collectiveSpaces": "Community-Owned Initiatives",
+      "collectiveSpacesDesc": "Third-sector entities and community-driven projects"
       },
       "location": {
         "title": "Location & History",
         "description": "\"Nestled in the heart of the Marche region, our factory offers the perfect blend of natural beauty and strategic accessibility. Located just 10 minutes from the historic center of Ascoli Piceno, the cultural capital of the region, it provides the perfect environment for sustainable production.\"",
         "size": "Size & Scale",
-        "sizeDesc": "Approximately 50 hectares of land dedicated to sustainable production, innovation spaces, community areas, and regenerative practices",
+        "sizeDesc": "About 3 hectares of land with building capacity of 6000m³, dedicated to sustainable production, innovation spaces, community areas, and regenerative practices",
         "history": "Historical Context",
         "historyDesc": "Built on ancient manufacturing traditions with a vision for the future, combining historical craftsmanship with modern regenerative practices",
         "ascoliPiceno": "Ascoli Piceno",
-        "ascoliPicenoDesc": "10 minutes from the historic center - cultural capital of the Marche region with Renaissance architecture and local traditions",
+        "ascoliPicenoDesc": "10 minutes",
         "adriaticCoast": "Adriatic Coast",
-        "adriaticCoastDesc": "30 minutes drive to beautiful beaches and coastal towns along the Adriatic Sea",
+        "adriaticCoastDesc": "30 minutes",
         "skiArea": "Ski Areas",
-        "skiAreaDesc": "30 minutes to nearby ski areas in the Sibillini Mountains, offering winter sports and mountain activities",
+        "skiAreaDesc": "30 minutes",
         "rome": "Rome",
-        "romeDesc": "2.5 hours by car to the center of Rome, connecting you to Italy's cultural and business hub",
+        "romeDesc": "2.5 hours",
         "sibilliniPark": "Sibillini National Park",
-        "sibilliniParkDesc": "15 minutes to the entrance of Sibillini National Park, offering hiking trails, wildlife viewing, and mountain activities",
+        "sibilliniParkDesc": "15 minutes",
         "lagaPark": "Laga Mountains National Park",
-        "lagaParkDesc": "45 minutes to Laga Mountains National Park, featuring ancient forests, waterfalls, and biodiversity-rich landscapes",
+        "lagaParkDesc": "45 minutes",
         "accessibility": "Easy Access",
-        "accessibilityDesc": "Easily accessible via major highways, with convenient connections to regional and national transportation networks"
+        "accessibilityDesc": "Easy access via major highways",
+        "airports": "Airports",
+        "airportsDesc": "90 minutes"
       },
       "communityCulture": {
         "title": "Community and Culture",
@@ -209,14 +211,14 @@ const translations = {
         "communityParticipationDesc": "The community as active protagonist"
       },
       "innovationCoworking": {
-        "title": "Innovation and Coworking",
-        "description": "\"A social innovation hub immersed in greenery. Shared workspaces, workshop rooms, places to incubate Third Sector startups and projects. Here living and working coincide, creating a continuous flow between life and innovation.\"",
-        "workspaces": "Workspaces",
-        "workspacesDesc": "Shared coworking areas immersed in nature, designed to foster creativity and collaboration",
-        "workshopRooms": "Workshop Rooms",
-        "workshopRoomsDesc": "Dedicated spaces for workshops, training and community meetings",
-        "startupIncubator": "Startup Incubator",
-        "startupIncubatorDesc": "Support for Third Sector startups and social impact projects"
+        "title": "Maker Space & Co-Creation Hub",
+        "description": "\"A thriving maker space and co-creation hub immersed in greenery. Shared workshops, fabrication labs, and spaces to incubate community-owned third-sector initiatives. Here co-living and co-creating coincide, fostering a continuous flow between communal life and collaborative innovation.\"",
+        "workspaces": "Maker Workshops",
+        "workspacesDesc": "Shared fabrication labs and maker spaces with tools for prototyping and creation",
+        "workshopRooms": "Co-Creation Labs",
+        "workshopRoomsDesc": "Collaborative spaces where community members co-create solutions and innovations",
+        "startupIncubator": "Community Initiative Incubator",
+        "startupIncubatorDesc": "Nurturing community-owned third-sector entities and social impact initiatives"
       },
       "dailyLifeGastronomy": {
         "title": "Daily Life and Gastronomy",
@@ -230,11 +232,9 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Wellness and Nature",
-        "description": "\"Wellness is an integral part of the experience: relaxation spaces, unspoiled nature, authentic connection with oneself and with others. Fabbrica del Terzo Settore is a place where time slows down, and work resumes its natural rhythm.\"",
+        "description": "\"Wellness is an integral part of the experience: relaxation spaces, authentic connection with oneself and with others. Fabbrica del Terzo Settore is a place where time slows down, and work resumes its natural rhythm.\"",
         "relaxationSpaces": "Relaxation Spaces",
         "relaxationSpacesDesc": "Areas dedicated to rest and contemplation",
-        "unspoiledNature": "Unspoiled Nature",
-        "unspoiledNatureDesc": "Deep connection with the natural environment",
         "authenticConnection": "Authentic Connection",
         "authenticConnectionDesc": "Natural rhythm of work and genuine relationships"
       },
@@ -300,17 +300,17 @@ const translations = {
       "liminalVillage": {
         "title": "Liminal Village",
         "subtitle": "Centro comunitario",
-        "description": "Nuestro centro comunitario central donde la innovación se encuentra con la tradición, sirviendo como el corazón de nuestra red regenerativa."
+        "description": "Nuestro centro comunitario central donde la innovación se encuentra con la tradición, sirviendo como el corazón de nuestra red ReGenerativa."
       },
       "brickFactory": {
         "title": "Fábrica del Tercer Sector",
-        "subtitle": "Fábrica Regenerativa",
+        "subtitle": "Fábrica ReGenerativa",
         "description": "Una fábrica del tercer sector enfocada en prácticas regenerativas, economía circular y metodologías de producción sostenible."
       },
       "casaSelva": {
         "title": "Casa Selva",
         "subtitle": "Santuario del bosque",
-        "description": "Un santuario del bosque que combina arquitectura tradicional con vida regenerativa moderna en perfecta armonía con la naturaleza."
+        "description": "Un santuario del bosque que combina arquitectura tradicional con vida ReGenerativa moderna en perfecta armonía con la naturaleza."
       }
     },
     "network": {
@@ -344,7 +344,7 @@ const translations = {
       },
       "visit": {
         "title": "Visitar",
-        "description": "Experimenta la vida regenerativa de primera mano en Liminal Village y otros nodos de la red.",
+        "description": "Experimenta la vida ReGenerativa de primera mano en Liminal Village y otros nodos de la red.",
         "cta": "Planificar Visita"
       }
     },
@@ -390,7 +390,7 @@ const translations = {
       "regenFinance": {
         "title": "Piloto de Finanzas Regenerativas",
         "location": "Red Global",
-        "description": "Lanzando nuestro primer sistema de tokens de recibo para financiar proyectos de infraestructura regenerativa."
+        "description": "Lanzando nuestro primer sistema de tokens de recibo para financiar proyectos de infraestructura ReGenerativa."
       }
     },
     "video": {
@@ -416,42 +416,44 @@ const translations = {
     "regenerativeVillage": {
       "hero": {
         "title": "Fábrica del Tercer Sector",
-        "subtitle": "Una fábrica del Tercer Sector enfocada en prácticas regenerativas, economía circular y producción sostenible.",
+        "subtitle": "Una fábrica de co-living y co-creación con maker space que fomenta iniciativas comunitarias y entidades del tercer sector.",
         "description": "Descubre nuestra visión y únete a la comunidad",
         "cta": "Únete a la Comunidad",
         "discoverVision": "Descubre la Visión"
       },
       "vision": {
         "title": "Visión",
-        "description": "\"No solo una fábrica, sino un ecosistema de producción e innovación social. La fábrica del Tercer Sector combina prácticas regenerativas, economía circular y producción sostenible: un modelo pionero que integra manufactura, centros de innovación y espacios comunitarios.\"",
-        "sustainableLiving": "Producción Regenerativa",
-        "sustainableLivingDesc": "Manufactura integrada con la naturaleza",
-        "activeCommunity": "Comunidad Activa",
-        "activeCommunityDesc": "Participación y colaboración colectiva",
-              "collectiveSpaces": "Espacios Colectivos",
-      "collectiveSpacesDesc": "Coworking y áreas comunes inclusivas"
+        "description": "\"No solo una fábrica, sino un ecosistema próspero de co-living, co-creación e iniciativas comunitarias. Un maker space donde entidades del tercer sector colaboran en prácticas regenerativas, economía circular y producción sostenible: un modelo pionero que integra manufactura, centros de innovación y espacios de convivencia comunal.\"",
+        "sustainableLiving": "Co-Creación y Fabricación",
+        "sustainableLivingDesc": "Maker space colaborativo con herramientas y recursos compartidos",
+        "activeCommunity": "Comunidad Co-Living",
+        "activeCommunityDesc": "Espacios de convivencia compartida que fomentan la colaboración profunda",
+              "collectiveSpaces": "Iniciativas Comunitarias",
+      "collectiveSpacesDesc": "Entidades del tercer sector y proyectos impulsados por la comunidad"
       },
       "location": {
         "title": "Ubicación e Historia",
         "description": "\"Ubicado en el corazón de la región de las Marcas, nuestro pueblo ofrece la combinación perfecta de belleza natural y accesibilidad estratégica. Situado a solo 10 minutos del centro histórico de Ascoli Piceno, la capital cultural de la región, brinda a los residentes tanto tranquilidad como comodidad urbana.\"",
         "size": "Tamaño y Escala",
-        "sizeDesc": "Aproximadamente 50 hectáreas de terreno dedicadas al desarrollo sostenible, vivienda, espacios comunitarios y áreas agrícolas",
+        "sizeDesc": "Alrededor de 3 hectáreas de terreno con capacidad de construcción de 6000m³, dedicadas al desarrollo sostenible, espacios comunitarios y prácticas regenerativas",
         "history": "Contexto Histórico",
         "historyDesc": "Construido sobre antiguas tradiciones agrícolas con una visión para el futuro, combinando sabiduría histórica con prácticas regenerativas modernas",
         "ascoliPiceno": "Ascoli Piceno",
-        "ascoliPicenoDesc": "10 minutos del centro histórico - capital cultural de la región de las Marcas con arquitectura renacentista y tradiciones locales",
+        "ascoliPicenoDesc": "10 minutos",
         "adriaticCoast": "Costa Adriática",
-        "adriaticCoastDesc": "30 minutos en coche a hermosas playas y pueblos costeros a lo largo del Mar Adriático",
+        "adriaticCoastDesc": "30 minutos",
         "skiArea": "Estaciones de Esquí",
-        "skiAreaDesc": "30 minutos a estaciones de esquí cercanas en las Montañas Sibillini, ofreciendo deportes de invierno y actividades de montaña",
+        "skiAreaDesc": "30 minutos",
         "rome": "Roma",
-        "romeDesc": "2.5 horas en coche al centro de Roma, conectándote con el centro cultural y empresarial de Italia",
+        "romeDesc": "2.5 horas",
         "sibilliniPark": "Parque Nacional Sibillini",
-        "sibilliniParkDesc": "15 minutos a la entrada del Parque Nacional Sibillini, ofreciendo senderos para caminar, observación de vida silvestre y actividades de montaña",
+        "sibilliniParkDesc": "15 minutos",
         "lagaPark": "Parque Nacional Montes Laga",
-        "lagaParkDesc": "45 minutos al Parque Nacional Montes Laga, con bosques antiguos, cascadas y paisajes ricos en biodiversidad",
+        "lagaParkDesc": "45 minutos",
         "accessibility": "Acceso por Autopista",
-        "accessibilityDesc": "Fácilmente accesible vía autopistas principales, con conexiones convenientes a redes de transporte regional y nacional"
+        "accessibilityDesc": "Fácil acceso vía autopistas principales",
+        "airports": "Aeropuertos",
+        "airportsDesc": "90 minutos"
       },
       "communityCulture": {
         "title": "Comunidad y Cultura",
@@ -464,14 +466,14 @@ const translations = {
         "communityParticipationDesc": "La comunidad como protagonista activa"
       },
       "innovationCoworking": {
-        "title": "Innovación y Coworking",
-        "description": "\"Un centro de innovación social inmerso en el verde. Espacios de trabajo compartidos, salas para talleres, lugares para incubar startups del Tercer Sector y proyectos. Aquí vivir y trabajar coinciden, creando un flujo continuo entre vida e innovación.\"",
-        "workspaces": "Espacios de Trabajo",
-        "workspacesDesc": "Áreas de coworking compartidas inmersas en la naturaleza, diseñadas para fomentar la creatividad y colaboración",
-        "workshopRooms": "Salas de Talleres",
-        "workshopRoomsDesc": "Espacios dedicados para talleres, formación y reuniones comunitarias",
-        "startupIncubator": "Incubadora de Startups",
-        "startupIncubatorDesc": "Apoyo para startups del Tercer Sector y proyectos de impacto social"
+        "title": "Maker Space y Centro de Co-Creación",
+        "description": "\"Un maker space próspero y centro de co-creación inmerso en el verde. Talleres compartidos, laboratorios de fabricación y espacios para incubar iniciativas comunitarias del tercer sector. Aquí co-living y co-creación coinciden, fomentando un flujo continuo entre vida comunal e innovación colaborativa.\"",
+        "workspaces": "Talleres de Fabricación",
+        "workspacesDesc": "Laboratorios de fabricación y maker spaces compartidos con herramientas para prototipado y creación",
+        "workshopRooms": "Laboratorios de Co-Creación",
+        "workshopRoomsDesc": "Espacios colaborativos donde los miembros de la comunidad co-crean soluciones e innovaciones",
+        "startupIncubator": "Incubadora de Iniciativas Comunitarias",
+        "startupIncubatorDesc": "Fomentando entidades comunitarias del tercer sector e iniciativas de impacto social"
       },
       "dailyLifeGastronomy": {
         "title": "Vida Cotidiana y Gastronomía",
@@ -485,24 +487,22 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Bienestar y Naturaleza",
-        "description": "\"El bienestar es parte integral de la experiencia: espacios de relajación, naturaleza intacta, conexión auténtica consigo mismo y con los demás. Aldea Regenerativa es un pueblo donde el tiempo se ralentiza, y la vida retoma su ritmo natural.\"",
+        "description": "\"El bienestar es parte integral de la experiencia: espacios de relajación, conexión auténtica consigo mismo y con los demás. Aldea ReGenerativa es un pueblo donde el tiempo se ralentiza, y la vida retoma su ritmo natural.\"",
         "relaxationSpaces": "Espacios de Relajación",
         "relaxationSpacesDesc": "Áreas dedicadas al descanso y contemplación",
-        "unspoiledNature": "Naturaleza Intacta",
-        "unspoiledNatureDesc": "Conexión profunda con el entorno natural",
         "authenticConnection": "Conexión Auténtica",
         "authenticConnectionDesc": "Ritmo natural de la vida y relaciones genuinas"
       },
       "futureInnovation": {
         "title": "Futuro e Innovación",
-        "description": "\"Un laboratorio vivo para el futuro del Tercer Sector. Un pueblo que inspira nuevas formas de economía solidaria, gobernanza participativa y sostenibilidad ambiental. Aldea Regenerativa no es solo un lugar para vivir: es un lugar para construir el futuro juntos.\"",
+        "description": "\"Un laboratorio vivo para el futuro del Tercer Sector. Un pueblo que inspira nuevas formas de economía solidaria, gobernanza participativa y sostenibilidad ambiental. Aldea ReGenerativa no es solo un lugar para vivir: es un lugar para construir el futuro juntos.\"",
         "solidarityEconomy": "Economía Solidaria",
         "solidarityEconomyDesc": "Nuevos modelos económicos basados en solidaridad y sostenibilidad",
         "participatoryGovernance": "Gobernanza Participativa",
         "participatoryGovernanceDesc": "Decisiones colectivas y participación activa de la comunidad",
         "environmentalSustainability": "Sostenibilidad Ambiental",
         "environmentalSustainabilityDesc": "Prácticas ecológicas integradas en la vida cotidiana",
-        "buildFuture": "Aldea Regenerativa no es solo un lugar para vivir: es un lugar para construir el futuro juntos."
+        "buildFuture": "Aldea ReGenerativa no es solo un lugar para vivir: es un lugar para construir el futuro juntos."
       },
       "villageVisions": {
         "title": "Visiones del Pueblo",
@@ -510,7 +510,7 @@ const translations = {
       },
       "callToAction": {
         "title": "Únete al Futuro del Tercer Sector",
-        "description": "Aldea Regenerativa es más que un pueblo: es un movimiento para construir juntos un futuro sostenible, inclusivo e innovador. Tu participación puede marcar la diferencia.",
+        "description": "Aldea ReGenerativa es más que un pueblo: es un movimiento para construir juntos un futuro sostenible, inclusivo e innovador. Tu participación puede marcar la diferencia.",
         "joinNow": "Únete Ahora",
         "contactUs": "Contáctanos"
       }
@@ -671,18 +671,18 @@ const translations = {
     "regenerativeVillage": {
       "hero": {
         "title": "Fabrique du Tiers Secteur",
-        "subtitle": "Une fabrique du Tiers Secteur axée sur les pratiques régénératives, l'économie circulaire et la production durable.",
+        "subtitle": "Une fabrique de co-living et co-création avec maker space favorisant les initiatives communautaires et entités du tiers secteur.",
         "description": "Découvrez notre vision et rejoignez la communauté",
         "cta": "Rejoignez la Communauté",
         "discoverVision": "Découvrez la Vision"
       },
       "vision": {
         "title": "Vision",
-        "description": "\"Pas seulement une fabrique, mais un écosystème de production et d'innovation sociale. La fabrique du Tiers Secteur combine pratiques régénératives, économie circulaire et production durable : un modèle pionero qui intègre la manufacture, les centres d'innovation et les espaces communautaires.\"",
-        "sustainableLiving": "Production Régénérative",
-        "sustainableLivingDesc": "Manufacture intégrée à la nature",
-        "activeCommunity": "Communauté Active",
-        "activeCommunityDesc": "Participation et collaboration collective",
+        "description": "\"Pas seulement une fabrique, mais un écosystème florissant de co-living, co-création et initiatives communautaires. Un maker space où les entités du tiers secteur collaborent sur les pratiques régénératives, économie circulaire et production durable : un modèle pionnier qui intègre manufacture, centres d'innovation et espaces de vie communale.\"",
+        "sustainableLiving": "Co-Création et Fabrication",
+        "sustainableLivingDesc": "Maker space collaboratif avec outils et ressources partagés",
+        "activeCommunity": "Communauté Co-Living",
+        "activeCommunityDesc": "Espaces de vie partagés favorisant la collaboration profonde"
               "collectiveSpaces": "Espaces Collectifs",
       "collectiveSpacesDesc": "Coworking et espaces communs inclusifs"
       },
@@ -690,23 +690,25 @@ const translations = {
         "title": "Emplacement et Histoire",
         "description": "\"Niché au cœur de la région des Marches, notre village offre le mélange parfait de beauté naturelle et d'accessibilité stratégique. Situé à seulement 10 minutes du centre historique d'Ascoli Piceno, la capitale culturelle de la région, il offre aux résidents à la fois tranquillité et commodité urbaine.\"",
         "size": "Taille et Échelle",
-        "sizeDesc": "Environ 50 hectares de terrain dédiés au développement durable, au logement, aux espaces communautaires et aux zones agricoles",
+        "sizeDesc": "Environ 3 hectares de terrain avec une capacité de construction de 6000m³, dédiés au développement durable, aux espaces communautaires et aux pratiques régénératives",
         "history": "Contexte Historique",
         "historyDesc": "Construit sur d'anciennes traditions agricoles avec une vision pour l'avenir, combinant la sagesse historique avec des pratiques régénératives modernes",
         "ascoliPiceno": "Ascoli Piceno",
-        "ascoliPicenoDesc": "10 minutes du centre historique - capitale culturelle de la région des Marches avec architecture Renaissance et traditions locales",
+        "ascoliPicenoDesc": "10 minutes",
         "adriaticCoast": "Côte Adriatique",
-        "adriaticCoastDesc": "30 minutes de route vers de belles plages et villes côtières le long de la mer Adriatique",
+        "adriaticCoastDesc": "30 minutes",
         "skiArea": "Stations de Ski",
-        "skiAreaDesc": "30 minutes vers les stations de ski voisines dans les Montagnes Sibillini, offrant sports d'hiver et activités de montagne",
+        "skiAreaDesc": "30 minutes",
         "rome": "Rome",
-        "romeDesc": "2.5 heures en voiture vers le centre de Rome, vous connectant au centre culturel et économique de l'Italie",
+        "romeDesc": "2.5 heures",
         "sibilliniPark": "Parc National des Sibillini",
-        "sibilliniParkDesc": "15 minutes jusqu'à l'entrée du Parc National des Sibillini, offrant des sentiers de randonnée, l'observation de la faune et des activités de montagne",
+        "sibilliniParkDesc": "15 minutes",
         "lagaPark": "Parc National des Monts Laga",
-        "lagaParkDesc": "45 minutes vers le Parc National des Monts Laga, avec des forêts anciennes, des cascades et des paysages riches en biodiversité",
+        "lagaParkDesc": "45 minutes",
         "accessibility": "Accès Autoroutier",
-        "accessibilityDesc": "Facilement accessible via les autoroutes principales, avec des connexions pratiques aux réseaux de transport régional et national"
+        "accessibilityDesc": "Accès facile via les autoroutes principales",
+        "airports": "Aéroports",
+        "airportsDesc": "90 minutes"
       },
       "communityCulture": {
         "title": "Communauté et Culture",
@@ -719,7 +721,7 @@ const translations = {
         "communityParticipationDesc": "La communauté comme protagoniste active"
       },
       "innovationCoworking": {
-        "title": "Innovation et Coworking",
+        "title": "Maker Space et Centre de Co-Création",
         "description": "\"Un centre d'innovation sociale immergé dans le vert. Espaces de travail partagés, salles pour ateliers, lieux pour incuber startups du Tiers Secteur et projets. Ici vivre et travailler coïncident, créant un flux continu entre vie et innovation.\"",
         "workspaces": "Espaces de Travail",
         "workspacesDesc": "Espaces de coworking partagés immergés dans la nature, conçus pour favoriser la créativité et la collaboration",
@@ -740,11 +742,9 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Bien-être et Nature",
-        "description": "\"Le bien-être fait partie intégrante de l'expérience : espaces de relaxation, nature intacte, connexion authentique avec soi-même et avec les autres. Fabrique du Tiers Secteur est un lieu où le temps ralentit, et le travail reprend son rythme naturel.\"",
+        "description": "\"Le bien-être fait partie intégrante de l'expérience : espaces de relaxation, connexion authentique avec soi-même et avec les autres. Fabrique du Tiers Secteur est un lieu où le temps ralentit, et le travail reprend son rythme naturel.\"",
         "relaxationSpaces": "Espaces de Relaxation",
         "relaxationSpacesDesc": "Espaces dédiés au repos et à la contemplation",
-        "unspoiledNature": "Nature Intacte",
-        "unspoiledNatureDesc": "Connexion profonde avec l'environnement naturel",
         "authenticConnection": "Connexion Authentique",
         "authenticConnectionDesc": "Rythme naturel de la vie et relations authentiques"
       },
@@ -945,23 +945,25 @@ const translations = {
         "title": "Posizione e Storia",
         "description": "\"Immersa nel cuore della regione Marche, la nostra fabbrica offre la combinazione perfetta di bellezza naturale e accessibilità strategica. Situata a soli 10 minuti dal centro storico di Ascoli Piceno, capitale culturale della regione, offre l'ambiente perfetto per la produzione sostenibile.\"",
         "size": "Dimensione e Scala",
-        "sizeDesc": "Circa 50 ettari di terreno dedicati alla produzione sostenibile, spazi di innovazione, aree comunitarie e pratiche rigenerative",
+        "sizeDesc": "Circa 3 ettari di terreno con capacità edificatoria di 6000m³, dedicati alla produzione sostenibile, spazi di innovazione, aree comunitarie e pratiche rigenerative",
         "history": "Contesto Storico",
         "historyDesc": "Costruita su antiche tradizioni manifatturiere con una visione per il futuro, combinando artigianato storico con pratiche rigenerative moderne",
         "ascoliPiceno": "Ascoli Piceno",
-        "ascoliPicenoDesc": "10 minuti dal centro storico - capitale culturale della regione Marche con architettura rinascimentale e tradizioni locali",
+        "ascoliPicenoDesc": "10 minuti",
         "adriaticCoast": "Costa Adriatica",
-        "adriaticCoastDesc": "30 minuti di auto verso belle spiagge e città costiere lungo il Mare Adriatico",
+        "adriaticCoastDesc": "30 minuti",
         "skiArea": "Aree Sciistiche",
-        "skiAreaDesc": "30 minuti verso le aree sciistiche vicine sui Monti Sibillini, offrendo sport invernali e attività montane",
+        "skiAreaDesc": "30 minuti",
         "rome": "Roma",
-        "romeDesc": "2.5 ore in auto verso il centro di Roma, collegandoti al centro culturale e commerciale d'Italia",
+        "romeDesc": "2.5 ore",
         "sibilliniPark": "Parco Nazionale dei Sibillini",
-        "sibilliniParkDesc": "15 minuti dall'ingresso del Parco Nazionale dei Sibillini, offrendo sentieri escursionistici, osservazione fauna e attività montane",
+        "sibilliniParkDesc": "15 minuti",
         "lagaPark": "Parco Nazionale dei Monti della Laga",
-        "lagaParkDesc": "45 minuti verso il Parco Nazionale dei Monti della Laga, con foreste antiche, cascate e paesaggi ricchi di biodiversità",
+        "lagaParkDesc": "45 minuti",
         "accessibility": "Accesso Facile",
-        "accessibilityDesc": "Facilmente accessibile tramite autostrade principali, con collegamenti convenienti alle reti di trasporto regionali e nazionali"
+        "accessibilityDesc": "Facile accesso tramite autostrade principali",
+        "airports": "Aeroporti",
+        "airportsDesc": "90 minuti"
       },
       "communityCulture": {
         "title": "Comunità e Cultura",
@@ -974,7 +976,7 @@ const translations = {
         "communityParticipationDesc": "La comunità come protagonista attiva"
       },
       "innovationCoworking": {
-        "title": "Innovazione e Coworking",
+        "title": "Maker Space e Centro di Co-Creazione",
         "description": "\"Un hub di innovazione sociale immerso nel verde. Spazi di lavoro condivisi, sale workshop, luoghi per incubare startup del Terzo Settore e progetti. Qui vivere e lavorare coincidono, creando un flusso continuo tra vita e innovazione.\"",
         "workspaces": "Spazi di Lavoro",
         "workspacesDesc": "Aree di coworking condivise immerse nella natura, progettate per favorire creatività e collaborazione",
@@ -995,11 +997,9 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Benessere e Natura",
-        "description": "\"Il benessere è parte integrante dell'esperienza: spazi di relax, natura incontaminata, connessione autentica con se stessi e con gli altri. La Fabbrica del Terzo Settore è un luogo dove il tempo rallenta, e il lavoro riprende il suo ritmo naturale.\"",
+        "description": "\"Il benessere è parte integrante dell'esperienza: spazi di relax, connessione autentica con se stessi e con gli altri. La Fabbrica del Terzo Settore è un luogo dove il tempo rallenta, e il lavoro riprende il suo ritmo naturale.\"",
         "relaxationSpaces": "Spazi di Relax",
         "relaxationSpacesDesc": "Aree dedicate al riposo e alla contemplazione",
-        "unspoiledNature": "Natura Incontaminata",
-        "unspoiledNatureDesc": "Connessione profonda con l'ambiente naturale",
         "authenticConnection": "Connessione Autentica",
         "authenticConnectionDesc": "Ritmo naturale del lavoro e relazioni genuine"
       },
@@ -1200,23 +1200,25 @@ const translations = {
         "title": "Locatie & Geschiedenis",
         "description": "\"Gelegen in het hart van de Marche regio, biedt onze fabriek de perfecte mix van natuurlijke schoonheid en strategische toegankelijkheid. Gelegen op slechts 10 minuten van het historische centrum van Ascoli Piceno, de culturele hoofdstad van de regio, biedt het de perfecte omgeving voor duurzame productie.\"",
         "size": "Grootte & Schaal",
-        "sizeDesc": "Ongeveer 50 hectare land gewijd aan duurzame productie, innovatieruimtes, gemeenschapsgebieden en regeneratieve praktijken",
+        "sizeDesc": "Ongeveer 3 hectare land met bouwcapaciteit van 6000m³, gewijd aan duurzame productie, innovatieruimtes, gemeenschapsgebieden en regeneratieve praktijken",
         "history": "Historische Context",
         "historyDesc": "Gebouwd op oude productie tradities met een visie voor de toekomst, waarbij historisch vakmanschap wordt gecombineerd met moderne regeneratieve praktijken",
         "ascoliPiceno": "Ascoli Piceno",
-        "ascoliPicenoDesc": "10 minuten van het historische centrum - culturele hoofdstad van de Marche regio met Renaissance architectuur en lokale tradities",
+        "ascoliPicenoDesc": "10 minuten",
         "adriaticCoast": "Adriatische Kust",
-        "adriaticCoastDesc": "30 minuten rijden naar prachtige stranden en kuststeden langs de Adriatische Zee",
+        "adriaticCoastDesc": "30 minuten",
         "skiArea": "Ski Gebieden",
-        "skiAreaDesc": "30 minuten naar nabijgelegen skigebieden in de Sibillini Bergen, met wintersport en bergactiviteiten",
+        "skiAreaDesc": "30 minuten",
         "rome": "Rome",
-        "romeDesc": "2,5 uur met de auto naar het centrum van Rome, dat je verbindt met Italië's culturele en zakelijke centrum",
+        "romeDesc": "2,5 uur",
         "sibilliniPark": "Sibillini Nationaal Park",
-        "sibilliniParkDesc": "15 minuten naar de ingang van Sibillini Nationaal Park, met wandelpaden, wildlife observatie en bergactiviteiten",
+        "sibilliniParkDesc": "15 minuten",
         "lagaPark": "Laga Bergen Nationaal Park",
-        "lagaParkDesc": "45 minuten naar Laga Bergen Nationaal Park, met oude bossen, watervallen en biodiversiteitsrijke landschappen",
+        "lagaParkDesc": "45 minuten",
         "accessibility": "Gemakkelijke Toegang",
-        "accessibilityDesc": "Gemakkelijk bereikbaar via grote snelwegen, met handige verbindingen naar regionale en nationale transportnetwerken"
+        "accessibilityDesc": "Gemakkelijke toegang via grote snelwegen",
+        "airports": "Luchthavens",
+        "airportsDesc": "90 minuten"
       },
       "communityCulture": {
         "title": "Gemeenschap en Cultuur",
@@ -1229,7 +1231,7 @@ const translations = {
         "communityParticipationDesc": "De gemeenschap als actieve protagonist"
       },
       "innovationCoworking": {
-        "title": "Innovatie en Coworking",
+        "title": "Maker Space en Co-Creatie Hub",
         "description": "\"Een sociale innovatie hub omgeven door groen. Gedeelde werkruimtes, workshop ruimtes, plaatsen om Derde Sector startups en projecten te incuberen. Hier vallen leven en werken samen, waardoor een continue stroom tussen leven en innovatie ontstaat.\"",
         "workspaces": "Werkruimtes",
         "workspacesDesc": "Gedeelde coworking ruimtes omgeven door natuur, ontworpen om creativiteit en samenwerking te bevorderen",
@@ -1250,11 +1252,9 @@ const translations = {
       },
       "wellnessNature": {
         "title": "Welzijn en Natuur",
-        "description": "\"Welzijn is een integraal onderdeel van de ervaring: ontspanningsruimtes, ongerepte natuur, authentieke verbinding met jezelf en met anderen. Fabbrica del Terzo Settore is een plek waar tijd vertraagt, en werk zijn natuurlijke ritme herneemt.\"",
+        "description": "\"Welzijn is een integraal onderdeel van de ervaring: ontspanningsruimtes, authentieke verbinding met jezelf en met anderen. Fabbrica del Terzo Settore is een plek waar tijd vertraagt, en werk zijn natuurlijke ritme herneemt.\"",
         "relaxationSpaces": "Ontspanningsruimtes",
         "relaxationSpacesDesc": "Gebieden gewijd aan rust en contemplatie",
-        "unspoiledNature": "Ongerepte Natuur",
-        "unspoiledNatureDesc": "Diepe verbinding met de natuurlijke omgeving",
         "authenticConnection": "Authentieke Verbinding",
         "authenticConnectionDesc": "Natuurlijk ritme van werk en oprechte relaties"
       },
@@ -1296,8 +1296,8 @@ export function useTranslation() {
 
     // Store in localStorage for persistence and mark as manually set
     if (typeof window !== 'undefined') {
-      localStorage.setItem('regenerativa-language', language);
-      localStorage.setItem('regenerativa-language-manually-set', 'true');
+      localStorage.setItem('ReGenerativa-language', language);
+      localStorage.setItem('ReGenerativa-language-manually-set', 'true');
       console.log('Language manually changed to:', language);
     }
 
@@ -1313,8 +1313,8 @@ export function useTranslation() {
       const supportedLanguages = ['en', 'es', 'fr', 'it', 'nl'];
       
       // Check if user has manually set a language before
-      const storedLanguage = localStorage.getItem('regenerativa-language') as Language;
-      const hasManuallySetLanguage = localStorage.getItem('regenerativa-language-manually-set') === 'true';
+      const storedLanguage = localStorage.getItem('ReGenerativa-language') as Language;
+      const hasManuallySetLanguage = localStorage.getItem('ReGenerativa-language-manually-set') === 'true';
       
       if (storedLanguage && supportedLanguages.includes(storedLanguage) && hasManuallySetLanguage) {
         console.log('Loading manually set language:', storedLanguage);
@@ -1330,7 +1330,7 @@ export function useTranslation() {
         console.log('Auto-detected browser language:', detectedLang, 'from', browserLang);
         setCurrentLanguage(detectedLang);
         // Store the detected language but don't mark as manually set
-        localStorage.setItem('regenerativa-language', detectedLang);
+        localStorage.setItem('ReGenerativa-language', detectedLang);
         return;
       }
 
@@ -1341,7 +1341,7 @@ export function useTranslation() {
           if (supportedLanguages.includes(fallbackLang)) {
             console.log('Auto-detected fallback browser language:', fallbackLang, 'from', lang);
             setCurrentLanguage(fallbackLang);
-            localStorage.setItem('regenerativa-language', fallbackLang);
+            localStorage.setItem('ReGenerativa-language', fallbackLang);
             return;
           }
         }
@@ -1350,7 +1350,7 @@ export function useTranslation() {
       // Default to English if no supported language detected
       console.log('No supported browser language detected, defaulting to English');
       setCurrentLanguage('en');
-      localStorage.setItem('regenerativa-language', 'en');
+      localStorage.setItem('ReGenerativa-language', 'en');
     };
 
     initializeLanguage();

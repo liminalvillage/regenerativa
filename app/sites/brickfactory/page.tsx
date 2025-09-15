@@ -20,7 +20,8 @@ import {
   Mountain,
   Waves,
   Car,
-  Ruler
+  Ruler,
+  Plane
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -124,7 +125,7 @@ export default function RegenerativeVillagePage() {
       {/* Pagina 2 – Location & History */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-3 gap-12 items-start">
             <div className="relative">
               <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
                 <Image
@@ -132,7 +133,7 @@ export default function RegenerativeVillagePage() {
                   alt="Vista panoramica del villaggio"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
             </div>
@@ -158,112 +159,81 @@ export default function RegenerativeVillagePage() {
                     <p className="text-sm text-muted-foreground">{t("regenerativeVillage.location.historyDesc")}</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">{t("regenerativeVillage.location.ascoliPiceno")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("regenerativeVillage.location.ascoliPicenoDesc")}</p>
-                  </div>
-                </div>
               </div>
+            </div>
+            
+            {/* Access Info Card */}
+            <div>
+              <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/10 sticky top-8">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-primary" />
+                    Easy Access
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-center justify-between py-2 border-b border-muted">
+                    <div className="flex items-center gap-3">
+                      <MapPin className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.ascoliPiceno")}</span>
+                    </div>
+                    <span className="font-semibold text-blue-600">{t("regenerativeVillage.location.ascoliPicenoDesc")}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between py-2 border-b border-muted">
+                    <div className="flex items-center gap-3">
+                      <Waves className="h-4 w-4 text-cyan-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.adriaticCoast")}</span>
+                    </div>
+                    <span className="font-semibold text-cyan-600">{t("regenerativeVillage.location.adriaticCoastDesc")}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between py-2 border-b border-muted">
+                    <div className="flex items-center gap-3">
+                      <Mountain className="h-4 w-4 text-purple-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.skiArea")}</span>
+                    </div>
+                    <span className="font-semibold text-purple-600">{t("regenerativeVillage.location.skiAreaDesc")}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between py-2 border-b border-muted">
+                    <div className="flex items-center gap-3">
+                      <TreePine className="h-4 w-4 text-green-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.sibilliniPark")}</span>
+                    </div>
+                    <span className="font-semibold text-green-600">{t("regenerativeVillage.location.sibilliniParkDesc")}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between py-2 border-b border-muted">
+                    <div className="flex items-center gap-3">
+                      <TreePine className="h-4 w-4 text-emerald-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.lagaPark")}</span>
+                    </div>
+                    <span className="font-semibold text-emerald-600">{t("regenerativeVillage.location.lagaParkDesc")}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between py-2 border-b border-muted">
+                    <div className="flex items-center gap-3">
+                      <Plane className="h-4 w-4 text-orange-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.airports")}</span>
+                    </div>
+                    <span className="font-semibold text-orange-600">{t("regenerativeVillage.location.airportsDesc")}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between py-2">
+                    <div className="flex items-center gap-3">
+                      <Car className="h-4 w-4 text-red-600" />
+                      <span className="text-sm">{t("regenerativeVillage.location.rome")}</span>
+                    </div>
+                    <span className="font-semibold text-red-600">{t("regenerativeVillage.location.romeDesc")}</span>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Proximity & Accessibility */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("regenerativeVillage.location.accessibility")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {t("regenerativeVillage.location.accessibilityDesc")}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("regenerativeVillage.location.ascoliPiceno")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t("regenerativeVillage.location.ascoliPicenoDesc")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Waves className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("regenerativeVillage.location.adriaticCoast")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t("regenerativeVillage.location.adriaticCoastDesc")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Mountain className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("regenerativeVillage.location.skiArea")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t("regenerativeVillage.location.skiAreaDesc")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Car className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("regenerativeVillage.location.rome")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t("regenerativeVillage.location.romeDesc")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TreePine className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("regenerativeVillage.location.sibilliniPark")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t("regenerativeVillage.location.sibilliniParkDesc")}
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TreePine className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("regenerativeVillage.location.lagaPark")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t("regenerativeVillage.location.lagaParkDesc")}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Pagina 3 – Comunità e Cultura */}
       <section className="py-16 bg-muted/30">
@@ -470,13 +440,6 @@ export default function RegenerativeVillagePage() {
                   <div>
                     <h3 className="font-semibold">{t("regenerativeVillage.wellnessNature.relaxationSpaces")}</h3>
                     <p className="text-sm text-muted-foreground">{t("regenerativeVillage.wellnessNature.relaxationSpacesDesc")}</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <TreePine className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">{t("regenerativeVillage.wellnessNature.unspoiledNature")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("regenerativeVillage.wellnessNature.unspoiledNatureDesc")}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

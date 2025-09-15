@@ -14,7 +14,7 @@ const Footer = () => {
               <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-display font-bold text-sm">R</span>
               </div>
-              <span className="font-display text-xl font-bold">Regenerativa</span>
+              <span className="font-display text-xl font-bold">ReGenerativa</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Building EcoCivilization 2030 through integral regeneration and bioregional networks.
@@ -111,7 +111,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2025 Regenerativa APS. All rights reserved.
+            © 2025 ReGenerativa APS. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
             <LanguageSelector />

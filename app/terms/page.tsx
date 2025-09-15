@@ -43,7 +43,7 @@ export default function TermsPage() {
                 Agreement to Terms
               </h2>
               <p className="text-lg text-muted-foreground">
-                By accessing and using the Regenerativa website and services, you agree to be bound by these Terms of Service. 
+                By accessing and using the ReGenerativa website and services, you agree to be bound by these Terms of Service. 
                 If you disagree with any part of these terms, you may not access our services.
               </p>
             </div>
@@ -51,7 +51,7 @@ export default function TermsPage() {
             <div className="mb-12">
               <h3 className="text-2xl font-display font-bold mb-4">1. Description of Service</h3>
               <p className="text-muted-foreground mb-4">
-                Regenerativa provides a platform for connecting individuals and communities interested in regenerative practices, 
+                ReGenerativa provides a platform for connecting individuals and communities interested in regenerative practices, 
                 sustainable living, and ecological restoration. Our services include:
               </p>
               <ul className="list-disc pl-6 text-muted-foreground">
@@ -122,7 +122,7 @@ export default function TermsPage() {
                 <div>
                   <h4 className="font-semibold">Our Content</h4>
                   <p className="text-muted-foreground">
-                    All content on our platform, including text, graphics, logos, and software, is owned by Regenerativa or 
+                    All content on our platform, including text, graphics, logos, and software, is owned by ReGenerativa or 
                     our licensors and is protected by copyright and other intellectual property laws.
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function TermsPage() {
             <div className="mb-12">
               <h3 className="text-2xl font-display font-bold mb-4">8. Limitation of Liability</h3>
               <p className="text-muted-foreground">
-                To the maximum extent permitted by law, Regenerativa shall not be liable for any indirect, incidental, 
+                To the maximum extent permitted by law, ReGenerativa shall not be liable for any indirect, incidental, 
                 special, consequential, or punitive damages resulting from your use of our services.
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function TermsPage() {
               <h3 className="text-2xl font-display font-bold mb-4">10. Governing Law</h3>
               <p className="text-muted-foreground">
                 These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which 
-                Regenerativa operates, without regard to its conflict of law provisions.
+                ReGenerativa operates, without regard to its conflict of law provisions.
               </p>
             </div>
 
@@ -193,8 +193,8 @@ export default function TermsPage() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="bg-muted/30 p-4 rounded-lg mt-4">
-                <p className="font-semibold">Regenerativa</p>
-                <p className="text-muted-foreground">Email: legal@regenerativa.org</p>
+                <p className="font-semibold">ReGenerativa</p>
+                <p className="text-muted-foreground">Email: legal@regenerativa.earth</p>
                 <p className="text-muted-foreground">Contact Form: <Link href="/contact" className="text-primary hover:underline">Contact Us</Link></p>
               </div>
             </div>

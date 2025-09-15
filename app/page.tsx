@@ -72,7 +72,7 @@ export default function HomePage() {
                 className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                title="Regenerativa Introduction Video"
+                title="ReGenerativa Introduction Video"
               />
             </div>
           </div>

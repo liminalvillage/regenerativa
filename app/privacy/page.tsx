@@ -43,7 +43,7 @@ export default function PrivacyPage() {
                 Our Commitment to Privacy
               </h2>
               <p className="text-lg text-muted-foreground">
-                At Regenerativa, we are committed to protecting your privacy and ensuring the security of your personal information. 
+                At ReGenerativa, we are committed to protecting your privacy and ensuring the security of your personal information. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website 
                 and use our services.
               </p>
@@ -174,8 +174,8 @@ export default function PrivacyPage() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us at:
               </p>
               <div className="bg-muted/30 p-4 rounded-lg mt-4">
-                <p className="font-semibold">Regenerativa</p>
-                <p className="text-muted-foreground">Email: privacy@regenerativa.org</p>
+                <p className="font-semibold">ReGenerativa</p>
+                <p className="text-muted-foreground">Email: privacy@regenerativa.earth</p>
                 <p className="text-muted-foreground">Contact Form: <Link href="/contact" className="text-primary hover:underline">Contact Us</Link></p>
               </div>
             </div>
