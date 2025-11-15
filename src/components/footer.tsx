@@ -26,23 +26,50 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Framework */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold">Network</h3>
+            <h3 className="font-display font-semibold">Framework</h3>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/theos" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Theos Protocol
+                </Link>
+              </li>
+              <li>
+                <Link href="/holons" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Holon Structure
+                </Link>
+              </li>
+              <li>
+                <Link href="/regenerative-business" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Business Model
+                </Link>
+              </li>
+              <li>
+                <Link href="/flow" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Flow Token
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Projects */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold">Projects</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/agrosphere" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Agrosphere Tech
+                </Link>
+              </li>
+              <li>
                 <Link href="/network" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Interactive Map
+                  Network Map
                 </Link>
               </li>
               <li>
-                <Link href="/network/nodes" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Active Nodes
-                </Link>
-              </li>
-              <li>
-                <Link href="/network/cells" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Fractal Communities
+                <Link href="/bootstrap" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Bootstrap Network
                 </Link>
               </li>
               <li>
@@ -55,53 +82,26 @@ const Footer = () => {
 
           {/* Get Involved */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold">Get Involved</h3>
+            <h3 className="font-display font-semibold">Participate</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/join" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Join Newsletter
+                  Join Network
+                </Link>
+              </li>
+              <li>
+                <Link href="/events" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Events & Lunations
                 </Link>
               </li>
               <li>
                 <Link href="/contribute" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contribute Skills
-                </Link>
-              </li>
-              <li>
-                <Link href="/stake" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Stake Funds
+                  Contribute
                 </Link>
               </li>
               <li>
                 <Link href="/visit" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Visit Liminal Village
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div className="space-y-4">
-            <h3 className="font-display font-semibold">Resources</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/events" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Events Calendar
-                </Link>
-              </li>
-              <li>
-                <Link href="/library" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Library
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
+                  Visit Sites
                 </Link>
               </li>
             </ul>

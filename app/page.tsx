@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Users, Calendar, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine } from "lucide-react";
+import { MapPin, Users, Calendar, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine, Sun, Moon, Zap, Sprout } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslationSimple";
@@ -129,8 +129,148 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Core Frameworks */}
+      <section id="frameworks" className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
+              Core Frameworks
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The foundational systems enabling regenerative coordination at planetary scale
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-lg">Theos Protocol</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Digital coordination infrastructure that inverts market research—collective needs become visible to all potential creators
+                </p>
+                <Button variant="link" size="sm" className="p-0" asChild>
+                  <Link href="/theos">
+                    Learn More <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Sun className="h-6 w-6 text-amber-600" />
+                </div>
+                <CardTitle className="text-lg">Three Pathways</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Purchase (Solar), Produce (Lunar), or Attract (Collective)—transforming consumers into producer-owners
+                </p>
+                <Button variant="link" size="sm" className="p-0" asChild>
+                  <Link href="/regenerative-business">
+                    Explore Pathways <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Moon className="h-6 w-6 text-blue-600" />
+                </div>
+                <CardTitle className="text-lg">Lunar Calendar</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Organize collective action around natural cycles—new moon to full moon, honoring both action and integration
+                </p>
+                <Button variant="link" size="sm" className="p-0" asChild>
+                  <Link href="/events">
+                    View Calendar <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Hexagon className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-lg">Holon Structure</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Fractal organization where each part is simultaneously a whole—enabling coordination at every scale
+                </p>
+                <Button variant="link" size="sm" className="p-0" asChild>
+                  <Link href="/holons">
+                    Discover Holons <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Project: Agrosphere */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
+                <Image
+                  src="/permaculture.jpg"
+                  alt="Agrosphere regenerative farming"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-emerald-500/10 rounded-full px-4 py-2 mb-4">
+                <Sprout className="h-4 w-4 text-emerald-600" />
+                <span className="text-sm font-medium text-emerald-600">Featured Project</span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
+                Agrosphere Technology
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Open-source farming equipment enabling small-scale organic agriculture at unprecedented
+                density while actively regenerating ecosystems. The license requires 50% of land be
+                dedicated to restoration—proving food production and ecological healing can happen simultaneously.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center space-x-2">
+                  <Globe className="h-5 w-5 text-primary" />
+                  <span className="text-sm">Production centers in Italy & South Africa</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Leaf className="h-5 w-5 text-primary" />
+                  <span className="text-sm">50% land regeneration requirement</span>
+                </div>
+              </div>
+              <Button className="mt-6" asChild>
+                <Link href="/agrosphere">
+                  Explore Agrosphere
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Sites */}
-      <section id="sites" className="py-16 lg:py-24">
+      <section id="sites" className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
