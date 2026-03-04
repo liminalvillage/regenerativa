@@ -81,18 +81,27 @@ export default function FlowPage() {
             </p>
           </div>
 
-          {/* Visual — village life */}
+          {/* Visual — value exchange */}
           <div className="max-w-5xl mx-auto mt-12">
-            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
-              <Image
-                src="/liminalvillage/3.jpg"
-                alt="Community life at Liminal Village"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              <p className="absolute bottom-4 left-6 text-white/90 text-sm font-medium">Where value flows naturally — Liminal Village</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="relative h-64 rounded-2xl overflow-hidden">
+                <Image
+                  src="/stock/farmers-market.jpg"
+                  alt="Local food market — real value exchange"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+              <div className="relative h-64 rounded-2xl overflow-hidden">
+                <Image
+                  src="/stock/soil-hands.jpg"
+                  alt="Nurturing growth from the ground up"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
             </div>
           </div>
         </div>

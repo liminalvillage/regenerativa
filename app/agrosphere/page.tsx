@@ -83,6 +83,39 @@ export default function AgrospherePage() {
               {pt("overviewP3")}
             </p>
           </div>
+
+          {/* Visual — farming in action */}
+          <div className="max-w-5xl mx-auto mt-12">
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="relative h-56 rounded-2xl overflow-hidden">
+                <Image
+                  src="/stock/garden-work.jpg"
+                  alt="Harvesting fresh produce"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <div className="relative h-56 rounded-2xl overflow-hidden">
+                <Image
+                  src="/stock/organic-farming.jpg"
+                  alt="Organic farming with traditional methods"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <div className="relative h-56 rounded-2xl overflow-hidden">
+                <Image
+                  src="/stock/solar-panels.jpg"
+                  alt="Solar-powered agriculture"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

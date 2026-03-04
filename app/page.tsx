@@ -86,13 +86,13 @@ export default function HomePage() {
       {/* Photo break */}
       <div className="relative h-48 md:h-64">
         <Image
-          src="/liminalvillage/5.jpeg"
-          alt="Community gathering at Liminal Village"
+          src="/stock/green-field.jpg"
+          alt="Golden fields at sunset"
           fill
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* The Framework — Centerpiece */}
@@ -442,8 +442,17 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/90 via-primary to-primary/80 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/90 via-primary to-primary/80 text-white">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/stock/aerial-green.jpg"
+            alt="Mountain landscape"
+            fill
+            className="object-cover opacity-20 mix-blend-overlay"
+            sizes="100vw"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
               {t("homepage.cta.heading")}

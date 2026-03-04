@@ -206,10 +206,10 @@ export default function EventsPage() {
             <div className="relative">
               <div className="bg-muted rounded-lg overflow-hidden h-80">
                 <Image
-                  src="/transition.jpg"
-                  alt="Lunation timeline and moon phases"
+                  src="/stock/moon-night.jpg"
+                  alt="Night sky — the moon guides our work cycles"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -365,6 +365,19 @@ export default function EventsPage() {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               {t("eventsPage.seasonalGatheringsSubtitle")}
             </p>
+          </div>
+
+          {/* Photo break */}
+          <div className="relative h-48 md:h-64 rounded-2xl overflow-hidden max-w-4xl mx-auto mb-12">
+            <Image
+              src="/stock/campfire.jpg"
+              alt="Community gathering around the fire"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 80vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <p className="absolute bottom-4 left-6 text-white/90 text-sm font-medium">Seasonal gatherings — where community comes together</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
