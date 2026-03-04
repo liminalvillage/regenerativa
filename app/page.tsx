@@ -278,7 +278,7 @@ export default function HomePage() {
               <div className="h-48 relative">
                 <Image
                   src="/brickfactory/13.jpeg"
-                  alt="Brick Factory"
+                  alt="ReFactory"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"

@@ -69,7 +69,7 @@ export default function CasaSelvaPage() {
                 Our Vision
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Born from the vision of Laura Valenti, Casa Selva invites people to reconnect with themselves, with each other, and with the living world.
+                Born from the vision of Laura van Wijngaarden, Casa Selva invites people to reconnect with themselves, with each other, and with the living world.
                 Here, life unfolds at a slower rhythm: guided by the cycles of nature, the laughter of children, and the practice of everyday care.
               </p>
               <p className="text-lg text-muted-foreground mb-6">

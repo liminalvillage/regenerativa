@@ -49,8 +49,8 @@ const translations = {
         "description": "Our central community hub where innovation meets tradition, serving as the heart of our regenerative network."
       },
       "brickFactory": {
-        "title": "Fabbrica del Terzo Settore",
-        "subtitle": "Regenerative Factory",
+        "title": "ReFactory",
+        "subtitle": "ReFactory",
         "description": "A third sector factory focused on regenerative practices, circular economy, and sustainable production methodologies."
       },
       "casaSelva": {
@@ -172,7 +172,7 @@ const translations = {
       "bootstrapNetwork": "Bootstrap Network",
       "networkMap": "Network Map",
       "liminalVillage": "Liminal Village",
-      "brickFactory": "Brick Factory",
+      "brickFactory": "ReFactory",
       "casaSelva": "Casa Selva",
       "events": "Events",
       "join": "Join",
@@ -407,8 +407,8 @@ const translations = {
         "description": "Nuestro centro comunitario central donde la innovación se encuentra con la tradición, sirviendo como el corazón de nuestra red ReGenerativa."
       },
       "brickFactory": {
-        "title": "Fábrica del Tercer Sector",
-        "subtitle": "Fábrica ReGenerativa",
+        "title": "ReFactory",
+        "subtitle": "Fabbrica del Terzo Settore",
         "description": "Una fábrica del tercer sector enfocada en prácticas regenerativas, economía circular y metodologías de producción sostenible."
       },
       "casaSelva": {
@@ -530,7 +530,7 @@ const translations = {
       "bootstrapNetwork": "Red Bootstrap",
       "networkMap": "Mapa de Red",
       "liminalVillage": "Liminal Village",
-      "brickFactory": "Brick Factory",
+      "brickFactory": "ReFactory",
       "casaSelva": "Casa Selva",
       "events": "Eventos",
       "join": "Unirse",
@@ -765,8 +765,8 @@ const translations = {
         "description": "Notre centre communautaire central où l'innovation rencontre la tradition, servant de cœur à notre réseau régénératif."
       },
       "brickFactory": {
-        "title": "Fabrique du Tiers Secteur",
-        "subtitle": "Fabrique Régénérative",
+        "title": "ReFactory",
+        "subtitle": "Fabbrica del Terzo Settore",
         "description": "Une fabrique du tiers secteur axée sur les pratiques régénératives, l'économie circulaire et les méthodologies de production durable."
       },
       "casaSelva": {
@@ -888,7 +888,7 @@ const translations = {
       "bootstrapNetwork": "Réseau Bootstrap",
       "networkMap": "Carte du Réseau",
       "liminalVillage": "Liminal Village",
-      "brickFactory": "Brick Factory",
+      "brickFactory": "ReFactory",
       "casaSelva": "Casa Selva",
       "events": "Événements",
       "join": "Rejoindre",
@@ -1123,8 +1123,8 @@ const translations = {
         "description": "Il nostro hub comunitario centrale dove l'innovazione incontra la tradizione, servendo come cuore della nostra rete rigenerativa."
       },
       "brickFactory": {
-        "title": "Fabbrica del Terzo Settore",
-        "subtitle": "Fabbrica Rigenerativa",
+        "title": "ReFactory",
+        "subtitle": "Fabbrica del Terzo Settore",
         "description": "Una fabbrica del terzo settore focalizzata su pratiche rigenerative, economia circolare e metodologie di produzione sostenibile."
       },
       "casaSelva": {
@@ -1246,7 +1246,7 @@ const translations = {
       "bootstrapNetwork": "Rete Bootstrap",
       "networkMap": "Mappa della Rete",
       "liminalVillage": "Liminal Village",
-      "brickFactory": "Brick Factory",
+      "brickFactory": "ReFactory",
       "casaSelva": "Casa Selva",
       "events": "Eventi",
       "join": "Unisciti",
@@ -1338,7 +1338,7 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Fabbrica del Terzo Settore",
+        "title": "ReFactory",
         "subtitle": "Una fabbrica del Terzo Settore focalizzata su pratiche rigenerative, economia circolare e produzione sostenibile.",
         "description": "Scopri la nostra visione e unisciti alla comunità",
         "cta": "Unisciti alla Comunità",
@@ -1481,7 +1481,7 @@ const translations = {
         "description": "Onze centrale gemeenschapshub waar innovatie traditie ontmoet, en dient als het hart van ons regeneratieve netwerk."
       },
       "brickFactory": {
-        "title": "Fabbrica del Terzo Settore",
+        "title": "ReFactory",
         "subtitle": "Regeneratieve Fabriek",
         "description": "Een derde sector fabriek gericht op regeneratieve praktijken, circulaire economie en duurzame productie methodologieën."
       },
@@ -1604,7 +1604,7 @@ const translations = {
       "bootstrapNetwork": "Bootstrap Netwerk",
       "networkMap": "Netwerkkaart",
       "liminalVillage": "Liminal Village",
-      "brickFactory": "Brick Factory",
+      "brickFactory": "ReFactory",
       "casaSelva": "Casa Selva",
       "events": "Evenementen",
       "join": "Doe Mee",
@@ -1696,7 +1696,7 @@ const translations = {
     },
     "regenerativeVillage": {
       "hero": {
-        "title": "Fabbrica del Terzo Settore",
+        "title": "ReFactory",
         "subtitle": "Een Derde Sector fabriek gericht op regeneratieve praktijken, circulaire economie en duurzame productie.",
         "description": "Ontdek onze visie en word lid van de gemeenschap",
         "cta": "Word Lid van de Gemeenschap",
