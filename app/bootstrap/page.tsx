@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Heart, ArrowRight, Leaf, Shield, Sparkles, CheckCircle2, TrendingUp, Gift, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslationSimple";
 import { bootstrapTranslations } from "@/translations/pages/bootstrap";
 
@@ -22,7 +23,17 @@ export default function BootstrapPage() {
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-emerald-500/10 via-background to-teal-500/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/brickfactory/1.jpeg"
+            alt="Regenerative building and sustainable architecture"
+            fill
+            className="object-cover opacity-15"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
               <Heart className="h-4 w-4 text-primary" />
@@ -68,6 +79,21 @@ export default function BootstrapPage() {
             <p className="text-lg text-muted-foreground">
               {pt("challengeP3")}
             </p>
+          </div>
+
+          {/* Visual — aerial of existing node */}
+          <div className="max-w-5xl mx-auto mt-12">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="/liminalvillage/1.jpeg"
+                alt="Liminal Village — an established regenerative node in Tuscany"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <p className="absolute bottom-4 left-6 text-white/90 text-sm font-medium">Liminal Village — a working example of a regenerative node in Tuscany</p>
+            </div>
           </div>
         </div>
       </section>

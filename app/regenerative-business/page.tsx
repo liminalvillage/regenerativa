@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sun, Moon, Users, ArrowRight, Leaf, Shield, Coins, Factory, BookOpen, Sparkles, Circle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslationSimple";
 import { regenbusinessTranslations } from "@/translations/pages/regenbusiness";
 
@@ -22,7 +23,17 @@ export default function RegenerativeBusinessPage() {
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-amber-500/10 via-background to-blue-500/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/liminalvillage/1.jpeg"
+            alt="Regenerative economy in action"
+            fill
+            className="object-cover opacity-15"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
               <Leaf className="h-4 w-4 text-primary" />
@@ -74,6 +85,30 @@ export default function RegenerativeBusinessPage() {
                 <p className="text-muted-foreground"><strong>{pt("abundanceBody")}</strong></p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Visual — retreat experience */}
+          <div className="max-w-5xl mx-auto mt-12">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="relative h-64 rounded-2xl overflow-hidden">
+                <Image
+                  src="/brickfactory/5.jpeg"
+                  alt="Regenerative retreat experience"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+              <div className="relative h-64 rounded-2xl overflow-hidden">
+                <Image
+                  src="/liminalvillage/7.JPG"
+                  alt="Sustainable living at Liminal Village"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

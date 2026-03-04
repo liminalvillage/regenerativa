@@ -152,6 +152,20 @@ export default function AgrospherePage() {
             </Card>
           </div>
 
+          {/* Earthship diagram */}
+          <div className="max-w-4xl mx-auto mt-8 mb-8">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="/earthship.jpg"
+                alt="Earthship self-sufficient building design"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
+            </div>
+            <p className="text-center text-sm text-muted-foreground mt-3">Earthship design — integrating energy, water, food, and waste systems into one building</p>
+          </div>
+
           <Card className="mt-8 max-w-3xl mx-auto bg-gradient-to-br from-primary/5 to-secondary/5">
             <CardHeader>
               <CardTitle className="flex items-center">

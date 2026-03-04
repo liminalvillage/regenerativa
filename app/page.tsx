@@ -83,6 +83,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Photo break */}
+      <div className="relative h-48 md:h-64">
+        <Image
+          src="/liminalvillage/5.jpeg"
+          alt="Community gathering at Liminal Village"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
+
       {/* The Framework — Centerpiece */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,30 +338,41 @@ export default function HomePage() {
       {/* Bootstrap Network */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 bg-blue-500/10 rounded-full px-4 py-2 mb-6">
-              <Network className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium text-blue-600">{t("homepage.bootstrap.badge")}</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-blue-500/10 rounded-full px-4 py-2 mb-6">
+                <Network className="h-4 w-4 text-blue-600" />
+                <span className="text-sm font-medium text-blue-600">{t("homepage.bootstrap.badge")}</span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
+                {t("homepage.bootstrap.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                {t("homepage.bootstrap.description")}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" asChild>
+                  <Link href="/bootstrap">
+                    {t("homepage.bootstrap.startNode")}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="/network">
+                    {t("homepage.bootstrap.viewMap")}
+                    <MapPin className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              {t("homepage.bootstrap.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {t("homepage.bootstrap.description")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link href="/bootstrap">
-                  {t("homepage.bootstrap.startNode")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/network">
-                  {t("homepage.bootstrap.viewMap")}
-                  <MapPin className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+            <div className="relative h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="/brickfactory/1.jpeg"
+                alt="Sustainable architecture — blending tradition with innovation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -358,15 +381,25 @@ export default function HomePage() {
       {/* Events — Simplified */}
       <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("homepage.events.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("homepage.events.subtitle")}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto mb-12">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
+                {t("homepage.events.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                {t("homepage.events.subtitle")}
+              </p>
+              <div className="relative h-48 rounded-2xl overflow-hidden">
+                <Image
+                  src="/liminalvillage/4.jpeg"
+                  alt="Community planning session"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+            <div className="space-y-4">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
@@ -395,6 +428,7 @@ export default function HomePage() {
                 </p>
               </CardContent>
             </Card>
+            </div>
           </div>
           <div className="text-center">
             <Button variant="outline" asChild>

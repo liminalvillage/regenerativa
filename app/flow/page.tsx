@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap, ArrowRight, TrendingUp, Users, Leaf, Heart, Database, Scale, Coins, Globe } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslationSimple";
 import { flowTranslations } from "@/translations/pages/flow";
 
@@ -22,7 +23,17 @@ export default function FlowPage() {
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-violet-500/10 via-background to-purple-500/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banner1.jpg"
+            alt="Growing value through regenerative systems"
+            fill
+            className="object-cover opacity-15"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
               <Zap className="h-4 w-4 text-primary" />
@@ -68,6 +79,21 @@ export default function FlowPage() {
             <p className="text-lg text-muted-foreground">
               <strong>{pt("beyondP3")}</strong>
             </p>
+          </div>
+
+          {/* Visual — village life */}
+          <div className="max-w-5xl mx-auto mt-12">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="/liminalvillage/3.jpg"
+                alt="Community life at Liminal Village"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <p className="absolute bottom-4 left-6 text-white/90 text-sm font-medium">Where value flows naturally — Liminal Village</p>
+            </div>
           </div>
         </div>
       </section>
