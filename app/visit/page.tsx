@@ -7,8 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "@/hooks/useTranslationSimple";
 
 export default function VisitPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -28,21 +30,21 @@ export default function VisitPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              Visit Our <span className="text-primary">Communities</span>
+              {t("visitPage.heroTitle")}<span className="text-primary">{t("visitPage.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              Experience regenerative living firsthand by visiting our network of communities and projects.
+              {t("visitPage.heroSubtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/network">
-                  Explore Network
+                  {t("visitPage.exploreNetwork")}
                   <MapPin className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/contact">
-                  Schedule Visit
+                  {t("visitPage.scheduleVisit")}
                   <Calendar className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -56,10 +58,10 @@ export default function VisitPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              How to Visit
+              {t("visitPage.howToVisit")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose from different types of visits to experience regenerative living.
+              {t("visitPage.howToVisitDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -68,17 +70,17 @@ export default function VisitPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Calendar className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Day Visits</CardTitle>
+                <CardTitle>{t("visitPage.dayVisits")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Spend a day exploring our communities and learning about regenerative practices.
+                  {t("visitPage.dayVisitsDesc")}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• Guided tours of facilities</li>
-                  <li>• Hands-on workshops</li>
-                  <li>• Community meals</li>
-                  <li>• Q&A sessions</li>
+                  <li>• {t("visitPage.guidedTours")}</li>
+                  <li>• {t("visitPage.handsOnWorkshops")}</li>
+                  <li>• {t("visitPage.communityMeals")}</li>
+                  <li>• {t("visitPage.qaSessions")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -87,17 +89,17 @@ export default function VisitPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Weekend Retreats</CardTitle>
+                <CardTitle>{t("visitPage.weekendRetreats")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Immerse yourself in community life with weekend stays and activities.
+                  {t("visitPage.weekendRetreatsDesc")}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• Accommodation in community</li>
-                  <li>• Participation in daily activities</li>
-                  <li>• Skill-building workshops</li>
-                  <li>• Community gatherings</li>
+                  <li>• {t("visitPage.accommodation")}</li>
+                  <li>• {t("visitPage.dailyActivities")}</li>
+                  <li>• {t("visitPage.skillWorkshops")}</li>
+                  <li>• {t("visitPage.communityGatherings")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -106,17 +108,17 @@ export default function VisitPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Extended Stays</CardTitle>
+                <CardTitle>{t("visitPage.extendedStays")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Live and work with communities for weeks or months to fully experience regenerative living.
+                  {t("visitPage.extendedStaysDesc")}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• Work exchange programs</li>
-                  <li>• Skill development</li>
-                  <li>• Deep community integration</li>
-                  <li>• Project participation</li>
+                  <li>• {t("visitPage.workExchange")}</li>
+                  <li>• {t("visitPage.skillDevelopment")}</li>
+                  <li>• {t("visitPage.deepIntegration")}</li>
+                  <li>• {t("visitPage.projectParticipation")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -129,21 +131,21 @@ export default function VisitPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              Ready to Experience Regenerative Living?
+              {t("visitPage.readyToExperience")}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Connect with our communities and see firsthand how regenerative practices are transforming lives and landscapes.
+              {t("visitPage.readyToExperienceDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/contact">
-                  Schedule Your Visit
+                  {t("visitPage.scheduleYourVisit")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/network">
-                  Browse Communities
+                  {t("visitPage.browseCommunities")}
                   <MapPin className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

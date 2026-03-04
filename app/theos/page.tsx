@@ -7,8 +7,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Network, Users, Calendar, Cpu, Database, GitBranch, ArrowRight, Leaf, Heart, Globe, Hexagon, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "@/hooks/useTranslationSimple";
+import { theosTranslations } from "@/translations/pages/theos";
 
 export default function TheosPage() {
+  const { currentLanguage } = useTranslation();
+  const pt = (key: string) => {
+    const t = theosTranslations[currentLanguage] || theosTranslations['en'];
+    return t[key] || theosTranslations['en'][key] || key;
+  };
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -24,24 +32,24 @@ export default function TheosPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
               <Cpu className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Digital Coordination Infrastructure</span>
+              <span className="text-sm font-medium">{pt("heroBadge")}</span>
             </div>
             <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-              Theos Protocol
+              {pt("heroTitle")}
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8">
-              A digital protocol for coordinating collective needs, wishes, and regenerative action across the network
+              {pt("heroSubtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/join">
-                  Join the Network
+                  {pt("joinNetwork")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <a href="#how-it-works">
-                  Learn More
+                  {pt("learnMore")}
                   <Network className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -55,16 +63,16 @@ export default function TheosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6 text-center">
-              What is Theos?
+              {pt("whatIsTitle")}
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Theos—described as both a "digital protocol" and a "digital religion"—represents the software infrastructure that enables Regenerativa's vision to function at scale. It provides the technical backbone for coordinating collective needs, resource flows, and regenerative action across a decentralized network of communities.
+              {pt("whatIsP1")}
             </p>
             <p className="text-lg text-muted-foreground mb-6">
-              Unlike traditional market systems where companies create products and then seek customers through advertising, Theos inverts this relationship: <strong>participants express their needs and wishes, which automatically become specifications for development.</strong>
+              <strong>{pt("whatIsP2")}</strong>
             </p>
             <p className="text-lg text-muted-foreground">
-              The protocol operates democratically—if only one person expresses a need, it may not constitute genuine collective demand. But when many subscribe to the same need, it demonstrates true demand worthy of coordination and resource allocation.
+              {pt("whatIsP3")}
             </p>
           </div>
         </div>
@@ -75,10 +83,10 @@ export default function TheosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              How Theos Works
+              {pt("howWorksTitle")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The protocol coordinates through a series of interconnected mechanisms
+              {pt("howWorksSubtitle")}
             </p>
           </div>
 
@@ -88,12 +96,12 @@ export default function TheosPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Heart className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Need Expression</CardTitle>
-                <CardDescription>Collective wishes create demand signals</CardDescription>
+                <CardTitle>{pt("needExprTitle")}</CardTitle>
+                <CardDescription>{pt("needExprDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Participants specify their needs (wishes) within the platform, subscribing to desired products, services, or solutions. These subscriptions aggregate into collective demand signals that creators and innovators respond to with their skills and expertise.
+                  {pt("needExprBody")}
                 </p>
               </CardContent>
             </Card>
@@ -103,12 +111,12 @@ export default function TheosPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Holon Integration</CardTitle>
-                <CardDescription>Nested coordination across scales</CardDescription>
+                <CardTitle>{pt("holonIntTitle")}</CardTitle>
+                <CardDescription>{pt("holonIntDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Each Holon has input interfaces (needs) and output interfaces (contributions). Needs travel with individuals across different Holons, creating personal profiles that can be satisfied anywhere in the network while contributions address collective requirements.
+                  {pt("holonIntBody")}
                 </p>
               </CardContent>
             </Card>
@@ -118,12 +126,12 @@ export default function TheosPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Database className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Multi-Resource Accounting</CardTitle>
-                <CardDescription>Comprehensive value tracking</CardDescription>
+                <CardTitle>{pt("multiResTitle")}</CardTitle>
+                <CardDescription>{pt("multiResDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  The protocol tracks money, labor, materials, land access, regenerative impacts, and social capital. Every resource is indexed by name, location, and usage, with exchange rates varying contextually. This enables sophisticated multi-hop exchanges.
+                  {pt("multiResBody")}
                 </p>
               </CardContent>
             </Card>
@@ -133,12 +141,12 @@ export default function TheosPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Flow Distribution</CardTitle>
-                <CardDescription>Value recognition system</CardDescription>
+                <CardTitle>{pt("flowDistTitle")}</CardTitle>
+                <CardDescription>{pt("flowDistDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Each month, Flow tokens distribute to those who have contributed toward collectively identified needs. The algorithm weighs both performance (measurable results) and relationality (quality of collaboration), ensuring both excellence and cooperation receive recognition.
+                  {pt("flowDistBody")}
                 </p>
               </CardContent>
             </Card>
@@ -151,10 +159,10 @@ export default function TheosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Technical Architecture
+              {pt("techArchTitle")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Built on decentralized protocols and open-source principles
+              {pt("techArchSubtitle")}
             </p>
           </div>
 
@@ -164,9 +172,9 @@ export default function TheosPage() {
                 <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Hexagon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">H3 Spatial Indexing</h3>
+                <h3 className="font-semibold mb-2">{pt("h3Title")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Geographic coordination using hexagonal hierarchical spatial indexing for bioregional organization
+                  {pt("h3Desc")}
                 </p>
               </div>
 
@@ -174,9 +182,9 @@ export default function TheosPage() {
                 <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <GitBranch className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Distributed Governance</h3>
+                <h3 className="font-semibold mb-2">{pt("distGovTitle")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Sociocratic circles and holacratic structures enable self-organization at multiple scales
+                  {pt("distGovDesc")}
                 </p>
               </div>
 
@@ -184,9 +192,9 @@ export default function TheosPage() {
                 <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Globe className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Open Source</h3>
+                <h3 className="font-semibold mb-2">{pt("openSourceTitle")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Fully transparent codebase enabling community contribution and regenerative licensing
+                  {pt("openSourceDesc")}
                 </p>
               </div>
             </div>
@@ -195,15 +203,15 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Leaf className="h-5 w-5 mr-2 text-primary" />
-                  Inverting Market Research
+                  {pt("invertTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Traditional market systems require companies to guess what people want, create products, and then convince people to buy through advertising. This creates enormous waste and misallocates resources.
+                  {pt("invertP1")}
                 </p>
                 <p className="text-muted-foreground">
-                  Theos flips this entirely: <strong>collective needs are automatically visible to all potential creators</strong>. There's no need for market research or advertising—the platform itself reveals what communities genuinely require, allowing skilled individuals to respond directly.
+                  <strong>{pt("invertP2")}</strong>
                 </p>
               </CardContent>
             </Card>
@@ -216,10 +224,10 @@ export default function TheosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Network Integration
+              {pt("netIntTitle")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Theos coordinates with every layer of the Regenerativa ecosystem
+              {pt("netIntSubtitle")}
             </p>
           </div>
 
@@ -228,12 +236,12 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
                   <Calendar className="h-5 w-5 mr-2 text-primary" />
-                  Lunar Calendar
+                  {pt("lunarCalTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Project timelines align with lunation cycles—planning at new moon, action during waxing, reflection during waning
+                  {pt("lunarCalDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -242,12 +250,12 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
                   <Hexagon className="h-5 w-5 mr-2 text-primary" />
-                  Holon Structure
+                  {pt("holonStructTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Each Holon uses Theos to coordinate internally and exchange with the broader network
+                  {pt("holonStructDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -256,12 +264,12 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
                   <Leaf className="h-5 w-5 mr-2 text-primary" />
-                  Regenerative Licensing
+                  {pt("regenLicTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Tracks license compliance and ensures regenerative requirements are met across the network
+                  {pt("regenLicDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -270,12 +278,12 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
                   <Database className="h-5 w-5 mr-2 text-primary" />
-                  Resource Flows
+                  {pt("resFlowTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Comprehensive accounting of materials, labor, land, and regenerative impacts across exchanges
+                  {pt("resFlowDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -284,12 +292,12 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
                   <Users className="h-5 w-5 mr-2 text-primary" />
-                  Bootstrap Network
+                  {pt("bootNetTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Provides onboarding pathways and connects newcomers with opportunities to contribute and benefit
+                  {pt("bootNetDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -298,12 +306,12 @@ export default function TheosPage() {
               <CardHeader>
                 <CardTitle className="flex items-center text-base">
                   <Zap className="h-5 w-5 mr-2 text-primary" />
-                  Flow Token
+                  {pt("flowTokenTitle")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Distributes monthly recognition tokens based on contributions to collective needs and regeneration
+                  {pt("flowTokenDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -316,24 +324,24 @@ export default function TheosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              Network-Supported Development
+              {pt("devTitle")}
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              The Theos development team operates as modern journeymen—traveling to beautiful locations across Europe where they receive food and accommodation in exchange for focused work on the technical infrastructure.
+              {pt("devP1")}
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              This arrangement reflects traditional journeyman practice: skilled individuals deepen their expertise while providing valuable service. The community recognizes this work because the software being developed is precisely the infrastructure that allows coordination to happen at scale.
+              {pt("devP2")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild>
                 <Link href="/contribute">
-                  Contribute to Development
+                  {pt("contributeDev")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link href="/about">
-                  Meet the Team
+                  {pt("meetTeam")}
                   <Users className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -347,21 +355,21 @@ export default function TheosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              Join the Digital Coordination Revolution
+              {pt("ctaTitle")}
             </h2>
             <p className="text-lg text-white/90 mb-8">
-              Theos is now open-source, inviting relationality with the broader community. Help shape the infrastructure that enables regenerative coordination at planetary scale.
+              {pt("ctaBody")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
                 <Link href="/join">
-                  Join the Network
+                  {pt("joinNetwork")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10" asChild>
                 <Link href="/network">
-                  Explore the Network
+                  {pt("exploreNetwork")}
                   <Network className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

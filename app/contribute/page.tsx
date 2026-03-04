@@ -7,8 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Heart, Users, Globe, ArrowRight, Gift, BookOpen, Wrench, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "@/hooks/useTranslationSimple";
 
 export default function ContributePage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -28,21 +30,21 @@ export default function ContributePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              Contribute to <span className="text-primary">Regeneration</span>
+              {t("contributePage.heroTitle")}<span className="text-primary">{t("contributePage.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              Share your skills, resources, and passion to help build a regenerative future for all.
+              {t("contributePage.heroSubtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/join">
-                  Join the Network
+                  {t("contributePage.joinNetwork")}
                   <Users className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/contact">
-                  Get in Touch
+                  {t("contributePage.getInTouch")}
                   <Heart className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -56,10 +58,10 @@ export default function ContributePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Ways to Contribute
+              {t("contributePage.waysToContribute")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              There are many ways you can contribute to our regenerative network, from sharing skills to providing resources.
+              {t("contributePage.waysToContributeDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -68,17 +70,17 @@ export default function ContributePage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <GraduationCap className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Share Skills</CardTitle>
+                <CardTitle>{t("contributePage.shareSkills")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Teach workshops, mentor others, or share your expertise in areas like:
+                  {t("contributePage.shareSkillsDesc")}
                 </p>
                 <ul className="space-y-1 text-sm">
-                  <li>• Permaculture design</li>
-                  <li>• Sustainable building</li>
-                  <li>• Renewable energy</li>
-                  <li>• Community organizing</li>
+                  <li>• {t("contributePage.permacultureDesign")}</li>
+                  <li>• {t("contributePage.sustainableBuilding")}</li>
+                  <li>• {t("contributePage.renewableEnergy")}</li>
+                  <li>• {t("contributePage.communityOrganizing")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -87,17 +89,17 @@ export default function ContributePage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Wrench className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Volunteer Time</CardTitle>
+                <CardTitle>{t("contributePage.volunteerTime")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Help with ongoing projects and community initiatives:
+                  {t("contributePage.volunteerTimeDesc")}
                 </p>
                 <ul className="space-y-1 text-sm">
-                  <li>• Physical labor</li>
-                  <li>• Event organization</li>
-                  <li>• Administrative support</li>
-                  <li>• Technical assistance</li>
+                  <li>• {t("contributePage.physicalLabor")}</li>
+                  <li>• {t("contributePage.eventOrganization")}</li>
+                  <li>• {t("contributePage.adminSupport")}</li>
+                  <li>• {t("contributePage.technicalAssistance")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -106,17 +108,17 @@ export default function ContributePage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Gift className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Donate Resources</CardTitle>
+                <CardTitle>{t("contributePage.donateResources")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Contribute materials, tools, or financial support:
+                  {t("contributePage.donateResourcesDesc")}
                 </p>
                 <ul className="space-y-1 text-sm">
-                  <li>• Building materials</li>
-                  <li>• Tools and equipment</li>
-                  <li>• Seeds and plants</li>
-                  <li>• Financial donations</li>
+                  <li>• {t("contributePage.buildingMaterials")}</li>
+                  <li>• {t("contributePage.toolsEquipment")}</li>
+                  <li>• {t("contributePage.seedsPlants")}</li>
+                  <li>• {t("contributePage.financialDonations")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -125,17 +127,17 @@ export default function ContributePage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <BookOpen className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Share Knowledge</CardTitle>
+                <CardTitle>{t("contributePage.shareKnowledge")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Contribute to our knowledge base and documentation:
+                  {t("contributePage.shareKnowledgeDesc")}
                 </p>
                 <ul className="space-y-1 text-sm">
-                  <li>• Write articles</li>
-                  <li>• Create tutorials</li>
-                  <li>• Document projects</li>
-                  <li>• Share research</li>
+                  <li>• {t("contributePage.writeArticles")}</li>
+                  <li>• {t("contributePage.createTutorials")}</li>
+                  <li>• {t("contributePage.documentProjects")}</li>
+                  <li>• {t("contributePage.shareResearch")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -148,25 +150,25 @@ export default function ContributePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Current Community Needs
+              {t("contributePage.currentNeeds")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Here are some specific ways communities are asking for help right now.
+              {t("contributePage.currentNeedsDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <CardTitle>Solar Installation</CardTitle>
-                <CardDescription>Community in Northern California</CardDescription>
+                <CardTitle>{t("contributePage.solarInstallation")}</CardTitle>
+                <CardDescription>{t("contributePage.solarLocation")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Need experienced solar installers to help set up a 10kW system for community center.
+                  {t("contributePage.solarDesc")}
                 </p>
                 <Button size="sm" variant="outline" asChild>
                   <Link href="/contact">
-                    Offer Help
+                    {t("contributePage.offerHelp")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -174,16 +176,16 @@ export default function ContributePage() {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Water System Design</CardTitle>
-                <CardDescription>Community in New Mexico</CardDescription>
+                <CardTitle>{t("contributePage.waterSystem")}</CardTitle>
+                <CardDescription>{t("contributePage.waterLocation")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Looking for permaculture water system designer to help with rainwater harvesting.
+                  {t("contributePage.waterDesc")}
                 </p>
                 <Button size="sm" variant="outline" asChild>
                   <Link href="/contact">
-                    Offer Help
+                    {t("contributePage.offerHelp")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -191,16 +193,16 @@ export default function ContributePage() {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Community Outreach</CardTitle>
-                <CardDescription>Network-wide initiative</CardDescription>
+                <CardTitle>{t("contributePage.communityOutreach")}</CardTitle>
+                <CardDescription>{t("contributePage.outreachLocation")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Help spread awareness about regenerative practices through social media and events.
+                  {t("contributePage.outreachDesc")}
                 </p>
                 <Button size="sm" variant="outline" asChild>
                   <Link href="/contact">
-                    Offer Help
+                    {t("contributePage.offerHelp")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -215,22 +217,21 @@ export default function ContributePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              Ready to Make a Difference?
+              {t("contributePage.readyToMakeDifference")}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Every contribution, no matter how small, helps build a more regenerative world. 
-              Let&apos;s work together to create positive change.
+              {t("contributePage.readyToMakeDifferenceDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/contact">
-                  Start Contributing
+                  {t("contributePage.startContributing")}
                   <Heart className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/network">
-                  Explore Communities
+                  {t("contributePage.exploreCommunities")}
                   <Globe className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

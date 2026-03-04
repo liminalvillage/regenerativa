@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { extraTranslations } from '@/translations/extra';
 
 type Language = 'en' | 'es' | 'fr' | 'it' | 'nl';
 
@@ -157,6 +158,109 @@ const translations = {
       "contact_info": "Contact Information",
       "quick_links": "Quick Links",
       "legal": "Legal"
+    },
+    "nav": {
+      "vision": "Vision",
+      "projects": "Projects",
+      "sites": "Sites",
+      "participate": "Participate",
+      "theos": "Theos Protocol",
+      "holons": "Holons",
+      "flow": "Flow",
+      "regenBusiness": "Regenerative Business",
+      "agrosphere": "Agrosphere",
+      "bootstrapNetwork": "Bootstrap Network",
+      "networkMap": "Network Map",
+      "liminalVillage": "Liminal Village",
+      "brickFactory": "Brick Factory",
+      "casaSelva": "Casa Selva",
+      "events": "Events",
+      "join": "Join",
+      "contribute": "Contribute",
+      "visit": "Visit"
+    },
+    "homepage": {
+      "hero": {
+        "title": "Regenerate the World, Together",
+        "subtitle": "A network of communities, technologies, and frameworks building the foundations for an ecological civilization.",
+        "cta": "Join the Movement"
+      },
+      "vision": {
+        "heading": "The world doesn't need more extraction. It needs regeneration.",
+        "description": "Our economic systems deplete soil, fracture communities, and concentrate wealth. ReGenerativa offers a different path: open-source tools, living laboratories, and a coordination framework where every participant becomes a steward of ecological and social renewal.",
+        "ecological": "Ecological",
+        "ecologicalDesc": "Regenerating soil, water, and biodiversity through every project",
+        "social": "Social",
+        "socialDesc": "Building communities where cooperation replaces competition",
+        "systemic": "Systemic",
+        "systemicDesc": "Open frameworks that anyone can adopt and adapt locally"
+      },
+      "framework": {
+        "heading": "The Framework",
+        "subtitle": "Four interconnected systems for regenerative coordination at any scale",
+        "theosTitle": "Theos Protocol",
+        "theosDesc": "Digital coordination where collective needs become visible to all potential creators.",
+        "theosCta": "Learn More",
+        "holonsTitle": "Holons",
+        "holonsDesc": "Fractal organization where each part is a whole—enabling coordination at every scale.",
+        "holonsCta": "Discover Holons",
+        "flowTitle": "Flow",
+        "flowDesc": "Value flows aligned with natural cycles—from lunar rhythms to regenerative economics.",
+        "flowCta": "Explore Flow",
+        "regenBusinessTitle": "Regenerative Business",
+        "regenBusinessDesc": "Three pathways—Purchase, Produce, or Attract—transforming consumers into producer-owners.",
+        "regenBusinessCta": "Explore Pathways"
+      },
+      "agrosphere": {
+        "badge": "Featured Project",
+        "title": "Agrosphere Technology",
+        "description": "Open-source farming equipment enabling small-scale organic agriculture at unprecedented density while actively regenerating ecosystems. The license requires 50% of land be dedicated to restoration.",
+        "production": "Production in Italy & South Africa",
+        "landReq": "50% land regeneration requirement",
+        "cta": "Explore Agrosphere"
+      },
+      "bootstrap": {
+        "badge": "Replicate the Model",
+        "title": "Bootstrap Network",
+        "description": "Everything we build is open-source and designed to be replicated. The Bootstrap Network provides the tools, templates, and support to start a regenerative node in your bioregion.",
+        "startNode": "Start a Node",
+        "viewMap": "View Network Map"
+      },
+      "events": {
+        "title": "Upcoming Events",
+        "subtitle": "Gatherings aligned with natural cycles",
+        "viewAll": "View All Events"
+      },
+      "cta": {
+        "heading": "Ready to regenerate?",
+        "description": "Whether you want to visit a site, start a project, or build a regenerative node in your bioregion — there's a place for you.",
+        "joinNetwork": "Join the Network",
+        "visitSite": "Visit a Site"
+      },
+      "learnMore": "Learn More"
+    },
+    "footerSection": {
+      "tagline": "Building EcoCivilization 2030 through integral regeneration and bioregional networks.",
+      "joinMovement": "Join Movement",
+      "framework": "Framework",
+      "theosProtocol": "Theos Protocol",
+      "holonStructure": "Holon Structure",
+      "businessModel": "Business Model",
+      "flowToken": "Flow Token",
+      "projects": "Projects",
+      "agrosphereTech": "Agrosphere Tech",
+      "networkMap": "Network Map",
+      "bootstrapNetwork": "Bootstrap Network",
+      "aboutUs": "About Us",
+      "participate": "Participate",
+      "joinNetwork": "Join Network",
+      "eventsLunations": "Events & Lunations",
+      "contribute": "Contribute",
+      "visitSites": "Visit Sites",
+      "copyright": "© 2025–2026 ReGenerativa APS. All rights reserved.",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
     },
     "regenerativeVillage": {
       "hero": {
@@ -413,6 +517,109 @@ const translations = {
       "quick_links": "Enlaces Rápidos",
       "legal": "Legal"
     },
+    "nav": {
+      "vision": "Visión",
+      "projects": "Proyectos",
+      "sites": "Sitios",
+      "participate": "Participar",
+      "theos": "Protocolo Theos",
+      "holons": "Holones",
+      "flow": "Flow",
+      "regenBusiness": "Negocio Regenerativo",
+      "agrosphere": "Agrosphere",
+      "bootstrapNetwork": "Red Bootstrap",
+      "networkMap": "Mapa de Red",
+      "liminalVillage": "Liminal Village",
+      "brickFactory": "Brick Factory",
+      "casaSelva": "Casa Selva",
+      "events": "Eventos",
+      "join": "Unirse",
+      "contribute": "Contribuir",
+      "visit": "Visitar"
+    },
+    "homepage": {
+      "hero": {
+        "title": "Regenerar el Mundo, Juntos",
+        "subtitle": "Una red de comunidades, tecnologías y marcos construyendo las bases de una civilización ecológica.",
+        "cta": "Únete al Movimiento"
+      },
+      "vision": {
+        "heading": "El mundo no necesita más extracción. Necesita regeneración.",
+        "description": "Nuestros sistemas económicos agotan el suelo, fracturan comunidades y concentran la riqueza. ReGenerativa ofrece un camino diferente: herramientas de código abierto, laboratorios vivos y un marco de coordinación donde cada participante se convierte en guardián de la renovación ecológica y social.",
+        "ecological": "Ecológico",
+        "ecologicalDesc": "Regenerando suelo, agua y biodiversidad a través de cada proyecto",
+        "social": "Social",
+        "socialDesc": "Construyendo comunidades donde la cooperación reemplaza la competencia",
+        "systemic": "Sistémico",
+        "systemicDesc": "Marcos abiertos que cualquiera puede adoptar y adaptar localmente"
+      },
+      "framework": {
+        "heading": "El Marco",
+        "subtitle": "Cuatro sistemas interconectados para la coordinación regenerativa a cualquier escala",
+        "theosTitle": "Protocolo Theos",
+        "theosDesc": "Coordinación digital donde las necesidades colectivas se hacen visibles para todos los creadores potenciales.",
+        "theosCta": "Saber Más",
+        "holonsTitle": "Holones",
+        "holonsDesc": "Organización fractal donde cada parte es un todo—posibilitando la coordinación a cada escala.",
+        "holonsCta": "Descubrir Holones",
+        "flowTitle": "Flow",
+        "flowDesc": "Flujos de valor alineados con los ciclos naturales—desde ritmos lunares hasta economía regenerativa.",
+        "flowCta": "Explorar Flow",
+        "regenBusinessTitle": "Negocio Regenerativo",
+        "regenBusinessDesc": "Tres vías—Comprar, Producir o Atraer—transformando consumidores en productores-propietarios.",
+        "regenBusinessCta": "Explorar Vías"
+      },
+      "agrosphere": {
+        "badge": "Proyecto Destacado",
+        "title": "Tecnología Agrosphere",
+        "description": "Equipamiento agrícola de código abierto que permite la agricultura orgánica a pequeña escala con una densidad sin precedentes mientras regenera activamente los ecosistemas. La licencia exige dedicar el 50% de la tierra a la restauración.",
+        "production": "Producción en Italia y Sudáfrica",
+        "landReq": "Requisito de 50% de regeneración del suelo",
+        "cta": "Explorar Agrosphere"
+      },
+      "bootstrap": {
+        "badge": "Replica el Modelo",
+        "title": "Red Bootstrap",
+        "description": "Todo lo que construimos es de código abierto y diseñado para ser replicado. La Red Bootstrap proporciona las herramientas, plantillas y apoyo para iniciar un nodo regenerativo en tu biorregión.",
+        "startNode": "Iniciar un Nodo",
+        "viewMap": "Ver Mapa de Red"
+      },
+      "events": {
+        "title": "Próximos Eventos",
+        "subtitle": "Encuentros alineados con los ciclos naturales",
+        "viewAll": "Ver Todos los Eventos"
+      },
+      "cta": {
+        "heading": "¿Listo para regenerar?",
+        "description": "Ya sea que quieras visitar un sitio, iniciar un proyecto o construir un nodo regenerativo en tu biorregión — hay un lugar para ti.",
+        "joinNetwork": "Unirse a la Red",
+        "visitSite": "Visitar un Sitio"
+      },
+      "learnMore": "Saber Más"
+    },
+    "footerSection": {
+      "tagline": "Construyendo EcoCivilización 2030 a través de la regeneración integral y redes biorregionales.",
+      "joinMovement": "Unirse al Movimiento",
+      "framework": "Marco",
+      "theosProtocol": "Protocolo Theos",
+      "holonStructure": "Estructura Holón",
+      "businessModel": "Modelo de Negocio",
+      "flowToken": "Token Flow",
+      "projects": "Proyectos",
+      "agrosphereTech": "Tecnología Agrosphere",
+      "networkMap": "Mapa de Red",
+      "bootstrapNetwork": "Red Bootstrap",
+      "aboutUs": "Sobre Nosotros",
+      "participate": "Participar",
+      "joinNetwork": "Unirse a la Red",
+      "eventsLunations": "Eventos y Lunaciones",
+      "contribute": "Contribuir",
+      "visitSites": "Visitar Sitios",
+      "copyright": "© 2025–2026 ReGenerativa APS. Todos los derechos reservados.",
+      "terms": "Términos",
+      "privacy": "Privacidad",
+      "cookies": "Cookies"
+    },
     "regenerativeVillage": {
       "hero": {
         "title": "Espacio de Co-Creación para Innovación Simbiótica",
@@ -667,6 +874,109 @@ const translations = {
       "contact_info": "Informations de Contact",
       "quick_links": "Liens Rapides",
       "legal": "Légal"
+    },
+    "nav": {
+      "vision": "Vision",
+      "projects": "Projets",
+      "sites": "Sites",
+      "participate": "Participer",
+      "theos": "Protocole Theos",
+      "holons": "Holons",
+      "flow": "Flow",
+      "regenBusiness": "Économie Régénérative",
+      "agrosphere": "Agrosphere",
+      "bootstrapNetwork": "Réseau Bootstrap",
+      "networkMap": "Carte du Réseau",
+      "liminalVillage": "Liminal Village",
+      "brickFactory": "Brick Factory",
+      "casaSelva": "Casa Selva",
+      "events": "Événements",
+      "join": "Rejoindre",
+      "contribute": "Contribuer",
+      "visit": "Visiter"
+    },
+    "homepage": {
+      "hero": {
+        "title": "Régénérer le Monde, Ensemble",
+        "subtitle": "Un réseau de communautés, de technologies et de cadres bâtissant les fondations d'une civilisation écologique.",
+        "cta": "Rejoindre le Mouvement"
+      },
+      "vision": {
+        "heading": "Le monde n'a pas besoin de plus d'extraction. Il a besoin de régénération.",
+        "description": "Nos systèmes économiques épuisent les sols, fracturent les communautés et concentrent les richesses. ReGenerativa propose un autre chemin : des outils libres, des laboratoires vivants et un cadre de coordination où chaque participant devient gardien du renouveau écologique et social.",
+        "ecological": "Écologique",
+        "ecologicalDesc": "Régénérer sols, eaux et biodiversité à travers chaque projet",
+        "social": "Social",
+        "socialDesc": "Construire des communautés où la coopération remplace la compétition",
+        "systemic": "Systémique",
+        "systemicDesc": "Des cadres ouverts que chacun peut adopter et adapter localement"
+      },
+      "framework": {
+        "heading": "Le Cadre",
+        "subtitle": "Quatre systèmes interconnectés pour une coordination régénérative à toute échelle",
+        "theosTitle": "Protocole Theos",
+        "theosDesc": "Coordination numérique où les besoins collectifs deviennent visibles pour tous les créateurs potentiels.",
+        "theosCta": "En Savoir Plus",
+        "holonsTitle": "Holons",
+        "holonsDesc": "Organisation fractale où chaque partie est un tout — permettant la coordination à toute échelle.",
+        "holonsCta": "Découvrir les Holons",
+        "flowTitle": "Flow",
+        "flowDesc": "Flux de valeur alignés sur les cycles naturels — des rythmes lunaires à l'économie régénérative.",
+        "flowCta": "Explorer Flow",
+        "regenBusinessTitle": "Économie Régénérative",
+        "regenBusinessDesc": "Trois voies — Acheter, Produire ou Attirer — transformant les consommateurs en producteurs-propriétaires.",
+        "regenBusinessCta": "Explorer les Voies"
+      },
+      "agrosphere": {
+        "badge": "Projet Phare",
+        "title": "Technologie Agrosphere",
+        "description": "Équipement agricole libre permettant l'agriculture biologique à petite échelle avec une densité sans précédent tout en régénérant activement les écosystèmes. La licence exige que 50% des terres soient dédiées à la restauration.",
+        "production": "Production en Italie et en Afrique du Sud",
+        "landReq": "Exigence de 50% de régénération des terres",
+        "cta": "Explorer Agrosphere"
+      },
+      "bootstrap": {
+        "badge": "Répliquer le Modèle",
+        "title": "Réseau Bootstrap",
+        "description": "Tout ce que nous construisons est libre et conçu pour être répliqué. Le Réseau Bootstrap fournit les outils, modèles et soutien pour lancer un nœud régénératif dans votre biorégion.",
+        "startNode": "Lancer un Nœud",
+        "viewMap": "Voir la Carte du Réseau"
+      },
+      "events": {
+        "title": "Événements à Venir",
+        "subtitle": "Rassemblements alignés sur les cycles naturels",
+        "viewAll": "Voir Tous les Événements"
+      },
+      "cta": {
+        "heading": "Prêt à régénérer ?",
+        "description": "Que vous souhaitiez visiter un site, lancer un projet ou construire un nœud régénératif dans votre biorégion — il y a une place pour vous.",
+        "joinNetwork": "Rejoindre le Réseau",
+        "visitSite": "Visiter un Site"
+      },
+      "learnMore": "En Savoir Plus"
+    },
+    "footerSection": {
+      "tagline": "Bâtir l'ÉcoCivilisation 2030 par la régénération intégrale et les réseaux biorégionaux.",
+      "joinMovement": "Rejoindre le Mouvement",
+      "framework": "Cadre",
+      "theosProtocol": "Protocole Theos",
+      "holonStructure": "Structure Holon",
+      "businessModel": "Modèle Économique",
+      "flowToken": "Token Flow",
+      "projects": "Projets",
+      "agrosphereTech": "Technologie Agrosphere",
+      "networkMap": "Carte du Réseau",
+      "bootstrapNetwork": "Réseau Bootstrap",
+      "aboutUs": "À Propos",
+      "participate": "Participer",
+      "joinNetwork": "Rejoindre le Réseau",
+      "eventsLunations": "Événements et Lunaisons",
+      "contribute": "Contribuer",
+      "visitSites": "Visiter les Sites",
+      "copyright": "© 2025–2026 ReGenerativa APS. Tous droits réservés.",
+      "terms": "Conditions",
+      "privacy": "Confidentialité",
+      "cookies": "Cookies"
     },
     "regenerativeVillage": {
       "hero": {
@@ -923,6 +1233,109 @@ const translations = {
       "quick_links": "Link Veloci",
       "legal": "Legale"
     },
+    "nav": {
+      "vision": "Visione",
+      "projects": "Progetti",
+      "sites": "Siti",
+      "participate": "Partecipa",
+      "theos": "Protocollo Theos",
+      "holons": "Holons",
+      "flow": "Flow",
+      "regenBusiness": "Business Rigenerativo",
+      "agrosphere": "Agrosphere",
+      "bootstrapNetwork": "Rete Bootstrap",
+      "networkMap": "Mappa della Rete",
+      "liminalVillage": "Liminal Village",
+      "brickFactory": "Brick Factory",
+      "casaSelva": "Casa Selva",
+      "events": "Eventi",
+      "join": "Unisciti",
+      "contribute": "Contribuisci",
+      "visit": "Visita"
+    },
+    "homepage": {
+      "hero": {
+        "title": "Rigenerare il Mondo, Insieme",
+        "subtitle": "Una rete di comunità, tecnologie e framework che costruiscono le fondamenta di una civiltà ecologica.",
+        "cta": "Unisciti al Movimento"
+      },
+      "vision": {
+        "heading": "Il mondo non ha bisogno di più estrazione. Ha bisogno di rigenerazione.",
+        "description": "I nostri sistemi economici impoveriscono il suolo, fratturano le comunità e concentrano la ricchezza. ReGenerativa offre un percorso diverso: strumenti open source, laboratori viventi e un quadro di coordinamento dove ogni partecipante diventa custode del rinnovamento ecologico e sociale.",
+        "ecological": "Ecologico",
+        "ecologicalDesc": "Rigenerando suolo, acqua e biodiversità attraverso ogni progetto",
+        "social": "Sociale",
+        "socialDesc": "Costruendo comunità dove la cooperazione sostituisce la competizione",
+        "systemic": "Sistemico",
+        "systemicDesc": "Framework aperti che chiunque può adottare e adattare localmente"
+      },
+      "framework": {
+        "heading": "Il Framework",
+        "subtitle": "Quattro sistemi interconnessi per il coordinamento rigenerativo a qualsiasi scala",
+        "theosTitle": "Protocollo Theos",
+        "theosDesc": "Coordinamento digitale dove i bisogni collettivi diventano visibili a tutti i potenziali creatori.",
+        "theosCta": "Scopri di Più",
+        "holonsTitle": "Holons",
+        "holonsDesc": "Organizzazione frattale dove ogni parte è un tutto — abilitando il coordinamento a ogni scala.",
+        "holonsCta": "Scopri gli Holons",
+        "flowTitle": "Flow",
+        "flowDesc": "Flussi di valore allineati ai cicli naturali — dai ritmi lunari all'economia rigenerativa.",
+        "flowCta": "Esplora Flow",
+        "regenBusinessTitle": "Business Rigenerativo",
+        "regenBusinessDesc": "Tre percorsi — Acquistare, Produrre o Attrarre — trasformando consumatori in produttori-proprietari.",
+        "regenBusinessCta": "Esplora i Percorsi"
+      },
+      "agrosphere": {
+        "badge": "Progetto in Primo Piano",
+        "title": "Tecnologia Agrosphere",
+        "description": "Attrezzatura agricola open source che permette l'agricoltura biologica su piccola scala con densità senza precedenti rigenerando attivamente gli ecosistemi. La licenza richiede che il 50% della terra sia dedicato al ripristino.",
+        "production": "Produzione in Italia e Sudafrica",
+        "landReq": "Requisito di 50% di rigenerazione del suolo",
+        "cta": "Esplora Agrosphere"
+      },
+      "bootstrap": {
+        "badge": "Replica il Modello",
+        "title": "Rete Bootstrap",
+        "description": "Tutto ciò che costruiamo è open source e progettato per essere replicato. La Rete Bootstrap fornisce strumenti, modelli e supporto per avviare un nodo rigenerativo nella tua bioregione.",
+        "startNode": "Avvia un Nodo",
+        "viewMap": "Vedi Mappa della Rete"
+      },
+      "events": {
+        "title": "Prossimi Eventi",
+        "subtitle": "Incontri allineati ai cicli naturali",
+        "viewAll": "Vedi Tutti gli Eventi"
+      },
+      "cta": {
+        "heading": "Pronto a rigenerare?",
+        "description": "Che tu voglia visitare un sito, avviare un progetto o costruire un nodo rigenerativo nella tua bioregione — c'è un posto per te.",
+        "joinNetwork": "Unisciti alla Rete",
+        "visitSite": "Visita un Sito"
+      },
+      "learnMore": "Scopri di Più"
+    },
+    "footerSection": {
+      "tagline": "Costruendo l'EcoCiviltà 2030 attraverso la rigenerazione integrale e le reti bioregionali.",
+      "joinMovement": "Unisciti al Movimento",
+      "framework": "Framework",
+      "theosProtocol": "Protocollo Theos",
+      "holonStructure": "Struttura Holon",
+      "businessModel": "Modello di Business",
+      "flowToken": "Token Flow",
+      "projects": "Progetti",
+      "agrosphereTech": "Tecnologia Agrosphere",
+      "networkMap": "Mappa della Rete",
+      "bootstrapNetwork": "Rete Bootstrap",
+      "aboutUs": "Chi Siamo",
+      "participate": "Partecipa",
+      "joinNetwork": "Unisciti alla Rete",
+      "eventsLunations": "Eventi e Lunazioni",
+      "contribute": "Contribuisci",
+      "visitSites": "Visita i Siti",
+      "copyright": "© 2025–2026 ReGenerativa APS. Tutti i diritti riservati.",
+      "terms": "Termini",
+      "privacy": "Privacy",
+      "cookies": "Cookie"
+    },
     "regenerativeVillage": {
       "hero": {
         "title": "Fabbrica del Terzo Settore",
@@ -1178,6 +1591,109 @@ const translations = {
       "quick_links": "Snelle Links",
       "legal": "Juridisch"
     },
+    "nav": {
+      "vision": "Visie",
+      "projects": "Projecten",
+      "sites": "Locaties",
+      "participate": "Deelnemen",
+      "theos": "Theos Protocol",
+      "holons": "Holons",
+      "flow": "Flow",
+      "regenBusiness": "Regeneratief Ondernemen",
+      "agrosphere": "Agrosphere",
+      "bootstrapNetwork": "Bootstrap Netwerk",
+      "networkMap": "Netwerkkaart",
+      "liminalVillage": "Liminal Village",
+      "brickFactory": "Brick Factory",
+      "casaSelva": "Casa Selva",
+      "events": "Evenementen",
+      "join": "Doe Mee",
+      "contribute": "Bijdragen",
+      "visit": "Bezoek"
+    },
+    "homepage": {
+      "hero": {
+        "title": "Regenereer de Wereld, Samen",
+        "subtitle": "Een netwerk van gemeenschappen, technologieën en kaders die de fundamenten bouwen voor een ecologische beschaving.",
+        "cta": "Word Lid van de Beweging"
+      },
+      "vision": {
+        "heading": "De wereld heeft geen verdere extractie nodig. Ze heeft regeneratie nodig.",
+        "description": "Onze economische systemen putten de bodem uit, versplinteren gemeenschappen en concentreren rijkdom. ReGenerativa biedt een ander pad: open-source gereedschap, levende laboratoria en een coördinatiekader waarin elke deelnemer hoeder wordt van ecologische en sociale vernieuwing.",
+        "ecological": "Ecologisch",
+        "ecologicalDesc": "Bodem, water en biodiversiteit regenereren door elk project",
+        "social": "Sociaal",
+        "socialDesc": "Gemeenschappen bouwen waar samenwerking competitie vervangt",
+        "systemic": "Systemisch",
+        "systemicDesc": "Open kaders die iedereen lokaal kan overnemen en aanpassen"
+      },
+      "framework": {
+        "heading": "Het Kader",
+        "subtitle": "Vier onderling verbonden systemen voor regeneratieve coördinatie op elke schaal",
+        "theosTitle": "Theos Protocol",
+        "theosDesc": "Digitale coördinatie waarbij collectieve behoeften zichtbaar worden voor alle potentiële makers.",
+        "theosCta": "Meer Informatie",
+        "holonsTitle": "Holons",
+        "holonsDesc": "Fractale organisatie waarbij elk deel een geheel is — coördinatie op elke schaal mogelijk makend.",
+        "holonsCta": "Ontdek Holons",
+        "flowTitle": "Flow",
+        "flowDesc": "Waardestromen afgestemd op natuurlijke cycli — van maanritmes tot regeneratieve economie.",
+        "flowCta": "Verken Flow",
+        "regenBusinessTitle": "Regeneratief Ondernemen",
+        "regenBusinessDesc": "Drie paden — Kopen, Produceren of Aantrekken — consumenten omvormen tot producent-eigenaren.",
+        "regenBusinessCta": "Verken de Paden"
+      },
+      "agrosphere": {
+        "badge": "Uitgelicht Project",
+        "title": "Agrosphere Technologie",
+        "description": "Open-source landbouwapparatuur die kleinschalige biologische landbouw mogelijk maakt met ongekende dichtheid terwijl ecosystemen actief worden geregenereerd. De licentie vereist dat 50% van het land wordt gewijd aan herstel.",
+        "production": "Productie in Italië en Zuid-Afrika",
+        "landReq": "Vereiste van 50% landregeneratie",
+        "cta": "Verken Agrosphere"
+      },
+      "bootstrap": {
+        "badge": "Repliceer het Model",
+        "title": "Bootstrap Netwerk",
+        "description": "Alles wat we bouwen is open source en ontworpen om te worden gerepliceerd. Het Bootstrap Netwerk biedt de tools, sjablonen en ondersteuning om een regeneratief knooppunt in jouw bioregio te starten.",
+        "startNode": "Start een Knooppunt",
+        "viewMap": "Bekijk Netwerkkaart"
+      },
+      "events": {
+        "title": "Aankomende Evenementen",
+        "subtitle": "Bijeenkomsten afgestemd op natuurlijke cycli",
+        "viewAll": "Bekijk Alle Evenementen"
+      },
+      "cta": {
+        "heading": "Klaar om te regenereren?",
+        "description": "Of je nu een locatie wilt bezoeken, een project wilt starten of een regeneratief knooppunt wilt bouwen in jouw bioregio — er is een plek voor jou.",
+        "joinNetwork": "Word Lid van het Netwerk",
+        "visitSite": "Bezoek een Locatie"
+      },
+      "learnMore": "Meer Informatie"
+    },
+    "footerSection": {
+      "tagline": "EcoBeschaving 2030 bouwen door integrale regeneratie en bioregionale netwerken.",
+      "joinMovement": "Word Lid van de Beweging",
+      "framework": "Kader",
+      "theosProtocol": "Theos Protocol",
+      "holonStructure": "Holon Structuur",
+      "businessModel": "Bedrijfsmodel",
+      "flowToken": "Flow Token",
+      "projects": "Projecten",
+      "agrosphereTech": "Agrosphere Tech",
+      "networkMap": "Netwerkkaart",
+      "bootstrapNetwork": "Bootstrap Netwerk",
+      "aboutUs": "Over Ons",
+      "participate": "Deelnemen",
+      "joinNetwork": "Word Lid van het Netwerk",
+      "eventsLunations": "Evenementen & Lunaties",
+      "contribute": "Bijdragen",
+      "visitSites": "Bezoek Locaties",
+      "copyright": "© 2025–2026 ReGenerativa APS. Alle rechten voorbehouden.",
+      "terms": "Voorwaarden",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
+    },
     "regenerativeVillage": {
       "hero": {
         "title": "Fabbrica del Terzo Settore",
@@ -1368,21 +1884,25 @@ export function useTranslation() {
     return () => window.removeEventListener('languageChanged', handleLanguageChange as EventListener);
   }, []);
 
-  // Translation function
+  // Translation function — checks extra translations first (newer overrides)
+  const resolve = (obj: unknown, keys: string[]): string | undefined => {
+    let v: unknown = obj;
+    for (const k of keys) {
+      if (v && typeof v === 'object' && v !== null) {
+        v = (v as Record<string, unknown>)[k];
+      } else return undefined;
+    }
+    return typeof v === 'string' ? v : undefined;
+  };
+
   const t = (key: string, defaultValue?: string): string => {
     const keys = key.split('.');
-    let value: unknown = translations[currentLanguage];
-
-    for (const k of keys) {
-      if (value && typeof value === 'object' && value !== null) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        value = undefined;
-        break;
-      }
-    }
-
-    return typeof value === 'string' ? value : (defaultValue || key);
+    return resolve(extraTranslations[currentLanguage], keys)
+      ?? resolve(translations[currentLanguage], keys)
+      ?? resolve(extraTranslations['en'], keys)
+      ?? resolve(translations['en'], keys)
+      ?? defaultValue
+      ?? key;
   };
 
   return {

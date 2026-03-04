@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
 import LanguageSelector from "@/components/LanguageSelector";
+import { useTranslation } from "@/hooks/useTranslationSimple";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t bg-muted/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -17,37 +21,37 @@ const Footer = () => {
               <span className="font-display text-xl font-bold">ReGenerativa</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Building EcoCivilization 2030 through integral regeneration and bioregional networks.
+              {t("footerSection.tagline")}
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" asChild>
-                <Link href="/join">Join Movement</Link>
+                <Link href="/join">{t("footerSection.joinMovement")}</Link>
               </Button>
             </div>
           </div>
 
           {/* Framework */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold">Framework</h3>
+            <h3 className="font-display font-semibold">{t("footerSection.framework")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/theos" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Theos Protocol
+                  {t("footerSection.theosProtocol")}
                 </Link>
               </li>
               <li>
                 <Link href="/holons" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Holon Structure
+                  {t("footerSection.holonStructure")}
                 </Link>
               </li>
               <li>
                 <Link href="/regenerative-business" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Business Model
+                  {t("footerSection.businessModel")}
                 </Link>
               </li>
               <li>
                 <Link href="/flow" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Flow Token
+                  {t("footerSection.flowToken")}
                 </Link>
               </li>
             </ul>
@@ -55,26 +59,26 @@ const Footer = () => {
 
           {/* Projects */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold">Projects</h3>
+            <h3 className="font-display font-semibold">{t("footerSection.projects")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/agrosphere" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Agrosphere Tech
+                  {t("footerSection.agrosphereTech")}
                 </Link>
               </li>
               <li>
                 <Link href="/network" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Network Map
+                  {t("footerSection.networkMap")}
                 </Link>
               </li>
               <li>
                 <Link href="/bootstrap" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Bootstrap Network
+                  {t("footerSection.bootstrapNetwork")}
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About Us
+                  {t("footerSection.aboutUs")}
                 </Link>
               </li>
             </ul>
@@ -82,26 +86,26 @@ const Footer = () => {
 
           {/* Get Involved */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold">Participate</h3>
+            <h3 className="font-display font-semibold">{t("footerSection.participate")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/join" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Join Network
+                  {t("footerSection.joinNetwork")}
                 </Link>
               </li>
               <li>
                 <Link href="/events" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Events & Lunations
+                  {t("footerSection.eventsLunations")}
                 </Link>
               </li>
               <li>
                 <Link href="/contribute" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contribute
+                  {t("footerSection.contribute")}
                 </Link>
               </li>
               <li>
                 <Link href="/visit" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Visit Sites
+                  {t("footerSection.visitSites")}
                 </Link>
               </li>
             </ul>
@@ -111,18 +115,18 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2025 ReGenerativa APS. All rights reserved.
+            {t("footerSection.copyright")}
           </div>
           <div className="flex items-center space-x-4">
             <LanguageSelector />
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
-              Terms
+              {t("footerSection.terms")}
             </Link>
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
-              Privacy
+              {t("footerSection.privacy")}
             </Link>
             <Link href="/cookies" className="text-sm text-muted-foreground hover:text-foreground">
-              Cookies
+              {t("footerSection.cookies")}
             </Link>
           </div>
         </div>
@@ -132,4 +136,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -11,8 +11,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Users, Building, Globe, Send } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "@/hooks/useTranslationSimple";
 
 export default function ContactPage() {
+  const { t } = useTranslation();
   const [contactType, setContactType] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -24,7 +26,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", { contactType, formData });
   };
 
@@ -47,11 +48,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              Get in <span className="text-primary">Touch</span>
+              {t("contactPage.heroTitle")}<span className="text-primary">{t("contactPage.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              Whether you&apos;re a potential partner, media representative, municipality, or community member, 
-              we&apos;d love to hear from you.
+              {t("contactPage.heroSubtitle")}
             </p>
           </div>
         </div>
@@ -62,10 +62,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              How Can We Help?
+              {t("contactPage.howCanWeHelp")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the type of inquiry that best matches your needs.
+              {t("contactPage.howCanWeHelpDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -76,11 +76,11 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-center">Partnership</CardTitle>
+                <CardTitle className="text-center">{t("contactPage.partnership")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
-                  Schools, NGOs, farms, and organizations interested in collaboration.
+                  {t("contactPage.partnershipDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -91,11 +91,11 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-center">Media</CardTitle>
+                <CardTitle className="text-center">{t("contactPage.media")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
-                  Journalists, bloggers, and content creators seeking information or interviews.
+                  {t("contactPage.mediaDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -106,11 +106,11 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Building className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-center">Municipality</CardTitle>
+                <CardTitle className="text-center">{t("contactPage.municipality")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
-                  Local governments interested in regenerative development initiatives.
+                  {t("contactPage.municipalityDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -121,11 +121,11 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-center">General</CardTitle>
+                <CardTitle className="text-center">{t("contactPage.general")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
-                  General inquiries, questions, or feedback about our work.
+                  {t("contactPage.generalDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -140,25 +140,25 @@ export default function ContactPage() {
             <Card className="p-6 lg:p-8">
               <CardHeader>
                 <CardTitle className="text-2xl font-display">
-                  {contactType === "partnership" && "Partnership Inquiry"}
-                  {contactType === "media" && "Media Inquiry"}
-                  {contactType === "municipality" && "Municipality Inquiry"}
-                  {contactType === "general" && "General Inquiry"}
-                  {!contactType && "Contact Form"}
+                  {contactType === "partnership" && t("contactPage.partnershipInquiry")}
+                  {contactType === "media" && t("contactPage.mediaInquiry")}
+                  {contactType === "municipality" && t("contactPage.municipalityInquiry")}
+                  {contactType === "general" && t("contactPage.generalInquiry")}
+                  {!contactType && t("contactPage.contactForm")}
                 </CardTitle>
                 <CardDescription>
-                  {contactType === "partnership" && "Tell us about your organization and how we might collaborate."}
-                                  {contactType === "media" && "Share your media outlet and the story you&apos;re working on."}
-                {contactType === "municipality" && "Describe your municipality&apos;s interest in regenerative development."}
-                {contactType === "general" && "We&apos;d love to hear from you. How can we help?"}
-                  {!contactType && "Please select a contact type above to get started."}
+                  {contactType === "partnership" && t("contactPage.partnershipFormDesc")}
+                  {contactType === "media" && t("contactPage.mediaFormDesc")}
+                  {contactType === "municipality" && t("contactPage.municipalityFormDesc")}
+                  {contactType === "general" && t("contactPage.generalFormDesc")}
+                  {!contactType && t("contactPage.selectContactType")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">{t("contactPage.fullName")}</Label>
                       <Input 
                         id="name" 
                         required
@@ -167,7 +167,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">{t("contactPage.emailAddress")}</Label>
                       <Input 
                         id="email" 
                         type="email" 
@@ -179,33 +179,33 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="organization">Organization</Label>
+                    <Label htmlFor="organization">{t("contactPage.organization")}</Label>
                     <Input 
                       id="organization" 
-                      placeholder="Your organization or company"
+                      placeholder={t("contactPage.organizationPlaceholder")}
                       value={formData.organization}
                       onChange={(e) => setFormData({...formData, organization: e.target.value})}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject *</Label>
+                    <Label htmlFor="subject">{t("contactPage.subject")}</Label>
                     <Input 
                       id="subject" 
                       required
-                      placeholder="Brief description of your inquiry"
+                      placeholder={t("contactPage.subjectPlaceholder")}
                       value={formData.subject}
                       onChange={(e) => setFormData({...formData, subject: e.target.value})}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">{t("contactPage.message")}</Label>
                     <Textarea 
                       id="message" 
                       required
                       rows={6}
-                      placeholder="Please provide details about your inquiry..."
+                      placeholder={t("contactPage.messagePlaceholder")}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                     />
@@ -217,7 +217,7 @@ export default function ContactPage() {
                     size="lg"
                     disabled={!contactType}
                   >
-                    Send Message
+                    {t("contactPage.sendMessage")}
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
@@ -232,10 +232,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Other Ways to Connect
+              {t("contactPage.otherWaysToConnect")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Prefer to reach us through other channels? Here are additional ways to get in touch.
+              {t("contactPage.otherWaysDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -244,15 +244,15 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Email</CardTitle>
+                <CardTitle>{t("contactPage.email")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  For general inquiries and support
+                  {t("contactPage.emailDesc")}
                 </p>
                 <p className="font-semibold">hello@regenerativa.earth</p>
                 <p className="text-xs text-muted-foreground mt-2">
-                  Response within 24-48 hours
+                  {t("contactPage.responseTime")}
                 </p>
               </CardContent>
             </Card>
@@ -261,16 +261,16 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Visit Us</CardTitle>
+                <CardTitle>{t("contactPage.visitUs")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Experience regenerative living firsthand
+                  {t("contactPage.visitUsDesc")}
                 </p>
                 <p className="font-semibold">Liminal Village</p>
                 <p className="text-sm text-muted-foreground">Tuscany, Italy</p>
                 <Button variant="outline" size="sm" className="mt-4" asChild>
-                  <Link href="/visit">Plan Your Visit</Link>
+                  <Link href="/visit">{t("contactPage.planYourVisit")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -279,11 +279,11 @@ export default function ContactPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Community</CardTitle>
+                <CardTitle>{t("contactPage.community")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Join our online community channels
+                  {t("contactPage.communityDesc")}
                 </p>
                 <div className="space-y-2">
                   <p className="font-semibold">Telegram</p>
@@ -291,7 +291,7 @@ export default function ContactPage() {
                   <p className="font-semibold">Discord</p>
                 </div>
                 <Button variant="outline" size="sm" className="mt-4" asChild>
-                  <Link href="/join">Join Community</Link>
+                  <Link href="/join">{t("contactPage.joinCommunity")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -304,54 +304,50 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Common Questions
+              {t("contactPage.commonQuestions")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Quick answers to frequently asked questions about contacting us.
+              {t("contactPage.commonQuestionsDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How quickly do you respond?</CardTitle>
+                <CardTitle className="text-lg">{t("contactPage.howQuickly")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  We aim to respond to all inquiries within 24-48 hours during business days. 
-                  Urgent matters may receive faster responses.
+                  {t("contactPage.howQuicklyAnswer")}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Can I visit your communities?</CardTitle>
+                <CardTitle className="text-lg">{t("contactPage.canIVisit")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Yes! We welcome visitors to our regenerative communities. Please use our 
-                  visit application form to arrange your stay.
+                  {t("contactPage.canIVisitAnswer")}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Do you offer consulting services?</CardTitle>
+                <CardTitle className="text-lg">{t("contactPage.doYouConsult")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  We provide consulting for municipalities and organizations interested in 
-                  implementing regenerative practices. Contact us to discuss your needs.
+                  {t("contactPage.doYouConsultAnswer")}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How can my organization partner with you?</CardTitle>
+                <CardTitle className="text-lg">{t("contactPage.howToPartner")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  We&apos;re always open to partnerships that align with our regenerative values. 
-                  Please reach out with details about your organization and proposed collaboration.
+                  {t("contactPage.howToPartnerAnswer")}
                 </p>
               </CardContent>
             </Card>
@@ -364,22 +360,21 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-              Ready to Get Started?
+              {t("contactPage.readyToGetStarted")}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Whether you want to join our community, explore partnership opportunities, 
-                              or learn more about regenerative practices, we&apos;re here to help.
+              {t("contactPage.readyToGetStartedDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/join">
-                  Join Our Community
+                  {t("contactPage.joinOurCommunity")}
                   <Users className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/network">
-                  Explore Our Network
+                  {t("contactPage.exploreOurNetwork")}
                   <MapPin className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -392,4 +387,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

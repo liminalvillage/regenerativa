@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Users, Calendar, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine, Sun, Moon, Zap, Sprout } from "lucide-react";
+import { MapPin, Users, Calendar, ArrowRight, Hexagon, Leaf, Heart, Globe, Factory, Home, TreePine, Zap, Sprout, Sun, Moon, Network } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslationSimple";
@@ -17,201 +17,155 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section id="hero" className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="relative py-24 lg:py-40 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="absolute inset-0 z-0">
           <Image
             src="/banner1.jpg"
             alt="Regenerative landscape"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-15"
             priority
             sizes="100vw"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-display font-bold text-balance mb-6">
-              {t("hero.title")}
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl lg:text-7xl font-display font-bold text-balance mb-6 leading-tight">
+              {t("homepage.hero.title").split(',').map((part, i) => i === 0 ? <span key={i}>{part},<br /></span> : <span key={i}>{part}</span>)}
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 text-balance">
-              {t("hero.subtitle")}
+            <p className="text-lg lg:text-xl text-muted-foreground mb-10 text-balance max-w-2xl mx-auto">
+              {t("homepage.hero.subtitle")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link href="/join">
-                  {t("hero.cta")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/network">
-                  {t("hero.explore")}
-                  <MapPin className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+            <Button size="lg" className="text-base px-8 py-6" asChild>
+              <Link href="/join">
+                {t("homepage.hero.cta")}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Intro Video Section */}
-      <section id="video" className="py-16 lg:py-24 bg-gradient-to-br from-primary/90 via-primary to-secondary/90 text-white">
+      {/* Problem / Vision */}
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("video.title")}
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
+              {t("homepage.vision.heading").split('.').map((part, i, arr) => i < arr.length - 1 ? <span key={i}>{part}.<br /></span> : <span key={i}>{part}</span>)}
             </h2>
-            <p className="text-lg lg:text-xl text-white/90 max-w-2xl mx-auto">
-              {t("video.subtitle")}
+            <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              {t("homepage.vision.description")}
             </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%', height: 0 }}>
-              <iframe
-                src="https://www.youtube.com/embed/XdhPXocPf9g"
-                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="ReGenerativa Introduction Video"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Explainer */}
-      <section id="about" className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-                {t("about.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                {t("about.description")}
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Hexagon className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">{t("about.fractalNetworks")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("about.fractalNetworksDesc")}</p>
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center">
+                <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Leaf className="h-7 w-7 text-primary" />
                 </div>
-                <div className="flex items-start space-x-3">
-                  <Leaf className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">{t("about.regenerativePractices")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("about.regenerativePracticesDesc")}</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Heart className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">{t("about.integralRegeneration")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("about.integralRegenerationDesc")}</p>
-                  </div>
-                </div>
+                <h3 className="font-semibold mb-2">{t("homepage.vision.ecological")}</h3>
+                <p className="text-sm text-muted-foreground">{t("homepage.vision.ecologicalDesc")}</p>
               </div>
-            </div>
-            <div className="relative">
-              <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
-                <Image
-                  src="/permaculture.jpg"
-                  alt="Permaculture garden showing regenerative agriculture practices"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              <div className="text-center">
+                <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">{t("homepage.vision.social")}</h3>
+                <p className="text-sm text-muted-foreground">{t("homepage.vision.socialDesc")}</p>
+              </div>
+              <div className="text-center">
+                <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">{t("homepage.vision.systemic")}</h3>
+                <p className="text-sm text-muted-foreground">{t("homepage.vision.systemicDesc")}</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Frameworks */}
-      <section id="frameworks" className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+      {/* The Framework — Centerpiece */}
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Core Frameworks
+              {t("homepage.framework.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The foundational systems enabling regenerative coordination at planetary scale
+              {t("homepage.framework.subtitle")}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Card className="hover:shadow-lg transition-all hover:-translate-y-1 border-primary/10">
               <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
                   <Zap className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg">Theos Protocol</CardTitle>
+                <CardTitle className="text-lg">{t("homepage.framework.theosTitle")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Digital coordination infrastructure that inverts market research—collective needs become visible to all potential creators
+                  {t("homepage.framework.theosDesc")}
                 </p>
                 <Button variant="link" size="sm" className="p-0" asChild>
                   <Link href="/theos">
-                    Learn More <ArrowRight className="ml-1 h-3 w-3" />
+                    {t("homepage.framework.theosCta")} <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-all hover:-translate-y-1 border-primary/10">
               <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Sun className="h-6 w-6 text-amber-600" />
-                </div>
-                <CardTitle className="text-lg">Three Pathways</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Purchase (Solar), Produce (Lunar), or Attract (Collective)—transforming consumers into producer-owners
-                </p>
-                <Button variant="link" size="sm" className="p-0" asChild>
-                  <Link href="/regenerative-business">
-                    Explore Pathways <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Moon className="h-6 w-6 text-blue-600" />
-                </div>
-                <CardTitle className="text-lg">Lunar Calendar</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Organize collective action around natural cycles—new moon to full moon, honoring both action and integration
-                </p>
-                <Button variant="link" size="sm" className="p-0" asChild>
-                  <Link href="/events">
-                    View Calendar <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
                   <Hexagon className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg">Holon Structure</CardTitle>
+                <CardTitle className="text-lg">{t("homepage.framework.holonsTitle")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Fractal organization where each part is simultaneously a whole—enabling coordination at every scale
+                  {t("homepage.framework.holonsDesc")}
                 </p>
                 <Button variant="link" size="sm" className="p-0" asChild>
                   <Link href="/holons">
-                    Discover Holons <ArrowRight className="ml-1 h-3 w-3" />
+                    {t("homepage.framework.holonsCta")} <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-all hover:-translate-y-1 border-primary/10">
+              <CardHeader>
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
+                  <Moon className="h-6 w-6 text-blue-600" />
+                </div>
+                <CardTitle className="text-lg">{t("homepage.framework.flowTitle")}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t("homepage.framework.flowDesc")}
+                </p>
+                <Button variant="link" size="sm" className="p-0" asChild>
+                  <Link href="/flow">
+                    {t("homepage.framework.flowCta")} <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-all hover:-translate-y-1 border-primary/10">
+              <CardHeader>
+                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
+                  <Sun className="h-6 w-6 text-amber-600" />
+                </div>
+                <CardTitle className="text-lg">{t("homepage.framework.regenBusinessTitle")}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t("homepage.framework.regenBusinessDesc")}
+                </p>
+                <Button variant="link" size="sm" className="p-0" asChild>
+                  <Link href="/regenerative-business">
+                    {t("homepage.framework.regenBusinessCta")} <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
               </CardContent>
@@ -238,29 +192,27 @@ export default function HomePage() {
             <div>
               <div className="inline-flex items-center space-x-2 bg-emerald-500/10 rounded-full px-4 py-2 mb-4">
                 <Sprout className="h-4 w-4 text-emerald-600" />
-                <span className="text-sm font-medium text-emerald-600">Featured Project</span>
+                <span className="text-sm font-medium text-emerald-600">{t("homepage.agrosphere.badge")}</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
-                Agrosphere Technology
+                {t("homepage.agrosphere.title")}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Open-source farming equipment enabling small-scale organic agriculture at unprecedented
-                density while actively regenerating ecosystems. The license requires 50% of land be
-                dedicated to restoration—proving food production and ecological healing can happen simultaneously.
+                {t("homepage.agrosphere.description")}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center space-x-2">
                   <Globe className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Production centers in Italy & South Africa</span>
+                  <span className="text-sm">{t("homepage.agrosphere.production")}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Leaf className="h-5 w-5 text-primary" />
-                  <span className="text-sm">50% land regeneration requirement</span>
+                  <span className="text-sm">{t("homepage.agrosphere.landReq")}</span>
                 </div>
               </div>
-              <Button className="mt-6" asChild>
+              <Button asChild>
                 <Link href="/agrosphere">
-                  Explore Agrosphere
+                  {t("homepage.agrosphere.cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -270,7 +222,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Sites */}
-      <section id="sites" className="py-16 lg:py-24 bg-muted/30">
+      <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
@@ -281,11 +233,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1">
               <div className="h-48 relative">
                 <Image
                   src="/liminalvillage/1.jpeg"
-                  alt="Liminal Village - Community hub"
+                  alt="Liminal Village"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -304,21 +256,20 @@ export default function HomePage() {
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/sites/liminalvillage">
-                    Learn More
-                    <ArrowRight className="ml-1 h-3 w-3" />
+                    {t("homepage.learnMore")} <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1">
               <div className="h-48 relative">
                 <Image
                   src="/brickfactory/13.jpeg"
-                  alt="Fabbrica del Terzo Settore - Regenerative Factory"
+                  alt="Brick Factory"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
               <CardHeader>
@@ -334,18 +285,17 @@ export default function HomePage() {
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/sites/brickfactory">
-                    Learn More
-                    <ArrowRight className="ml-1 h-3 w-3" />
+                    {t("homepage.learnMore")} <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1">
               <div className="h-48 relative">
                 <Image
                   src="/casaselva/1.jpeg"
-                  alt="Casa Selva - Forest sanctuary"
+                  alt="Casa Selva"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -364,8 +314,7 @@ export default function HomePage() {
                 </p>
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/sites/casaselva">
-                    Learn More
-                    <ArrowRight className="ml-1 h-3 w-3" />
+                    {t("homepage.learnMore")} <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
               </CardContent>
@@ -374,219 +323,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Network Map Preview */}
-      <section id="network" className="py-16 bg-muted/30">
+      {/* Bootstrap Network */}
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("network.title")}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center space-x-2 bg-blue-500/10 rounded-full px-4 py-2 mb-6">
+              <Network className="h-4 w-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-600">{t("homepage.bootstrap.badge")}</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">
+              {t("homepage.bootstrap.title")}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("network.subtitle")}
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              {t("homepage.bootstrap.description")}
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  {t("network.activeNodes")}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-primary">12</p>
-                <p className="text-sm text-muted-foreground">{t("network.activeNodesDesc")}</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Users className="h-5 w-5 mr-2" />
-                  {t("network.communityMembers")}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-primary">2,847</p>
-                <p className="text-sm text-muted-foreground">{t("network.communityMembersDesc")}</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Globe className="h-5 w-5 mr-2" />
-                  {t("network.fractalCommunities")}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-primary">156</p>
-                <p className="text-sm text-muted-foreground">{t("network.fractalCommunitiesDesc")}</p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="text-center">
-            <Button asChild>
-              <Link href="/network">
-                {t("network.explore")}
-                <MapPin className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link href="/bootstrap">
+                  {t("homepage.bootstrap.startNode")}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/network">
+                  {t("homepage.bootstrap.viewMap")}
+                  <MapPin className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Ways to Engage */}
-      <section id="engage" className="py-16 lg:py-24">
+      {/* Events — Simplified */}
+      <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("engage.title")}
+              {t("homepage.events.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("engage.subtitle")}
+              {t("homepage.events.subtitle")}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("engage.join.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("engage.join.description")}
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="https://wequest.typeform.com/to/q0BDRm7z" target="_blank" rel="noopener noreferrer">
-                    {t("engage.join.cta")}
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("engage.contribute.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("engage.contribute.description")}
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/contribute">{t("engage.contribute.cta")}</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Leaf className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("engage.stake.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("engage.stake.description")}
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/stake">{t("engage.stake.cta")}</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{t("engage.visit.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("engage.visit.description")}
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/visit">{t("engage.visit.cta")}</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events */}
-      <section id="events" className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("events.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("events.subtitle")}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Calendar className="h-5 w-5 mr-2" />
+                <CardTitle className="flex items-center text-base">
+                  <Calendar className="h-5 w-5 mr-2 text-primary" />
                   {t("events.nextLunation.title")}
                 </CardTitle>
                 <CardDescription>{t("events.nextLunation.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold mb-2">{t("events.nextLunation.date")}</p>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground">
                   {t("events.nextLunation.description")}
                 </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/events">{t("events.nextLunation.cta")}</Link>
-                </Button>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Calendar className="h-5 w-5 mr-2" />
+                <CardTitle className="flex items-center text-base">
+                  <Calendar className="h-5 w-5 mr-2 text-primary" />
                   {t("events.autumnEquinox.title")}
                 </CardTitle>
                 <CardDescription>{t("events.autumnEquinox.subtitle")}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold mb-2">{t("events.autumnEquinox.date")}</p>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground">
                   {t("events.autumnEquinox.description")}
                 </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/events">{t("events.autumnEquinox.cta")}</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Calendar className="h-5 w-5 mr-2" />
-                  {t("events.permacultureWorkshop.title")}
-                </CardTitle>
-                <CardDescription>{t("events.permacultureWorkshop.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg font-semibold mb-2">{t("events.permacultureWorkshop.date")}</p>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("events.permacultureWorkshop.description")}
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/events">{t("events.permacultureWorkshop.cta")}</Link>
-                </Button>
               </CardContent>
             </Card>
           </div>
           <div className="text-center">
-            <Button asChild>
+            <Button variant="outline" asChild>
               <Link href="/events">
-                {t("events.viewAll")}
+                {t("homepage.events.viewAll")}
                 <Calendar className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -594,236 +407,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest Stories */}
-      <section id="stories" className="py-16 lg:py-24">
+      {/* Final CTA */}
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/90 via-primary to-primary/80 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              {t("stories.title")}
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              {t("homepage.cta.heading")}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("stories.subtitle")}
+            <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
+              {t("homepage.cta.description")}
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="overflow-hidden">
-              <div className="h-48 relative">
-                <Image
-                  src="/earthship.jpg"
-                  alt="Clay house construction project"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{t("stories.clayHouse.title")}</CardTitle>
-                <CardDescription>{t("stories.clayHouse.location")}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("stories.clayHouse.description")}
-                </p>
-                <Button variant="link" size="sm" className="p-0">
-                  Read More <ArrowRight className="ml-1 h-3 w-3" />
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden">
-              <div className="h-48 relative">
-                <Image
-                  src="/banner3.jpg"
-                  alt="Community gathering in nature"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{t("stories.newCommunity.title")}</CardTitle>
-                <CardDescription>{t("stories.newCommunity.location")}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("stories.newCommunity.description")}
-                </p>
-                <Button variant="link" size="sm" className="p-0">
-                  Read More <ArrowRight className="ml-1 h-3 w-3" />
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden">
-              <div className="h-48 relative">
-                <Image
-                  src="/transition.jpg"
-                  alt="Sustainable transition and renewable energy"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{t("stories.regenFinance.title")}</CardTitle>
-                <CardDescription>{t("stories.regenFinance.location")}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("stories.regenFinance.description")}
-                </p>
-                <Button variant="link" size="sm" className="p-0">
-                  Read More <ArrowRight className="ml-1 h-3 w-3" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners & Network - Hidden for now */}
-      {/* 
-      <section id="partners" className="py-16 lg:py-24 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-4">
-              Our Regenerative Network
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Connected to a global ecosystem of organizations pioneering regenerative practices, 
-              Resource-Based Economy principles, and transformative community models.
-            </p>
-          </div>
-          
-          <div className="mb-16">
-            <h3 className="text-2xl font-display font-bold text-center mb-8">Core Partners</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="h-20 w-20 mx-auto mb-4 relative">
-                  <Image
-                    src="/venusproject.png"
-                    alt="Venus Project"
-                    fill
-                    sizes="80px"
-                    className="object-contain"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">Venus Project</h4>
-                <p className="text-sm text-muted-foreground">
-                  Pioneering Resource-Based Economy and holistic design for sustainable civilization.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="h-20 w-20 mx-auto mb-4 relative">
-                  <Image
-                    src="/zeitgeist.png"
-                    alt="Zeitgeist Movement"
-                    fill
-                    sizes="80px"
-                    className="object-contain"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">Zeitgeist Movement</h4>
-                <p className="text-sm text-muted-foreground">
-                  Global movement advocating for scientific method and Resource-Based Economy principles.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="h-20 w-20 mx-auto mb-4 relative">
-                  <Image
-                    src="/envienta.png"
-                    alt="Envienta"
-                    fill
-                    sizes="80px"
-                    className="object-contain"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">Envienta</h4>
-                <p className="text-sm text-muted-foreground">
-                  Open-source platform for regenerative technology and sustainable innovation.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <h3 className="text-2xl font-display font-bold text-center mb-8">Regenerative Allies</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Leaf className="h-8 w-8 text-primary" />
-                </div>
-                <p className="text-sm font-medium">Permaculture Institute</p>
-                <p className="text-xs text-muted-foreground mt-1">Regenerative Agriculture</p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <p className="text-sm font-medium">Transition Network</p>
-                <p className="text-xs text-muted-foreground mt-1">Community Resilience</p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-8 w-8 text-primary" />
-                </div>
-                <p className="text-sm font-medium">Biomimicry Institute</p>
-                <p className="text-xs text-muted-foreground mt-1">Nature-Inspired Design</p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Heart className="h-8 w-8 text-primary" />
-                </div>
-                <p className="text-sm font-medium">Game B Community</p>
-                <p className="text-xs text-muted-foreground mt-1">Cultural Evolution</p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Target className="h-8 w-8 text-primary" />
-                </div>
-                <p className="text-sm font-medium">Regen Network</p>
-                <p className="text-xs text-muted-foreground mt-1">Regenerative Finance</p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <BookOpen className="h-8 w-8 text-primary" />
-                </div>
-                <p className="text-sm font-medium">Open Source Ecology</p>
-                <p className="text-xs text-muted-foreground mt-1">Open Technology</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-display font-bold text-center mb-8">Technology Partners</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="text-center">
-                <div className="h-20 w-20 mx-auto mb-4 relative">
-                  <Image
-                    src="/ethereum.png"
-                    alt="Ethereum"
-                    fill
-                    sizes="80px"
-                    className="object-contain"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">Ethereum Foundation</h4>
-                <p className="text-sm text-muted-foreground">
-                  Decentralized infrastructure supporting regenerative economy and community governance.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Globe className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">Holochain</h4>
-                <p className="text-sm text-muted-foreground">
-                  Peer-to-peer applications for regenerative community coordination and resource sharing.
-                </p>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" className="text-base px-8" asChild>
+                <Link href="/join">
+                  {t("homepage.cta.joinNetwork")}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="text-base px-8 border-white/30 text-white hover:bg-white/10" asChild>
+                <Link href="/visit">
+                  {t("homepage.cta.visitSite")}
+                  <MapPin className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
-      */}
 
       <Footer />
     </div>
